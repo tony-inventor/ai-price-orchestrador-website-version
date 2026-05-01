@@ -1,0 +1,417 @@
+
+<h2 class="sr-only">Motor de comparação de preços entre 3 supermercados — faça upload dos arquivos CSV para cada loja e veja análises de preços, promoções e melhor opção de compra.</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.header{padding:1.5rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.header h1{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.header p{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.upload-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem;cursor:pointer;transition:border-color 0.2s}
+.upload-card:hover{border-color:var(--color-border-secondary)}
+.upload-card.loaded{border-color:#1D9E75}
+.upload-card label{cursor:pointer;display:block}
+.store-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;margin-bottom:8px}
+.s1 .store-icon{background:#E6F1FB;color:#185FA5}
+.s2 .store-icon{background:#EEEDFE;color:#534AB7}
+.s3 .store-icon{background:#E1F5EE;color:#0F6E56}
+.upload-card h3{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.upload-card p{font-size:12px;color:var(--color-text-secondary)}
+.upload-card input[type=file]{display:none}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--color-border-secondary);display:inline-block;margin-right:6px}
+.status-dot.ok{background:#1D9E75}
+.status-row{display:flex;align-items:center;font-size:11px;color:var(--color-text-secondary);margin-top:6px}
+.analyze-btn{display:block;width:100%;padding:10px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);font-size:14px;font-weight:500;color:var(--color-text-primary);cursor:pointer;margin-bottom:1.5rem;transition:background 0.2s}
+.analyze-btn:hover{background:var(--color-background-tertiary)}
+.analyze-btn:disabled{opacity:0.4;cursor:default}
+.section{margin-bottom:2rem}
+.section-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.5rem}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem}
+.metric .label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric .value{font-size:22px;font-weight:500;color:var(--color-text-primary)}
+.metric .sub{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:8px 10px;font-weight:500;font-size:12px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary);white-space:nowrap}
+td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.badge-promo{background:#E1F5EE;color:#085041}
+.badge-best{background:#E6F1FB;color:#0C447C}
+.badge-worst{background:#FCEBEB;color:#791F1F}
+.winner-cell{font-weight:500;color:#0F6E56}
+.price-bar-wrap{display:flex;align-items:center;gap:8px}
+.price-bar{height:6px;border-radius:3px;min-width:4px;transition:width 0.3s}
+.bar-s1{background:#378ADD}
+.bar-s2{background:#7F77DD}
+.bar-s3{background:#1D9E75}
+.tabs{display:flex;gap:0;margin-bottom:1rem;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
+.tab{flex:1;padding:8px;font-size:13px;font-weight:500;background:transparent;border:none;cursor:pointer;color:var(--color-text-secondary);transition:all 0.15s}
+.tab.active{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.filter-row{display:flex;gap:8px;margin-bottom:1rem;align-items:center}
+.filter-row input{flex:1;padding:7px 10px;font-size:13px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary)}
+.filter-row select{padding:7px 10px;font-size:13px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary)}
+.no-data{text-align:center;padding:2rem;color:var(--color-text-secondary);font-size:13px}
+.savings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.savings-row:last-child{border-bottom:none}
+.store-chip{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:500}
+.chip-s1{background:#E6F1FB;color:#185FA5}
+.chip-s2{background:#EEEDFE;color:#534AB7}
+.chip-s3{background:#E1F5EE;color:#0F6E56}
+.chart-area{height:240px;position:relative}
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;text-align:center}
+.empty-icon{width:48px;height:48px;background:var(--color-background-secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.empty-state p{font-size:13px;color:var(--color-text-secondary);max-width:300px;line-height:1.6}
+.demo-btn{margin-top:1rem;padding:8px 16px;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;cursor:pointer;color:var(--color-text-primary)}
+.demo-btn:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="header">
+  <h1>Motor de Comparação de Preços</h1>
+  <p>Carregue os arquivos CSV de cada supermercado e veja onde comprar cada produto mais barato.</p>
+</div>
+
+<div class="upload-grid">
+  <div class="upload-card s1" id="card1">
+    <label>
+      <div class="store-icon">S1</div>
+      <h3 id="name1">Supermercado 1</h3>
+      <p>Clique para carregar CSV</p>
+      <div class="status-row"><span class="status-dot" id="dot1"></span><span id="status1">Aguardando arquivo...</span></div>
+      <input type="file" accept=".csv" id="file1" onchange="loadFile(1)">
+    </label>
+  </div>
+  <div class="upload-card s2" id="card2">
+    <label>
+      <div class="store-icon">S2</div>
+      <h3 id="name2">Supermercado 2</h3>
+      <p>Clique para carregar CSV</p>
+      <div class="status-row"><span class="status-dot" id="dot2"></span><span id="status2">Aguardando arquivo...</span></div>
+      <input type="file" accept=".csv" id="file2" onchange="loadFile(2)">
+    </label>
+  </div>
+  <div class="upload-card s3" id="card3">
+    <label>
+      <div class="store-icon">S3</div>
+      <h3 id="name3">Supermercado 3</h3>
+      <p>Clique para carregar CSV</p>
+      <div class="status-row"><span class="status-dot" id="dot3"></span><span id="status3">Aguardando arquivo...</span></div>
+      <input type="file" accept=".csv" id="file3" onchange="loadFile(3)">
+    </label>
+  </div>
+</div>
+
+<button class="analyze-btn" id="analyzeBtn" disabled onclick="analyze()">Analisar preços</button>
+
+<div id="results" style="display:none">
+  <div class="section">
+    <div class="section-title">Resumo geral</div>
+    <div class="metrics" id="metricsRow"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Comparação por produto</div>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('tabela',this)">Tabela</button>
+      <button class="tab" onclick="switchTab('grafico',this)">Gráfico</button>
+      <button class="tab" onclick="switchTab('economia',this)">Onde economizar</button>
+    </div>
+
+    <div id="tabela">
+      <div class="filter-row">
+        <input type="text" id="searchInput" placeholder="Buscar produto..." oninput="renderTable()">
+        <select id="filterPromo" onchange="renderTable()">
+          <option value="">Todos</option>
+          <option value="promo">Só promoções</option>
+        </select>
+        <select id="sortBy" onchange="renderTable()">
+          <option value="produto">Produto A→Z</option>
+          <option value="economia">Maior economia</option>
+          <option value="menor">Menor preço</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table id="compTable">
+          <thead><tr id="tableHead"></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="grafico" style="display:none">
+      <div class="chart-area"><canvas id="barChart" role="img" aria-label="Gráfico de barras comparando preços dos produtos nos três supermercados">Gráfico de comparação de preços</canvas></div>
+    </div>
+
+    <div id="economia" style="display:none" id="econTab">
+      <div id="econContent"></div>
+    </div>
+  </div>
+</div>
+
+<div id="emptyState" class="empty-state">
+  <div class="empty-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+  </div>
+  <p>Carregue os CSVs dos supermercados para começar. Formato esperado: <code>data, produto, preco, is_promocao</code></p>
+  <button class="demo-btn" onclick="loadDemo()">Carregar dados de demonstração</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+let stores = {1:null,2:null,3:null};
+let storeNames = {1:'Supermercado 1',2:'Supermercado 2',3:'Supermercado 3'};
+let analysis = null;
+let activeTab = 'tabela';
+let chartInstance = null;
+
+function parseCSV(text){
+  const lines = text.trim().split('\n');
+  if(lines.length < 2) return [];
+  const header = lines[0].split(',').map(h=>h.trim().toLowerCase().replace(/['"]/g,''));
+  const rows = [];
+  for(let i=1;i<lines.length;i++){
+    const vals = lines[i].split(',').map(v=>v.trim().replace(/['"]/g,''));
+    if(vals.length < 2) continue;
+    const row = {};
+    header.forEach((h,idx)=>row[h]=vals[idx]||'');
+    const produto = row['produto']||row['product']||row['nome']||row['item']||'';
+    const preco = parseFloat((row['preco']||row['preço']||row['price']||'0').replace(',','.'));
+    const is_promo = ['true','1','sim','yes','s'].includes((row['is_promocao']||row['is_promoção']||row['promo']||'').toLowerCase());
+    const data = row['data']||row['date']||'';
+    if(produto && !isNaN(preco)) rows.push({produto,preco,is_promo,data});
+  }
+  return rows;
+}
+
+function loadFile(n){
+  const file = document.getElementById('file'+n).files[0];
+  if(!file) return;
+  const name = file.name.replace('.csv','').replace(/_/g,' ');
+  storeNames[n] = name.length > 20 ? name.slice(0,20) : name;
+  document.getElementById('name'+n).textContent = storeNames[n];
+  const reader = new FileReader();
+  reader.onload = e => {
+    const rows = parseCSV(e.target.result);
+    stores[n] = rows;
+    document.getElementById('dot'+n).classList.add('ok');
+    document.getElementById('card'+n).classList.add('loaded');
+    document.getElementById('status'+n).textContent = rows.length + ' produtos carregados';
+    checkReady();
+  };
+  reader.readAsText(file);
+}
+
+function checkReady(){
+  const loaded = Object.values(stores).filter(s=>s!==null).length;
+  document.getElementById('analyzeBtn').disabled = loaded < 2;
+  if(loaded >= 2) document.getElementById('analyzeBtn').textContent = `Analisar preços (${loaded} supermercados)`;
+}
+
+function analyze(){
+  const activeStores = Object.entries(stores).filter(([,v])=>v!==null);
+  const allProducts = new Set();
+  activeStores.forEach(([,rows])=>rows.forEach(r=>allProducts.add(r.produto.toLowerCase())));
+  
+  const compared = [];
+  allProducts.forEach(prod => {
+    const entry = {produto: prod, stores:{}};
+    let hasPromo = false;
+    activeStores.forEach(([id,rows]) => {
+      const match = rows.find(r=>r.produto.toLowerCase()===prod);
+      if(match){
+        entry.stores[id] = {preco: match.preco, is_promo: match.is_promo, data: match.data};
+        if(match.is_promo) hasPromo = true;
+      }
+    });
+    const prices = Object.values(entry.stores).map(s=>s.preco).filter(p=>p>0);
+    if(prices.length < 1) return;
+    entry.min = Math.min(...prices);
+    entry.max = Math.max(...prices);
+    entry.economia = prices.length > 1 ? entry.max - entry.min : 0;
+    entry.has_promo = hasPromo;
+    const winnerEntry = Object.entries(entry.stores).find(([,v])=>v.preco===entry.min);
+    entry.winner = winnerEntry ? winnerEntry[0] : null;
+    compared.push(entry);
+  });
+  
+  compared.sort((a,b)=>a.produto.localeCompare(b.produto));
+  analysis = {compared, activeStores: activeStores.map(([id])=>id)};
+  
+  renderMetrics();
+  renderTable();
+  renderEconomia();
+  document.getElementById('results').style.display='block';
+  document.getElementById('emptyState').style.display='none';
+}
+
+function renderMetrics(){
+  const {compared, activeStores} = analysis;
+  const totalProdutos = compared.length;
+  const comPromo = compared.filter(p=>p.has_promo).length;
+  const totalEconomia = compared.reduce((s,p)=>s+p.economia,0);
+  const melhor = activeStores.reduce((best,sid)=>{
+    const wins = compared.filter(p=>p.winner===sid).length;
+    return wins > (best.wins||0) ? {sid, wins} : best;
+  },{});
+  
+  document.getElementById('metricsRow').innerHTML = `
+    <div class="metric"><div class="label">Produtos comparados</div><div class="value">${totalProdutos}</div><div class="sub">em ${activeStores.length} supermercados</div></div>
+    <div class="metric"><div class="label">Com promoção ativa</div><div class="value">${comPromo}</div><div class="sub">${Math.round(comPromo/totalProdutos*100)}% do total</div></div>
+    <div class="metric"><div class="label">Economia máxima total</div><div class="value">R$ ${totalEconomia.toFixed(2)}</div><div class="sub">comprando sempre no mais barato</div></div>
+    <div class="metric"><div class="label">Supermercado mais barato</div><div class="value" style="font-size:14px;padding-top:4px">${storeNames[melhor.sid]||'—'}</div><div class="sub">${melhor.wins||0} produto(s) com menor preço</div></div>
+  `;
+}
+
+function renderTable(){
+  const {compared, activeStores} = analysis;
+  const search = (document.getElementById('searchInput').value||'').toLowerCase();
+  const filterPromo = document.getElementById('filterPromo').value;
+  const sortBy = document.getElementById('sortBy').value;
+  
+  let rows = compared.filter(p=>{
+    if(search && !p.produto.includes(search)) return false;
+    if(filterPromo==='promo' && !p.has_promo) return false;
+    return true;
+  });
+  
+  if(sortBy==='economia') rows.sort((a,b)=>b.economia-a.economia);
+  else if(sortBy==='menor') rows.sort((a,b)=>a.min-b.min);
+  else rows.sort((a,b)=>a.produto.localeCompare(b.produto));
+  
+  const colors = {1:'#378ADD',2:'#7F77DD',3:'#1D9E75'};
+  document.getElementById('tableHead').innerHTML = `
+    <th>Produto</th>
+    ${activeStores.map(sid=>`<th>${storeNames[sid]}</th>`).join('')}
+    <th>Economia</th>
+    <th>Melhor opção</th>
+  `;
+  
+  const maxEcon = Math.max(...rows.map(r=>r.economia),1);
+  
+  document.getElementById('tableBody').innerHTML = rows.map(p=>{
+    const storeCells = activeStores.map(sid=>{
+      const s = p.stores[sid];
+      if(!s) return `<td style="color:var(--color-text-secondary)">—</td>`;
+      const isWinner = String(sid)===String(p.winner);
+      const barW = Math.round((s.preco/p.max)*80);
+      return `<td>
+        <div class="price-bar-wrap">
+          <div class="price-bar bar-s${sid}" style="width:${barW}px"></div>
+          <span class="${isWinner?'winner-cell':''}">R$ ${s.preco.toFixed(2)}</span>
+          ${s.is_promo?'<span class="badge badge-promo">promo</span>':''}
+        </div>
+      </td>`;
+    }).join('');
+    const winnerName = p.winner ? storeNames[p.winner] : '—';
+    return `<tr>
+      <td style="font-weight:500">${p.produto}</td>
+      ${storeCells}
+      <td>${p.economia>0?`<span style="color:#0F6E56;font-weight:500">R$ ${p.economia.toFixed(2)}</span>`:'—'}</td>
+      <td>${p.winner?`<span class="store-chip chip-s${p.winner}">${winnerName}</span>`:'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderChart(){
+  const {compared, activeStores} = analysis;
+  const top10 = [...compared].sort((a,b)=>b.economia-a.economia).slice(0,10);
+  const labels = top10.map(p=>p.produto.length>15?p.produto.slice(0,14)+'…':p.produto);
+  const colors = {1:'#378ADD',2:'#7F77DD',3:'#1D9E75'};
+  const datasets = activeStores.map(sid=>({
+    label: storeNames[sid],
+    data: top10.map(p=>p.stores[sid]?p.stores[sid].preco:null),
+    backgroundColor: colors[sid]+'cc',
+    borderColor: colors[sid],
+    borderWidth: 1
+  }));
+  if(chartInstance) chartInstance.destroy();
+  chartInstance = new Chart(document.getElementById('barChart'),{
+    type:'bar',
+    data:{labels,datasets},
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{ticks:{font:{size:11},autoSkip:false,maxRotation:35}},y:{ticks:{callback:v=>'R$'+v.toFixed(0)}}}
+    }
+  });
+}
+
+function renderEconomia(){
+  const {compared, activeStores} = analysis;
+  const byStore = {};
+  activeStores.forEach(sid=>{byStore[sid]={wins:0,totalEcon:0,promos:0}});
+  compared.forEach(p=>{
+    if(p.winner) byStore[p.winner].wins++;
+    if(p.has_promo){
+      activeStores.forEach(sid=>{
+        if(p.stores[sid]&&p.stores[sid].is_promo) byStore[sid].promos++;
+      });
+    }
+    if(p.economia>0 && p.winner) byStore[p.winner].totalEcon += p.economia;
+  });
+  
+  const html = activeStores.map(sid=>`
+    <div class="savings-row">
+      <div>
+        <span class="store-chip chip-s${sid}">${storeNames[sid]}</span>
+        <span style="font-size:12px;color:var(--color-text-secondary);margin-left:8px">${byStore[sid].wins} produto(s) mais barato(s)</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <span style="font-size:12px;color:var(--color-text-secondary)">${byStore[sid].promos} em promoção</span>
+        <span style="font-size:13px;font-weight:500;color:#0F6E56">economiza R$ ${byStore[sid].totalEcon.toFixed(2)}</span>
+      </div>
+    </div>
+  `).join('');
+  
+  const bestPicks = [...compared].filter(p=>p.economia>0).sort((a,b)=>b.economia-a.economia).slice(0,5);
+  const picks = bestPicks.map(p=>`
+    <div class="savings-row">
+      <div style="font-size:13px;font-weight:500">${p.produto}</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        ${p.winner?`<span class="store-chip chip-s${p.winner}">${storeNames[p.winner]}</span>`:''}
+        <span style="font-size:13px;color:#0F6E56">economia de R$ ${p.economia.toFixed(2)}</span>
+      </div>
+    </div>
+  `).join('');
+  
+  document.getElementById('econContent').innerHTML = `
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;font-size:11px">Comparativo por loja</div>
+    ${html}
+    <div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);margin:1.5rem 0 8px;text-transform:uppercase;letter-spacing:0.05em">Top produtos com maior economia</div>
+    ${picks}
+  `;
+}
+
+function switchTab(tab, btn){
+  activeTab = tab;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  ['tabela','grafico','economia'].forEach(t=>{
+    document.getElementById(t).style.display = t===tab?'block':'none';
+  });
+  if(tab==='grafico') setTimeout(renderChart,50);
+}
+
+function loadDemo(){
+  const demo1 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,22.90,false\n2025-04-01,Feijão 1kg,8.50,true\n2025-04-01,Óleo de soja 900ml,7.80,false\n2025-04-01,Leite integral 1L,4.20,false\n2025-04-01,Pão de forma,6.90,false\n2025-04-01,Frango resfriado kg,14.50,true\n2025-04-01,Açúcar 1kg,5.30,false\n2025-04-01,Café 500g,18.90,false\n2025-04-01,Macarrão 500g,4.10,false\n2025-04-01,Tomate kg,6.80,false`;
+  const demo2 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,24.50,false\n2025-04-01,Feijão 1kg,7.90,false\n2025-04-01,Óleo de soja 900ml,8.20,true\n2025-04-01,Leite integral 1L,3.99,true\n2025-04-01,Pão de forma,7.20,false\n2025-04-01,Frango resfriado kg,13.80,false\n2025-04-01,Açúcar 1kg,5.80,false\n2025-04-01,Café 500g,20.50,false\n2025-04-01,Macarrão 500g,3.90,true\n2025-04-01,Tomate kg,5.90,true`;
+  const demo3 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,21.90,true\n2025-04-01,Feijão 1kg,9.10,false\n2025-04-01,Óleo de soja 900ml,7.50,false\n2025-04-01,Leite integral 1L,4.50,false\n2025-04-01,Pão de forma,6.50,true\n2025-04-01,Frango resfriado kg,15.20,false\n2025-04-01,Açúcar 1kg,4.90,true\n2025-04-01,Café 500g,17.80,true\n2025-04-01,Macarrão 500g,4.50,false\n2025-04-01,Tomate kg,7.20,false`;
+  
+  storeNames = {1:'Mercadão Central',2:'Superprix',3:'Atacadão Bom Preço'};
+  [1,2,3].forEach(n=>{
+    const texts = {1:demo1,2:demo2,3:demo3};
+    const names = {1:'mercadao-central.csv',2:'superprix.csv',3:'atacadao-bom-preco.csv'};
+    stores[n] = parseCSV(texts[n]);
+    document.getElementById('name'+n).textContent = storeNames[n];
+    document.getElementById('dot'+n).classList.add('ok');
+    document.getElementById('card'+n).classList.add('loaded');
+    document.getElementById('status'+n).textContent = '10 produtos carregados';
+  });
+  checkReady();
+  document.getElementById('emptyState').style.display='none';
+  analyze();
+}
+</script>

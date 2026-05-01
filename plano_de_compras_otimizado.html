@@ -1,0 +1,333 @@
+
+<h2 class="sr-only">Planejador de compras otimizado — monte sua lista, carregue os CSVs dos supermercados e veja em qual loja comprar cada item para gastar o mínimo total.</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.header{padding:1.5rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.header h1{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.header p{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.5rem}
+.panel{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+.panel-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.04em}
+.upload-row{display:flex;flex-direction:column;gap:8px}
+.upload-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);cursor:pointer;transition:border-color 0.15s}
+.upload-item:hover{border-color:var(--color-border-secondary)}
+.upload-item.loaded{border-color:#1D9E75}
+.upload-item label{cursor:pointer;display:flex;align-items:center;gap:8px;flex:1}
+.upload-item input[type=file]{display:none}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--color-border-secondary);flex-shrink:0}
+.dot.ok{background:#1D9E75}
+.store-label{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.store-sub{font-size:11px;color:var(--color-text-secondary);margin-left:auto}
+.list-input-wrap{display:flex;gap:6px;margin-bottom:8px}
+.list-input-wrap input{flex:1;padding:7px 10px;font-size:13px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary)}
+.list-input-wrap button{padding:7px 12px;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;cursor:pointer;color:var(--color-text-primary)}
+.list-input-wrap button:hover{background:var(--color-background-secondary)}
+.lista-items{display:flex;flex-direction:column;gap:4px;max-height:180px;overflow-y:auto}
+.lista-item{display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);font-size:13px}
+.lista-item button{background:none;border:none;cursor:pointer;color:var(--color-text-secondary);font-size:14px;padding:0 2px;line-height:1}
+.lista-item button:hover{color:var(--color-text-primary)}
+.run-btn{display:block;width:100%;padding:11px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);font-size:14px;font-weight:500;color:var(--color-text-primary);cursor:pointer;margin-bottom:1.5rem;transition:background 0.15s}
+.run-btn:hover{background:var(--color-background-tertiary)}
+.run-btn:disabled{opacity:0.4;cursor:default}
+.results-area{display:none}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem}
+.metric .mlabel{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric .mval{font-size:21px;font-weight:500;color:var(--color-text-primary)}
+.metric .msub{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.store-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:1.5rem}
+.store-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+.store-card.winner{border-color:#1D9E75}
+.sc-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sc-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.av1{background:#E6F1FB;color:#185FA5}
+.av2{background:#EEEDFE;color:#534AB7}
+.av3{background:#E1F5EE;color:#0F6E56}
+.sc-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.sc-total{font-size:22px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.sc-items{font-size:12px;color:var(--color-text-secondary);margin-bottom:10px}
+.sc-list{border-top:0.5px solid var(--color-border-tertiary);padding-top:8px;display:flex;flex-direction:column;gap:4px}
+.sc-row{display:flex;justify-content:space-between;font-size:12px;gap:8px}
+.sc-prod{color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+.sc-price{color:var(--color-text-primary);font-weight:500;flex-shrink:0}
+.badge-promo{display:inline-block;padding:1px 5px;border-radius:3px;font-size:10px;background:#E1F5EE;color:#085041;font-weight:500;margin-left:3px}
+.not-found-section{margin-bottom:1.5rem}
+.not-found-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px}
+.not-found-list{display:flex;flex-wrap:wrap;gap:6px}
+.nf-tag{padding:3px 10px;border-radius:4px;font-size:12px;background:#FCEBEB;color:#791F1F;border:0.5px solid #F09595}
+.section-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.summary-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.summary-table th{text-align:left;padding:8px 10px;font-weight:500;font-size:12px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.summary-table td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:middle}
+.summary-table tr:last-child td{border-bottom:none}
+.chip{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.chip1{background:#E6F1FB;color:#0C447C}
+.chip2{background:#EEEDFE;color:#3C3489}
+.chip3{background:#E1F5EE;color:#085041}
+.saving-bar-wrap{display:flex;align-items:center;gap:6px}
+.saving-bar{height:4px;border-radius:2px;background:#1D9E75}
+.demo-link{font-size:12px;color:var(--color-text-secondary);text-decoration:underline;cursor:pointer;margin-left:8px}
+</style>
+
+<div class="header">
+  <h1>Planejador de compras otimizado</h1>
+  <p>Monte sua lista, carregue os CSVs e veja o roteiro de compras mais barato distribuído por supermercado.</p>
+</div>
+
+<div class="two-col">
+  <div class="panel">
+    <div class="panel-title">Supermercados <span class="demo-link" onclick="loadDemo()">usar demo</span></div>
+    <div class="upload-row" id="uploadRow">
+      <div class="upload-item" id="upcard1">
+        <label><input type="file" accept=".csv" id="f1" onchange="loadFile(1)"><span class="dot" id="d1"></span><span class="store-label" id="sn1">Supermercado 1</span><span class="store-sub" id="ss1">CSV</span></label>
+      </div>
+      <div class="upload-item" id="upcard2">
+        <label><input type="file" accept=".csv" id="f2" onchange="loadFile(2)"><span class="dot" id="d2"></span><span class="store-label" id="sn2">Supermercado 2</span><span class="store-sub" id="ss2">CSV</span></label>
+      </div>
+      <div class="upload-item" id="upcard3">
+        <label><input type="file" accept=".csv" id="f3" onchange="loadFile(3)"><span class="dot" id="d3"></span><span class="store-label" id="sn3">Supermercado 3</span><span class="store-sub" id="ss3">CSV</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Minha lista de compras</div>
+    <div class="list-input-wrap">
+      <input type="text" id="itemInput" placeholder="Ex: Arroz 5kg" onkeydown="if(event.key==='Enter')addItem()">
+      <button onclick="addItem()">Adicionar</button>
+    </div>
+    <div class="lista-items" id="listaItems"></div>
+    <div style="margin-top:8px;font-size:11px;color:var(--color-text-secondary)" id="listaCount">0 itens na lista</div>
+  </div>
+</div>
+
+<button class="run-btn" id="runBtn" disabled onclick="optimize()">Calcular plano de compras otimizado</button>
+
+<div class="results-area" id="resultsArea">
+  <div class="section-title">Plano de compras</div>
+
+  <div class="metrics" id="metricsRow"></div>
+
+  <div class="store-cards" id="storeCards"></div>
+
+  <div class="not-found-section" id="notFoundSection" style="display:none">
+    <div class="not-found-title">Itens não encontrados nos CSVs</div>
+    <div class="not-found-list" id="notFoundList"></div>
+  </div>
+
+  <div class="section-title" style="margin-top:1rem">Resumo por item</div>
+  <div style="overflow-x:auto">
+    <table class="summary-table">
+      <thead><tr>
+        <th style="width:35%">Produto</th>
+        <th style="width:22%">Melhor loja</th>
+        <th style="width:14%">Preço</th>
+        <th style="width:14%">Preço mais caro</th>
+        <th style="width:15%">Economia</th>
+      </tr></thead>
+      <tbody id="summaryBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+let stores={1:null,2:null,3:null};
+let storeNames={1:'Supermercado 1',2:'Supermercado 2',3:'Supermercado 3'};
+let lista=[];
+
+function parseCSV(text){
+  const lines=text.trim().split('\n');
+  if(lines.length<2)return[];
+  const header=lines[0].split(',').map(h=>h.trim().toLowerCase().replace(/['"]/g,''));
+  const rows=[];
+  for(let i=1;i<lines.length;i++){
+    const vals=lines[i].split(',').map(v=>v.trim().replace(/['"]/g,''));
+    if(vals.length<2)continue;
+    const row={};
+    header.forEach((h,idx)=>row[h]=vals[idx]||'');
+    const produto=row['produto']||row['product']||row['nome']||row['item']||'';
+    const preco=parseFloat((row['preco']||row['preço']||row['price']||'0').replace(',','.'));
+    const is_promo=['true','1','sim','yes','s'].includes((row['is_promocao']||row['is_promoção']||row['promo']||'').toLowerCase());
+    if(produto&&!isNaN(preco)&&preco>0)rows.push({produto,preco,is_promo});
+  }
+  return rows;
+}
+
+function loadFile(n){
+  const file=document.getElementById('f'+n).files[0];
+  if(!file)return;
+  const name=file.name.replace('.csv','').replace(/_/g,' ');
+  storeNames[n]=name.length>22?name.slice(0,21)+'…':name;
+  document.getElementById('sn'+n).textContent=storeNames[n];
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const rows=parseCSV(e.target.result);
+    stores[n]=rows;
+    document.getElementById('d'+n).classList.add('ok');
+    document.getElementById('upcard'+n).classList.add('loaded');
+    document.getElementById('ss'+n).textContent=rows.length+' produtos';
+    checkReady();
+  };
+  reader.readAsText(file);
+}
+
+function addItem(){
+  const inp=document.getElementById('itemInput');
+  const val=inp.value.trim();
+  if(!val)return;
+  if(!lista.includes(val.toLowerCase()))lista.push(val.toLowerCase());
+  inp.value='';
+  renderLista();
+  checkReady();
+}
+
+function removeItem(i){
+  lista.splice(i,1);
+  renderLista();
+  checkReady();
+}
+
+function renderLista(){
+  document.getElementById('listaItems').innerHTML=lista.map((it,i)=>`
+    <div class="lista-item">
+      <span>${it}</span>
+      <button onclick="removeItem(${i})">×</button>
+    </div>
+  `).join('');
+  document.getElementById('listaCount').textContent=lista.length+' ite'+(lista.length===1?'m':'ns')+' na lista';
+}
+
+function checkReady(){
+  const loaded=Object.values(stores).filter(s=>s!==null).length;
+  const hasItems=lista.length>0;
+  const btn=document.getElementById('runBtn');
+  btn.disabled=!(loaded>=2&&hasItems);
+  if(loaded>=2&&hasItems)btn.textContent=`Calcular plano de compras (${lista.length} ite${lista.length===1?'m':'ns'}, ${loaded} supermercados)`;
+  else btn.textContent='Calcular plano de compras otimizado';
+}
+
+function normalize(s){return s.toLowerCase().trim()}
+
+function optimize(){
+  const activeStores=Object.entries(stores).filter(([,v])=>v!==null);
+  const chipClass=['chip1','chip2','chip3'];
+  const avClass=['av1','av2','av3'];
+
+  const found=[];
+  const notFound=[];
+
+  lista.forEach(item=>{
+    const matches=[];
+    activeStores.forEach(([sid,rows])=>{
+      const row=rows.find(r=>normalize(r.produto)===normalize(item)||normalize(r.produto).includes(normalize(item))||normalize(item).includes(normalize(r.produto)));
+      if(row)matches.push({sid,preco:row.preco,is_promo:row.is_promo,nome:row.produto});
+    });
+    if(matches.length===0){notFound.push(item);return;}
+    matches.sort((a,b)=>a.preco-b.preco);
+    const best=matches[0];
+    const worst=matches[matches.length-1];
+    found.push({item,best,worst,allMatches:matches,economia:matches.length>1?worst.preco-best.preco:0});
+  });
+
+  const byStore={};
+  activeStores.forEach(([sid])=>{byStore[sid]={items:[],total:0}});
+  found.forEach(f=>{
+    const sid=f.best.sid;
+    byStore[sid].items.push(f);
+    byStore[sid].total+=f.best.preco;
+  });
+
+  const totalOtimizado=found.reduce((s,f)=>s+f.best.preco,0);
+  const totalSemOtimizar=found.reduce((s,f)=>s+f.worst.preco,0);
+  const economiaTotal=totalSemOtimizar-totalOtimizado;
+  const economiaPct=totalSemOtimizar>0?Math.round(economiaTotal/totalSemOtimizar*100):0;
+  const lojas=Object.values(byStore).filter(b=>b.items.length>0).length;
+
+  document.getElementById('metricsRow').innerHTML=`
+    <div class="metric"><div class="mlabel">Total otimizado</div><div class="mval">R$ ${totalOtimizado.toFixed(2)}</div><div class="msub">${found.length} ite${found.length===1?'m':'ns'} encontrados</div></div>
+    <div class="metric"><div class="mlabel">Sem otimizar</div><div class="mval">R$ ${totalSemOtimizar.toFixed(2)}</div><div class="msub">pagando sempre mais caro</div></div>
+    <div class="metric"><div class="mlabel">Economia total</div><div class="mval" style="color:#0F6E56">R$ ${economiaTotal.toFixed(2)}</div><div class="msub">${economiaPct}% a menos</div></div>
+    <div class="metric"><div class="mlabel">Lojas no roteiro</div><div class="mval">${lojas}</div><div class="msub">de ${activeStores.length} disponíveis</div></div>
+  `;
+
+  const maxTotal=Math.max(...Object.values(byStore).map(b=>b.total),1);
+  const sortedStores=activeStores.map(([sid])=>sid).sort((a,b)=>byStore[b].total-byStore[a].total);
+  const winnerStore=activeStores.map(([sid])=>sid).sort((a,b)=>byStore[b].items.length-byStore[a].items.length)[0];
+
+  document.getElementById('storeCards').innerHTML=sortedStores.map((sid,i)=>{
+    const sd=byStore[sid];
+    if(sd.items.length===0)return'';
+    const isWinner=String(sid)===String(winnerStore)&&sd.items.length>0;
+    const avIdx=activeStores.findIndex(([s])=>String(s)===String(sid));
+    const avCls=avClass[avIdx]||'av1';
+    const chipCls=chipClass[avIdx]||'chip1';
+    const initials=storeNames[sid].split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const itemRows=sd.items.map(f=>`
+      <div class="sc-row">
+        <span class="sc-prod">${f.item}</span>
+        <span class="sc-price">R$ ${f.best.preco.toFixed(2)}${f.best.is_promo?'<span class="badge-promo">promo</span>':''}</span>
+      </div>
+    `).join('');
+    return`<div class="store-card${isWinner?' winner':''}">
+      <div class="sc-head">
+        <div class="sc-avatar ${avCls}">${initials}</div>
+        <div>
+          <div class="sc-name">${storeNames[sid]}</div>
+          ${isWinner?'<span class="chip '+chipCls+'" style="font-size:10px">maior parte da lista</span>':''}
+        </div>
+      </div>
+      <div class="sc-total">R$ ${sd.total.toFixed(2)}</div>
+      <div class="sc-items">${sd.items.length} ite${sd.items.length===1?'m':'ns'} desta lista</div>
+      <div class="sc-list">${itemRows}</div>
+    </div>`;
+  }).join('');
+
+  if(notFound.length>0){
+    document.getElementById('notFoundSection').style.display='block';
+    document.getElementById('notFoundList').innerHTML=notFound.map(it=>`<span class="nf-tag">${it}</span>`).join('');
+  } else {
+    document.getElementById('notFoundSection').style.display='none';
+  }
+
+  const maxEcon=Math.max(...found.map(f=>f.economia),1);
+  document.getElementById('summaryBody').innerHTML=found.map(f=>{
+    const avIdx=activeStores.findIndex(([s])=>String(s)===String(f.best.sid));
+    const chipCls=chipClass[avIdx]||'chip1';
+    const barW=Math.round((f.economia/maxEcon)*80);
+    return`<tr>
+      <td style="font-weight:500">${f.item}</td>
+      <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
+      <td>R$ ${f.best.preco.toFixed(2)}</td>
+      <td style="color:var(--color-text-secondary)">R$ ${f.worst.preco.toFixed(2)}</td>
+      <td>
+        <div class="saving-bar-wrap">
+          <div class="saving-bar" style="width:${barW}px"></div>
+          <span style="font-size:12px;color:#0F6E56;font-weight:500">${f.economia>0?'R$ '+f.economia.toFixed(2):'—'}</span>
+        </div>
+      </td>
+    </tr>`;
+  }).join('')+(notFound.map(it=>`<tr><td style="color:var(--color-text-secondary);font-style:italic">${it}</td><td colspan="4" style="color:var(--color-text-secondary);font-size:12px">não encontrado nos CSVs</td></tr>`).join(''));
+
+  document.getElementById('resultsArea').style.display='block';
+  document.getElementById('resultsArea').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function loadDemo(){
+  const d1=`data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,22.90,false\n2025-04-01,Feijão 1kg,8.50,true\n2025-04-01,Óleo de soja 900ml,7.80,false\n2025-04-01,Leite integral 1L,4.20,false\n2025-04-01,Pão de forma,6.90,false\n2025-04-01,Frango resfriado kg,14.50,true\n2025-04-01,Açúcar 1kg,5.30,false\n2025-04-01,Café 500g,18.90,false\n2025-04-01,Macarrão 500g,4.10,false\n2025-04-01,Tomate kg,6.80,false`;
+  const d2=`data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,24.50,false\n2025-04-01,Feijão 1kg,7.90,false\n2025-04-01,Óleo de soja 900ml,8.20,true\n2025-04-01,Leite integral 1L,3.99,true\n2025-04-01,Pão de forma,7.20,false\n2025-04-01,Frango resfriado kg,13.80,false\n2025-04-01,Açúcar 1kg,5.80,false\n2025-04-01,Café 500g,20.50,false\n2025-04-01,Macarrão 500g,3.90,true\n2025-04-01,Tomate kg,5.90,true`;
+  const d3=`data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,21.90,true\n2025-04-01,Feijão 1kg,9.10,false\n2025-04-01,Óleo de soja 900ml,7.50,false\n2025-04-01,Leite integral 1L,4.50,false\n2025-04-01,Pão de forma,6.50,true\n2025-04-01,Frango resfriado kg,15.20,false\n2025-04-01,Açúcar 1kg,4.90,true\n2025-04-01,Café 500g,17.80,true\n2025-04-01,Macarrão 500g,4.50,false\n2025-04-01,Tomate kg,7.20,false`;
+  storeNames={1:'Mercadão Central',2:'Superprix',3:'Atacadão Bom Preço'};
+  [[1,d1],[2,d2],[3,d3]].forEach(([n,txt])=>{
+    stores[n]=parseCSV(txt);
+    document.getElementById('sn'+n).textContent=storeNames[n];
+    document.getElementById('d'+n).classList.add('ok');
+    document.getElementById('upcard'+n).classList.add('loaded');
+    document.getElementById('ss'+n).textContent='10 produtos';
+  });
+  lista=['arroz 5kg','feijão 1kg','leite integral 1l','café 500g','frango resfriado kg','açúcar 1kg','pão de forma','macarrão 500g'];
+  renderLista();
+  checkReady();
+  setTimeout(optimize,100);
+}
+</script>
