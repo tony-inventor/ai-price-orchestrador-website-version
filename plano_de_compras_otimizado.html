@@ -785,7 +785,7 @@
             <th style="width: 35%">Produto</th>
             <th style="width: 22%">Melhor loja</th>
             <th style="width: 14%">Preço</th>
-            <th style="width: 14%">Preço mais caro</th>
+            
             <th style="width: 15%">Economia</th>
           </tr>
         </thead>
@@ -1209,7 +1209,6 @@
       <td style="font-weight:500">${f.item}</td>
       <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
       <td>R$ ${f.best.preco.toFixed(2)}</td>
-      <td style="color:var(--color-text-secondary)">R$ ${f.worst.preco.toFixed(2)}</td>
       <td>
         <div class="saving-bar-wrap">
           <div class="saving-bar" style="width:${barW}px"></div>
