@@ -1209,12 +1209,7 @@
       <td style="font-weight:500">${f.item}</td>
       <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
       <td>R$ ${f.best.preco.toFixed(2)}</td>
-      <td>
-        <div class="saving-bar-wrap">
-          <div class="saving-bar" style="width:${barW}px"></div>
-          <span style="font-size:12px;color:#0F6E56;font-weight:500">${f.economia > 0 ? "R$ " + f.economia.toFixed(2) : "—"}</span>
-        </div>
-      </td>
+      <td style="font-size:13px;color:#0F6E56;font-weight:500">${f.economia > 0 ? "R$ " + f.economia.toFixed(2) : "—"}</td>
     </tr>`;
         })
         .join("") +
