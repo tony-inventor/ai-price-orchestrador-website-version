@@ -853,11 +853,21 @@
 
   // Known CSVs in the same directory
   const BASE_URL = (location.origin + location.pathname).replace(/\/[^/]*$/, '/');
+  // Add or remove entries here as needed: { file, label }
   const KNOWN_CSVS = [
-    { file: 'dados_supermercado_A.csv', label: 'Supermercado A' },
-    { file: 'dados_supermercado_B.csv', label: 'Supermercado B' },
-    { file: 'dados_supermercado_C.csv', label: 'Supermercado C' },
+    { file: 'dados_supermercado_epa.csv',              label: 'Epa' },
+    { file: 'dados_supermercado_farid.csv',            label: 'Farid' },
+    { file: 'dados_supermercado_supermercado_bh.csv',  label: 'Supermercado BH' },
   ];
+
+  function labelFromFilename(file) {
+    const match = KNOWN_CSVS.find(c => c.file === file);
+    if (match) return match.label;
+    // fallback: strip known prefixes and uppercase remainder
+    const parts = file.replace(/\.csv$/i, '').split('_');
+    const filtered = parts.filter(p => !['dados','supermercado','data','supermarket'].includes(p.toLowerCase()));
+    return filtered.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+  }
 
   let activePicker = null;
 
@@ -865,15 +875,15 @@
     activePicker = n;
     document.getElementById('modalTitle').textContent = `Supermercado ${n} — escolher CSV`;
     const list = document.getElementById('csvOptionsList');
-    list.innerHTML = KNOWN_CSVS.map(csv => `
-      <div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
+    list.innerHTML = KNOWN_CSVS.map(csv => {
+      return `<div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
         <div class="csv-icon">CSV</div>
         <div>
           <div class="csv-name">${csv.label}</div>
           <div class="csv-hint">${csv.file}</div>
         </div>
-      </div>
-    `).join('');
+      </div>`;
+    }).join('');
     document.getElementById('modalOverlay').classList.add('open');
   }
 
