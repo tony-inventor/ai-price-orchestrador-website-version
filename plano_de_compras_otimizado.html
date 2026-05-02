@@ -1,8 +1,12 @@
-<h2 class="sr-only">
-  Planejador de compras otimizado — monte sua lista, carregue os CSVs dos
-  supermercados e veja em qual loja comprar cada item para gastar o mínimo
-  total.
-</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Planejador de compras otimizado — monte sua lista, carregue os CSVs dos supermercados e veja em qual loja comprar cada item para gastar o mínimo total." />
+  <title>Planejador de compras otimizado</title>
+</head>
+<body>
 
 <style>
   :root {
@@ -74,15 +78,10 @@
     line-height: 1.7;
   }
   .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-bottom: 1.5rem;
-  }
-  @media (max-width: 860px) {
-    .two-col {
-      grid-template-columns: 1fr;
-    }
   }
   .panel {
     background: rgba(15, 23, 42, 0.88);
@@ -219,6 +218,60 @@
   .list-input-wrap button:hover {
     transform: translateY(-1px);
     box-shadow: 0 18px 35px rgba(14, 165, 233, 0.22);
+  }
+  .input-autocomplete-wrap {
+    position: relative;
+    flex: 1 1 220px;
+    min-width: 0;
+  }
+  .input-autocomplete-wrap input {
+    width: 100%;
+  }
+  .autocomplete-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+  }
+  .autocomplete-dropdown.open {
+    display: block;
+  }
+  .ac-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .ac-item:last-child {
+    border-bottom: none;
+  }
+  .ac-item:hover,
+  .ac-item.active {
+    background: rgba(56, 189, 248, 0.1);
+    color: #f8fafc;
+  }
+  .ac-item mark {
+    background: none;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .ac-store-badge {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
   }
   .lista-items {
     display: flex;
@@ -581,11 +634,16 @@
     <div class="panel">
       <div class="panel-title">Minha lista de compras</div>
       <div class="list-input-wrap">
-        <input
-          type="text"
-          id="itemInput"
-          placeholder="Ex: Arroz 5kg"
-          onkeydown="if (event.key === 'Enter') addItem();" />
+        <div class="input-autocomplete-wrap">
+          <input
+            type="text"
+            id="itemInput"
+            placeholder="Ex: Arroz 5kg"
+            autocomplete="off"
+            oninput="onInputChange()"
+            onkeydown="onInputKeydown(event)" />
+          <div class="autocomplete-dropdown" id="acDropdown"></div>
+        </div>
         <button onclick="addItem()">Adicionar</button>
       </div>
       <div class="lista-items" id="listaItems"></div>
@@ -693,12 +751,103 @@
     reader.readAsText(file);
   }
 
+  let acIndex = -1;
+
+  function getAllProducts() {
+    const seen = new Set();
+    const results = [];
+    Object.entries(stores).forEach(([sid, rows]) => {
+      if (!rows) return;
+      rows.forEach(r => {
+        const key = r.produto.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          results.push({ nome: r.produto, sid });
+        }
+      });
+    });
+    return results;
+  }
+
+  function matchesAllWords(produto, query) {
+    const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    const target = produto.toLowerCase();
+    return words.every(w => target.includes(w));
+  }
+
+  function highlightWords(text, query) {
+    const words = query.trim().split(/\s+/).filter(Boolean);
+    let result = text;
+    words.forEach(w => {
+      const re = new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      result = result.replace(re, '<mark>$1</mark>');
+    });
+    return result;
+  }
+
+  function onInputChange() {
+    const val = document.getElementById('itemInput').value;
+    acIndex = -1;
+    if (val.trim().length < 2) { closeDropdown(); return; }
+    const products = getAllProducts();
+    const matches = products.filter(p => matchesAllWords(p.nome, val)).slice(0, 8);
+    if (matches.length === 0) { closeDropdown(); return; }
+    const dd = document.getElementById('acDropdown');
+    dd.innerHTML = matches.map((p, i) =>
+      `<div class="ac-item" data-val="${p.nome}" onmousedown="pickSuggestion('${p.nome.replace(/'/g, "\\'")}')">
+        ${highlightWords(p.nome, val)}
+        <span class="ac-store-badge">${storeNames[p.sid]}</span>
+      </div>`
+    ).join('');
+    dd.classList.add('open');
+  }
+
+  function onInputKeydown(e) {
+    const dd = document.getElementById('acDropdown');
+    const items = dd.querySelectorAll('.ac-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      acIndex = Math.min(acIndex + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      acIndex = Math.max(acIndex - 1, -1);
+      items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+    } else if (e.key === 'Enter') {
+      if (acIndex >= 0 && items[acIndex]) {
+        pickSuggestion(items[acIndex].dataset.val);
+      } else {
+        addItem();
+      }
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+    }
+  }
+
+  function pickSuggestion(val) {
+    document.getElementById('itemInput').value = val;
+    closeDropdown();
+    addItem();
+  }
+
+  function closeDropdown() {
+    const dd = document.getElementById('acDropdown');
+    dd.classList.remove('open');
+    dd.innerHTML = '';
+    acIndex = -1;
+  }
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.input-autocomplete-wrap')) closeDropdown();
+  });
+
   function addItem() {
     const inp = document.getElementById("itemInput");
     const val = inp.value.trim();
     if (!val) return;
     if (!lista.includes(val.toLowerCase())) lista.push(val.toLowerCase());
     inp.value = "";
+    closeDropdown();
     renderLista();
     checkReady();
   }
@@ -865,8 +1014,14 @@
     }
 
     const maxEcon = Math.max(...found.map(f => f.economia), 1);
+    const foundSorted = [...found].sort((a, b) => {
+      const storeA = storeNames[a.best.sid].toLowerCase();
+      const storeB = storeNames[b.best.sid].toLowerCase();
+      if (storeA !== storeB) return storeA.localeCompare(storeB);
+      return a.item.localeCompare(b.item);
+    });
     document.getElementById("summaryBody").innerHTML =
-      found
+      foundSorted
         .map(f => {
           const avIdx = activeStores.findIndex(
             ([s]) => String(s) === String(f.best.sid),
@@ -935,3 +1090,5 @@
     setTimeout(optimize, 100);
   }
 </script>
+</body>
+</html>
