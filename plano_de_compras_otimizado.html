@@ -1,1172 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Planejador de compras otimizado — monte sua lista, carregue os CSVs dos supermercados e veja em qual loja comprar cada item para gastar o mínimo total." />
-  <title>Planejador de compras otimizado</title>
-</head>
-<body>
-
-<style>
-  :root {
-    color-scheme: dark;
-    --color-background: #020617;
-    --color-surface: rgba(15, 23, 42, 0.92);
-    --color-surface-soft: rgba(30, 41, 59, 0.8);
-    --color-surface-strong: #111827;
-    --color-border: rgba(148, 163, 184, 0.18);
-    --color-border-strong: rgba(148, 163, 184, 0.28);
-    --color-text-primary: #f8fafc;
-    --color-text-secondary: #94a3b8;
-    --color-text-muted: #cbd5e1;
-    --color-accent: #38bdf8;
-    --color-success: #22c55e;
-    --color-danger: #ef4444;
-    --border-radius-md: 16px;
-    --border-radius-lg: 24px;
-    --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.22);
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    min-height: 100vh;
-    font-family:
-      Inter,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-    color: var(--color-text-primary);
-    background:
-      radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 28%),
-      linear-gradient(180deg, #020617 0%, #071020 100%);
-  }
-  .page-shell {
-    width: min(1120px, 100%);
-    margin: 0 auto;
-    padding: 2rem 1rem 3rem;
-  }
-  .header {
-    display: grid;
-    gap: 0.75rem;
-    padding: 1.75rem 1.5rem 1.3rem;
-    border: 1px solid var(--color-border);
-    background: rgba(15, 23, 42, 0.92);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 1.75rem;
-  }
-  .header h1 {
-    font-size: clamp(2rem, 2.5vw, 2.6rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    color: #f8fafc;
-  }
-  .header p {
-    max-width: 54rem;
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-  }
-  .two-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .panel {
-    background: rgba(15, 23, 42, 0.88);
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: var(--border-radius-lg);
-    padding: 1.25rem;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
-    backdrop-filter: blur(12px);
-  }
-  .panel-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    font-size: 0.82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-  }
-  .demo-link {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-  .demo-link:hover {
-    color: var(--color-accent);
-  }
-  .upload-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
-  }
-  @media (max-width: 720px) {
-    .upload-row {
-      grid-template-columns: 1fr;
-    }
-  }
-  .upload-item {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    padding: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    cursor: pointer;
-    transition:
-      transform 0.2s,
-      border-color 0.2s,
-      background 0.2s,
-      box-shadow 0.2s;
-    background: rgba(255, 255, 255, 0.03);
-  }
-  .upload-item:hover {
-    transform: translateY(-1px);
-    border-color: rgba(56, 189, 248, 0.5);
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.16);
-  }
-  .upload-item.loaded {
-    border-color: var(--color-success);
-    background: rgba(34, 197, 94, 0.12);
-  }
-  .upload-item label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    flex: 1;
-  }
-  .upload-item input[type="file"] {
-    display: none;
-  }
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(148, 163, 184, 0.45);
-    flex-shrink: 0;
-  }
-  .dot.ok {
-    background: var(--color-success);
-    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
-  }
-  .store-label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #f8fafc;
-  }
-  .store-sub {
-    margin-left: auto;
-    font-size: 0.78rem;
-    color: var(--color-text-secondary);
-  }
-  .list-input-wrap {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-  .list-input-wrap input {
-    flex: 1 1 220px;
-    min-width: 0;
-    padding: 1rem;
-    font-size: 0.95rem;
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--color-text-primary);
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
-  }
-  .list-input-wrap input:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
-  }
-  .list-input-wrap button {
-    padding: 1rem 1.15rem;
-    border: 1px solid transparent;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    color: #fff;
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      transform 0.2s,
-      box-shadow 0.2s;
-  }
-  .list-input-wrap button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 18px 35px rgba(14, 165, 233, 0.22);
-  }
-  .input-autocomplete-wrap {
-    position: relative;
-    flex: 1 1 220px;
-    min-width: 0;
-  }
-  .input-autocomplete-wrap input {
-    width: 100%;
-  }
-  .autocomplete-dropdown {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    right: 0;
-    background: #0f172a;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    border-radius: 14px;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-    z-index: 100;
-    overflow: hidden;
-    display: none;
-  }
-  .autocomplete-dropdown.open {
-    display: block;
-  }
-  .ac-item {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    color: #e2e8f0;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
-    transition: background 0.15s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .ac-item:last-child {
-    border-bottom: none;
-  }
-  .ac-item:hover,
-  .ac-item.active {
-    background: rgba(56, 189, 248, 0.1);
-    color: #f8fafc;
-  }
-  .ac-item mark {
-    background: none;
-    color: var(--color-accent);
-    font-weight: 700;
-  }
-  .ac-store-badge {
-    margin-left: auto;
-    font-size: 0.72rem;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-  }
-  .lista-items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-    max-height: 220px;
-    overflow-y: auto;
-    padding-right: 2px;
-  }
-  .lista-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.95rem 1rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: 16px;
-    font-size: 0.95rem;
-    color: #e2e8f0;
-  }
-  .lista-item button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--color-text-secondary);
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0;
-    transition: color 0.2s;
-  }
-  .lista-item button:hover {
-    color: #f8fafc;
-  }
-  .run-btn {
-    width: 100%;
-    padding: 1.05rem 1rem;
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    cursor: pointer;
-    box-shadow: 0 20px 45px rgba(14, 165, 233, 0.2);
-    transition:
-      transform 0.2s,
-      opacity 0.2s;
-    margin-bottom: 1.75rem;
-  }
-  .run-btn:hover:not(:disabled) {
-    transform: translateY(-1px);
-  }
-  .run-btn:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-    box-shadow: none;
-    background: rgba(56, 189, 248, 0.35);
-  }
-  .results-area {
-    display: none;
-    padding: 1.5rem;
-    border-radius: var(--border-radius-lg);
-    background: rgba(15, 23, 42, 0.88);
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(16px);
-  }
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  @media (max-width: 820px) {
-    .metrics {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 560px) {
-    .metrics {
-      grid-template-columns: 1fr;
-    }
-  }
-  .metric {
-    background: linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 0.96),
-      rgba(15, 23, 42, 0.84)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 1rem 1rem 1.15rem;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  }
-  .metric .mlabel {
-    font-size: 0.78rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-  .metric .mval {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #f8fafc;
-    line-height: 1.1;
-  }
-  .metric .msub {
-    font-size: 0.82rem;
-    color: var(--color-text-secondary);
-    margin-top: 0.45rem;
-  }
-  .store-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .store-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: 24px;
-    padding: 1.25rem;
-    transition:
-      transform 0.2s,
-      border-color 0.2s,
-      box-shadow 0.2s;
-  }
-  .store-card:hover {
-    transform: translateY(-1px);
-    border-color: rgba(56, 189, 248, 0.45);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.15);
-  }
-  .store-card.winner {
-    border-color: var(--color-success);
-    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.12);
-  }
-  .sc-head {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 1rem;
-  }
-  .sc-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0;
-  }
-  .av1 {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  }
-  .av2 {
-    background: linear-gradient(135deg, #a78bfa, #7c3aed);
-  }
-  .av3 {
-    background: linear-gradient(135deg, #34d399, #059669);
-  }
-  .sc-name {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f8fafc;
-  }
-  .sc-total {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0.45rem;
-  }
-  .sc-items {
-    font-size: 0.88rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 1rem;
-  }
-  .sc-list {
-    border-top: 1px solid rgba(148, 163, 184, 0.12);
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .sc-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.92rem;
-    color: var(--color-text-primary);
-  }
-  .sc-prod {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 160px;
-    color: #e2e8f0;
-  }
-  .sc-price {
-    font-weight: 700;
-    color: #f8fafc;
-  }
-  .badge-promo {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    background: rgba(34, 197, 94, 0.16);
-    color: var(--color-success);
-    font-weight: 700;
-    margin-left: 0.5rem;
-  }
-  .not-found-section {
-    margin-bottom: 1.5rem;
-  }
-  .not-found-title {
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 0.75rem;
-  }
-  .not-found-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-  }
-  .nf-tag {
-    padding: 0.55rem 0.85rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    background: rgba(248, 113, 113, 0.12);
-    color: #fecaca;
-    border: 1px solid rgba(248, 113, 113, 0.18);
-  }
-  .section-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 1rem;
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-  }
-  .summary-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.92rem;
-    table-layout: fixed;
-  }
-  .summary-table th {
-    text-align: left;
-    padding: 1rem 1rem;
-    font-weight: 700;
-    font-size: 0.82rem;
-    color: var(--color-text-secondary);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .summary-table td {
-    padding: 0.95rem 1rem;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-    color: #e2e8f0;
-    vertical-align: middle;
-  }
-  .summary-table tr:last-child td {
-    border-bottom: none;
-  }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 700;
-  }
-  .chip1 {
-    background: rgba(59, 130, 246, 0.12);
-    color: #7dd3fc;
-  }
-  .chip2 {
-    background: rgba(168, 85, 247, 0.12);
-    color: #c4b5fd;
-  }
-  .chip3 {
-    background: rgba(52, 211, 153, 0.12);
-    color: #6ee7b7;
-  }
-  .saving-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-  }
-  .saving-bar {
-    height: 6px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #22c55e, #4ade80);
-    min-width: 40px;
-  }
-
-  /* CSV picker modal */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.75);
-    backdrop-filter: blur(6px);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
-  .modal-overlay.open {
-    display: flex;
-  }
-  .modal-box {
-    background: #0f172a;
-    border: 1px solid rgba(148,163,184,0.2);
-    border-radius: 24px;
-    padding: 1.75rem;
-    width: min(420px, 92vw);
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-  }
-  .modal-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #f8fafc;
-    margin-bottom: 0.35rem;
-  }
-  .modal-sub {
-    font-size: 0.82rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 1.25rem;
-  }
-  .csv-option {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid rgba(148,163,184,0.12);
-    border-radius: 14px;
-    cursor: pointer;
-    margin-bottom: 0.6rem;
-    background: rgba(255,255,255,0.03);
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .csv-option:hover {
-    background: rgba(56,189,248,0.08);
-    border-color: rgba(56,189,248,0.4);
-  }
-  .csv-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(56,189,248,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    flex-shrink: 0;
-  }
-  .csv-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #f8fafc;
-  }
-  .csv-hint {
-    font-size: 0.75rem;
-    color: var(--color-text-secondary);
-    margin-top: 2px;
-  }
-  .modal-divider {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 1rem 0;
-    color: var(--color-text-secondary);
-    font-size: 0.78rem;
-  }
-  .modal-divider::before,
-  .modal-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(148,163,184,0.15);
-  }
-  .modal-upload-btn {
-    width: 100%;
-    padding: 0.85rem;
-    border: 1px dashed rgba(148,163,184,0.25);
-    border-radius: 14px;
-    background: transparent;
-    color: var(--color-text-secondary);
-    font-size: 0.88rem;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-    text-align: center;
-    display: block;
-    box-sizing: border-box;
-  }
-  .modal-upload-btn:hover {
-    border-color: rgba(56,189,248,0.5);
-    color: var(--color-accent);
-  }
-  .modal-cancel {
-    width: 100%;
-    margin-top: 0.6rem;
-    padding: 0.7rem;
-    border: none;
-    background: none;
-    color: var(--color-text-secondary);
-    font-size: 0.85rem;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: color 0.2s;
-  }
-  .modal-cancel:hover { color: #f8fafc; }
-
-</style>
-
-<div class="page-shell">
-  <div class="header">
-    <h1>Planejador de compras otimizado</h1>
-    <p>
-      Monte sua lista, carregue os CSVs e veja o roteiro de compras mais barato
-      distribuído por supermercado.
-    </p>
-  </div>
-
-  <div class="two-col">
-    <div class="panel">
-      <div class="panel-title">
-        Supermercados
-        <span class="demo-link" onclick="loadDemo()">usar demo</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Planejador de compras otimizado — monte sua lista, carregue os CSVs dos supermercados e veja em qual loja comprar cada item para gastar o mínimo total." />
+    <title>Planejador de compras otimizado</title>
+    <link rel="stylesheet" href="plano_de_compras_otimizado.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="header">
+        <h1>Planejador de compras otimizado</h1>
+        <p>
+          Monte sua lista, carregue os CSVs e veja o roteiro de compras mais
+          barato distribuído por supermercado.
+        </p>
       </div>
-      <div class="upload-row" id="uploadRow">
-        <div class="upload-item" id="upcard1" onclick="openPicker(1)">
-          <span class="dot" id="d1"></span>
-          <span class="store-label" id="sn1">Supermercado 1</span>
-          <span class="store-sub" id="ss1">escolher CSV</span>
+
+      <div class="two-col">
+        <div class="panel">
+          <div class="panel-title">
+            Supermercados
+            <span class="demo-link" onclick="loadDemo()">usar demo</span>
+          </div>
+          <div class="upload-row" id="uploadRow">
+            <div class="upload-item" id="upcard1" onclick="openPicker(1)">
+              <span class="dot" id="d1"></span>
+              <span class="store-label" id="sn1">Supermercado 1</span>
+              <span class="store-sub" id="ss1">escolher CSV</span>
+            </div>
+            <div class="upload-item" id="upcard2" onclick="openPicker(2)">
+              <span class="dot" id="d2"></span>
+              <span class="store-label" id="sn2">Supermercado 2</span>
+              <span class="store-sub" id="ss2">escolher CSV</span>
+            </div>
+            <div class="upload-item" id="upcard3" onclick="openPicker(3)">
+              <span class="dot" id="d3"></span>
+              <span class="store-label" id="sn3">Supermercado 3</span>
+              <span class="store-sub" id="ss3">escolher CSV</span>
+            </div>
+          </div>
         </div>
-        <div class="upload-item" id="upcard2" onclick="openPicker(2)">
-          <span class="dot" id="d2"></span>
-          <span class="store-label" id="sn2">Supermercado 2</span>
-          <span class="store-sub" id="ss2">escolher CSV</span>
-        </div>
-        <div class="upload-item" id="upcard3" onclick="openPicker(3)">
-          <span class="dot" id="d3"></span>
-          <span class="store-label" id="sn3">Supermercado 3</span>
-          <span class="store-sub" id="ss3">escolher CSV</span>
+
+        <div class="panel">
+          <div class="panel-title">Minha lista de compras</div>
+          <div class="list-input-wrap">
+            <div class="input-autocomplete-wrap">
+              <input
+                type="text"
+                id="itemInput"
+                placeholder="Ex: Arroz 5kg"
+                autocomplete="off"
+                oninput="onInputChange()"
+                onkeydown="onInputKeydown(event)" />
+              <div class="autocomplete-dropdown" id="acDropdown"></div>
+            </div>
+            <button onclick="addItem()">Adicionar</button>
+          </div>
+          <div class="lista-items" id="listaItems"></div>
+          <div
+            style="
+              margin-top: 8px;
+              font-size: 11px;
+              color: var(--color-text-secondary);
+            "
+            id="listaCount">
+            0 itens na lista
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="panel">
-      <div class="panel-title">Minha lista de compras</div>
-      <div class="list-input-wrap">
-        <div class="input-autocomplete-wrap">
-          <input
-            type="text"
-            id="itemInput"
-            placeholder="Ex: Arroz 5kg"
-            autocomplete="off"
-            oninput="onInputChange()"
-            onkeydown="onInputKeydown(event)" />
-          <div class="autocomplete-dropdown" id="acDropdown"></div>
+      <button class="run-btn" id="runBtn" disabled onclick="optimize()">
+        Calcular plano de compras otimizado
+      </button>
+
+      <div class="results-area" id="resultsArea">
+        <div class="section-title">Plano de compras</div>
+
+        <div class="metrics" id="metricsRow"></div>
+
+        <div class="store-cards" id="storeCards"></div>
+
+        <div
+          class="not-found-section"
+          id="notFoundSection"
+          style="display: none">
+          <div class="not-found-title">Itens não encontrados nos CSVs</div>
+          <div class="not-found-list" id="notFoundList"></div>
         </div>
-        <button onclick="addItem()">Adicionar</button>
+
+        <div class="section-title" style="margin-top: 1rem">
+          Resumo por item
+        </div>
+        <div style="overflow-x: auto">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th style="width: 35%">Produto</th>
+                <th style="width: 22%">Melhor loja</th>
+                <th style="width: 14%">Preço</th>
+
+                <th style="width: 15%">Economia</th>
+              </tr>
+            </thead>
+            <tbody id="summaryBody"></tbody>
+          </table>
+        </div>
       </div>
-      <div class="lista-items" id="listaItems"></div>
+
+      <!-- CSV Picker Modal -->
       <div
-        style="
-          margin-top: 8px;
-          font-size: 11px;
-          color: var(--color-text-secondary);
-        "
-        id="listaCount">
-        0 itens na lista
+        class="modal-overlay"
+        id="modalOverlay"
+        onclick="if (event.target === this) closeModal();">
+        <div class="modal-box">
+          <div class="modal-title" id="modalTitle">Escolher arquivo CSV</div>
+          <div class="modal-sub">
+            Selecione um dos arquivos disponíveis no servidor
+          </div>
+          <div id="csvOptionsList"></div>
+          <div class="modal-divider">ou</div>
+          <label class="modal-upload-btn">
+            📂 Carregar arquivo do computador
+            <input
+              type="file"
+              accept=".csv"
+              id="modalFileInput"
+              style="display: none"
+              onchange="loadFileFromInput()" />
+          </label>
+          <button class="modal-cancel" onclick="closeModal()">Cancelar</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <button class="run-btn" id="runBtn" disabled onclick="optimize()">
-    Calcular plano de compras otimizado
-  </button>
+    <script>
+      let stores = { 1: null, 2: null, 3: null };
+      let storeNames = {
+        1: "Supermercado 1",
+        2: "Supermercado 2",
+        3: "Supermercado 3",
+      };
+      let lista = [];
 
-  <div class="results-area" id="resultsArea">
-    <div class="section-title">Plano de compras</div>
+      function parseCSV(text) {
+        const lines = text.trim().split("\n");
+        if (lines.length < 2) return [];
+        const header = lines[0]
+          .split(",")
+          .map(h => h.trim().toLowerCase().replace(/['"]/g, ""));
+        const rows = [];
+        for (let i = 1; i < lines.length; i++) {
+          const vals = lines[i]
+            .split(",")
+            .map(v => v.trim().replace(/['"]/g, ""));
+          if (vals.length < 2) continue;
+          const row = {};
+          header.forEach((h, idx) => (row[h] = vals[idx] || ""));
+          const produto =
+            row["produto"] ||
+            row["product"] ||
+            row["nome"] ||
+            row["item"] ||
+            "";
+          const preco = parseFloat(
+            (row["preco"] || row["preço"] || row["price"] || "0").replace(
+              ",",
+              ".",
+            ),
+          );
+          const is_promo = ["true", "1", "sim", "yes", "s"].includes(
+            (
+              row["is_promocao"] ||
+              row["is_promoção"] ||
+              row["promo"] ||
+              ""
+            ).toLowerCase(),
+          );
+          if (produto && !isNaN(preco) && preco > 0)
+            rows.push({ produto, preco, is_promo });
+        }
+        return rows;
+      }
 
-    <div class="metrics" id="metricsRow"></div>
-
-    <div class="store-cards" id="storeCards"></div>
-
-    <div class="not-found-section" id="notFoundSection" style="display: none">
-      <div class="not-found-title">Itens não encontrados nos CSVs</div>
-      <div class="not-found-list" id="notFoundList"></div>
-    </div>
-
-    <div class="section-title" style="margin-top: 1rem">Resumo por item</div>
-    <div style="overflow-x: auto">
-      <table class="summary-table">
-        <thead>
-          <tr>
-            <th style="width: 35%">Produto</th>
-            <th style="width: 22%">Melhor loja</th>
-            <th style="width: 14%">Preço</th>
-            
-            <th style="width: 15%">Economia</th>
-          </tr>
-        </thead>
-        <tbody id="summaryBody"></tbody>
-      </table>
-    </div>
-  </div>
-
-<!-- CSV Picker Modal -->
-<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
-  <div class="modal-box">
-    <div class="modal-title" id="modalTitle">Escolher arquivo CSV</div>
-    <div class="modal-sub">Selecione um dos arquivos disponíveis no servidor</div>
-    <div id="csvOptionsList"></div>
-    <div class="modal-divider">ou</div>
-    <label class="modal-upload-btn">
-      📂 Carregar arquivo do computador
-      <input type="file" accept=".csv" id="modalFileInput" style="display:none" onchange="loadFileFromInput()">
-    </label>
-    <button class="modal-cancel" onclick="closeModal()">Cancelar</button>
-  </div>
-</div>
-
-</div>
-
-<script>
-  let stores = { 1: null, 2: null, 3: null };
-  let storeNames = {
-    1: "Supermercado 1",
-    2: "Supermercado 2",
-    3: "Supermercado 3",
-  };
-  let lista = [];
-
-  function parseCSV(text) {
-    const lines = text.trim().split("\n");
-    if (lines.length < 2) return [];
-    const header = lines[0]
-      .split(",")
-      .map(h => h.trim().toLowerCase().replace(/['"]/g, ""));
-    const rows = [];
-    for (let i = 1; i < lines.length; i++) {
-      const vals = lines[i].split(",").map(v => v.trim().replace(/['"]/g, ""));
-      if (vals.length < 2) continue;
-      const row = {};
-      header.forEach((h, idx) => (row[h] = vals[idx] || ""));
-      const produto =
-        row["produto"] || row["product"] || row["nome"] || row["item"] || "";
-      const preco = parseFloat(
-        (row["preco"] || row["preço"] || row["price"] || "0").replace(",", "."),
+      // Known CSVs in the same directory
+      const BASE_URL = (location.origin + location.pathname).replace(
+        /\/[^/]*$/,
+        "/",
       );
-      const is_promo = ["true", "1", "sim", "yes", "s"].includes(
-        (
-          row["is_promocao"] ||
-          row["is_promoção"] ||
-          row["promo"] ||
-          ""
-        ).toLowerCase(),
-      );
-      if (produto && !isNaN(preco) && preco > 0)
-        rows.push({ produto, preco, is_promo });
-    }
-    return rows;
-  }
+      // Add or remove entries here as needed: { file, label }
+      const KNOWN_CSVS = [
+        { file: "dados_supermercado_epa.csv", label: "Epa" },
+        { file: "dados_supermercado_farid.csv", label: "Farid" },
+        {
+          file: "dados_supermercado_supermercado_bh.csv",
+          label: "Supermercado BH",
+        },
+      ];
 
-  // Known CSVs in the same directory
-  const BASE_URL = (location.origin + location.pathname).replace(/\/[^/]*$/, '/');
-  // Add or remove entries here as needed: { file, label }
-  const KNOWN_CSVS = [
-    { file: 'dados_supermercado_epa.csv',              label: 'Epa' },
-    { file: 'dados_supermercado_farid.csv',            label: 'Farid' },
-    { file: 'dados_supermercado_supermercado_bh.csv',  label: 'Supermercado BH' },
-  ];
+      function labelFromFilename(file) {
+        const match = KNOWN_CSVS.find(c => c.file === file);
+        if (match) return match.label;
+        // fallback: strip known prefixes and uppercase remainder
+        const parts = file.replace(/\.csv$/i, "").split("_");
+        const filtered = parts.filter(
+          p =>
+            !["dados", "supermercado", "data", "supermarket"].includes(
+              p.toLowerCase(),
+            ),
+        );
+        return filtered
+          .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+          .join(" ");
+      }
 
-  function labelFromFilename(file) {
-    const match = KNOWN_CSVS.find(c => c.file === file);
-    if (match) return match.label;
-    // fallback: strip known prefixes and uppercase remainder
-    const parts = file.replace(/\.csv$/i, '').split('_');
-    const filtered = parts.filter(p => !['dados','supermercado','data','supermarket'].includes(p.toLowerCase()));
-    return filtered.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
-  }
+      let activePicker = null;
 
-  let activePicker = null;
-
-  function openPicker(n) {
-    activePicker = n;
-    document.getElementById('modalTitle').textContent = `Supermercado ${n} — escolher CSV`;
-    const list = document.getElementById('csvOptionsList');
-    list.innerHTML = KNOWN_CSVS.map(csv => {
-      return `<div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
+      function openPicker(n) {
+        activePicker = n;
+        document.getElementById("modalTitle").textContent =
+          `Supermercado ${n} — escolher CSV`;
+        const list = document.getElementById("csvOptionsList");
+        list.innerHTML = KNOWN_CSVS.map(csv => {
+          return `<div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
         <div class="csv-icon">CSV</div>
         <div>
           <div class="csv-name">${csv.label}</div>
           <div class="csv-hint">${csv.file}</div>
         </div>
       </div>`;
-    }).join('');
-    document.getElementById('modalOverlay').classList.add('open');
-  }
+        }).join("");
+        document.getElementById("modalOverlay").classList.add("open");
+      }
 
-  function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('open');
-    activePicker = null;
-  }
+      function closeModal() {
+        document.getElementById("modalOverlay").classList.remove("open");
+        activePicker = null;
+      }
 
-  function loadFromUrl(file, label) {
-    const n = activePicker;
-    closeModal();
-    fetch(BASE_URL + file)
-      .then(r => { if (!r.ok) throw new Error('Erro ao carregar ' + file); return r.text(); })
-      .then(text => applyCSV(n, text, label))
-      .catch(err => alert('Não foi possível carregar o arquivo: ' + err.message));
-  }
+      function loadFromUrl(file, label) {
+        const n = activePicker;
+        closeModal();
+        fetch(BASE_URL + file)
+          .then(r => {
+            if (!r.ok) throw new Error("Erro ao carregar " + file);
+            return r.text();
+          })
+          .then(text => applyCSV(n, text, label))
+          .catch(err =>
+            alert("Não foi possível carregar o arquivo: " + err.message),
+          );
+      }
 
-  function loadFileFromInput() {
-    const n = activePicker;
-    const file = document.getElementById('modalFileInput').files[0];
-    if (!file) return;
-    closeModal();
-    const name = file.name.replace('.csv', '').replace(/_/g, ' ');
-    const reader = new FileReader();
-    reader.onload = e => applyCSV(n, e.target.result, name);
-    reader.readAsText(file);
-  }
+      function loadFileFromInput() {
+        const n = activePicker;
+        const file = document.getElementById("modalFileInput").files[0];
+        if (!file) return;
+        closeModal();
+        const name = file.name.replace(".csv", "").replace(/_/g, " ");
+        const reader = new FileReader();
+        reader.onload = e => applyCSV(n, e.target.result, name);
+        reader.readAsText(file);
+      }
 
-  function applyCSV(n, text, label) {
-    const rows = parseCSV(text);
-    const name = label.length > 22 ? label.slice(0, 21) + '…' : label;
-    storeNames[n] = name;
-    stores[n] = rows;
-    document.getElementById('sn' + n).textContent = name;
-    document.getElementById('d' + n).classList.add('ok');
-    document.getElementById('upcard' + n).classList.add('loaded');
-    document.getElementById('ss' + n).textContent = rows.length + ' produtos';
-    checkReady();
-  }
+      function applyCSV(n, text, label) {
+        const rows = parseCSV(text);
+        const name = label.length > 22 ? label.slice(0, 21) + "…" : label;
+        storeNames[n] = name;
+        stores[n] = rows;
+        document.getElementById("sn" + n).textContent = name;
+        document.getElementById("d" + n).classList.add("ok");
+        document.getElementById("upcard" + n).classList.add("loaded");
+        document.getElementById("ss" + n).textContent =
+          rows.length + " produtos";
+        checkReady();
+      }
 
-  function loadFile(n) {
-    // legacy — kept for demo compatibility
-  }
+      function loadFile(n) {
+        // legacy — kept for demo compatibility
+      }
 
-  let acIndex = -1;
+      let acIndex = -1;
 
-  function getAllProducts() {
-    const seen = new Set();
-    const results = [];
-    Object.entries(stores).forEach(([sid, rows]) => {
-      if (!rows) return;
-      rows.forEach(r => {
-        const key = r.produto.toLowerCase();
-        if (!seen.has(key)) {
-          seen.add(key);
-          results.push({ nome: r.produto, sid });
+      function getAllProducts() {
+        const seen = new Set();
+        const results = [];
+        Object.entries(stores).forEach(([sid, rows]) => {
+          if (!rows) return;
+          rows.forEach(r => {
+            const key = r.produto.toLowerCase();
+            if (!seen.has(key)) {
+              seen.add(key);
+              results.push({ nome: r.produto, sid });
+            }
+          });
+        });
+        return results;
+      }
+
+      function matchesAllWords(produto, query) {
+        const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        const target = produto.toLowerCase();
+        return words.every(w => target.includes(w));
+      }
+
+      function highlightWords(text, query) {
+        const words = query.trim().split(/\s+/).filter(Boolean);
+        let result = text;
+        words.forEach(w => {
+          const re = new RegExp(
+            `(${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+            "gi",
+          );
+          result = result.replace(re, "<mark>$1</mark>");
+        });
+        return result;
+      }
+
+      function onInputChange() {
+        const val = document.getElementById("itemInput").value;
+        acIndex = -1;
+        if (val.trim().length < 2) {
+          closeDropdown();
+          return;
         }
-      });
-    });
-    return results;
-  }
-
-  function matchesAllWords(produto, query) {
-    const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-    const target = produto.toLowerCase();
-    return words.every(w => target.includes(w));
-  }
-
-  function highlightWords(text, query) {
-    const words = query.trim().split(/\s+/).filter(Boolean);
-    let result = text;
-    words.forEach(w => {
-      const re = new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-      result = result.replace(re, '<mark>$1</mark>');
-    });
-    return result;
-  }
-
-  function onInputChange() {
-    const val = document.getElementById('itemInput').value;
-    acIndex = -1;
-    if (val.trim().length < 2) { closeDropdown(); return; }
-    const products = getAllProducts();
-    const matches = products.filter(p => matchesAllWords(p.nome, val)).slice(0, 8);
-    if (matches.length === 0) { closeDropdown(); return; }
-    const dd = document.getElementById('acDropdown');
-    dd.innerHTML = matches.map((p, i) =>
-      `<div class="ac-item" data-val="${p.nome}" onmousedown="pickSuggestion('${p.nome.replace(/'/g, "\\'")}')">
+        const products = getAllProducts();
+        const matches = products
+          .filter(p => matchesAllWords(p.nome, val))
+          .slice(0, 8);
+        if (matches.length === 0) {
+          closeDropdown();
+          return;
+        }
+        const dd = document.getElementById("acDropdown");
+        dd.innerHTML = matches
+          .map(
+            (p, i) =>
+              `<div class="ac-item" data-val="${p.nome}" onmousedown="pickSuggestion('${p.nome.replace(/'/g, "\\'")}')">
         ${highlightWords(p.nome, val)}
         <span class="ac-store-badge">${storeNames[p.sid]}</span>
-      </div>`
-    ).join('');
-    dd.classList.add('open');
-  }
+      </div>`,
+          )
+          .join("");
+        dd.classList.add("open");
+      }
 
-  function onInputKeydown(e) {
-    const dd = document.getElementById('acDropdown');
-    const items = dd.querySelectorAll('.ac-item');
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      acIndex = Math.min(acIndex + 1, items.length - 1);
-      items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      acIndex = Math.max(acIndex - 1, -1);
-      items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
-    } else if (e.key === 'Enter') {
-      if (acIndex >= 0 && items[acIndex]) {
-        pickSuggestion(items[acIndex].dataset.val);
-      } else {
+      function onInputKeydown(e) {
+        const dd = document.getElementById("acDropdown");
+        const items = dd.querySelectorAll(".ac-item");
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          acIndex = Math.min(acIndex + 1, items.length - 1);
+          items.forEach((el, i) =>
+            el.classList.toggle("active", i === acIndex),
+          );
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          acIndex = Math.max(acIndex - 1, -1);
+          items.forEach((el, i) =>
+            el.classList.toggle("active", i === acIndex),
+          );
+        } else if (e.key === "Enter") {
+          if (acIndex >= 0 && items[acIndex]) {
+            pickSuggestion(items[acIndex].dataset.val);
+          } else {
+            addItem();
+          }
+        } else if (e.key === "Escape") {
+          closeDropdown();
+        }
+      }
+
+      function pickSuggestion(val) {
+        document.getElementById("itemInput").value = val;
+        closeDropdown();
         addItem();
       }
-    } else if (e.key === 'Escape') {
-      closeDropdown();
-    }
-  }
 
-  function pickSuggestion(val) {
-    document.getElementById('itemInput').value = val;
-    closeDropdown();
-    addItem();
-  }
+      function closeDropdown() {
+        const dd = document.getElementById("acDropdown");
+        dd.classList.remove("open");
+        dd.innerHTML = "";
+        acIndex = -1;
+      }
 
-  function closeDropdown() {
-    const dd = document.getElementById('acDropdown');
-    dd.classList.remove('open');
-    dd.innerHTML = '';
-    acIndex = -1;
-  }
+      document.addEventListener("click", e => {
+        if (!e.target.closest(".input-autocomplete-wrap")) closeDropdown();
+      });
 
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.input-autocomplete-wrap')) closeDropdown();
-  });
+      function addItem() {
+        const inp = document.getElementById("itemInput");
+        const val = inp.value.trim();
+        if (!val) return;
+        if (!lista.includes(val.toLowerCase())) lista.push(val.toLowerCase());
+        inp.value = "";
+        closeDropdown();
+        renderLista();
+        checkReady();
+      }
 
-  function addItem() {
-    const inp = document.getElementById("itemInput");
-    const val = inp.value.trim();
-    if (!val) return;
-    if (!lista.includes(val.toLowerCase())) lista.push(val.toLowerCase());
-    inp.value = "";
-    closeDropdown();
-    renderLista();
-    checkReady();
-  }
+      function removeItem(i) {
+        lista.splice(i, 1);
+        renderLista();
+        checkReady();
+      }
 
-  function removeItem(i) {
-    lista.splice(i, 1);
-    renderLista();
-    checkReady();
-  }
-
-  function renderLista() {
-    document.getElementById("listaItems").innerHTML = lista
-      .map(
-        (it, i) => `
+      function renderLista() {
+        document.getElementById("listaItems").innerHTML = lista
+          .map(
+            (it, i) => `
     <div class="lista-item">
       <span>${it}</span>
       <button onclick="removeItem(${i})">×</button>
     </div>
   `,
-      )
-      .join("");
-    document.getElementById("listaCount").textContent =
-      lista.length + " ite" + (lista.length === 1 ? "m" : "ns") + " na lista";
-  }
-
-  function checkReady() {
-    const loaded = Object.values(stores).filter(s => s !== null).length;
-    const hasItems = lista.length > 0;
-    const btn = document.getElementById("runBtn");
-    btn.disabled = !(loaded >= 2 && hasItems);
-    if (loaded >= 2 && hasItems)
-      btn.textContent = `Calcular plano de compras (${lista.length} ite${lista.length === 1 ? "m" : "ns"}, ${loaded} supermercados)`;
-    else btn.textContent = "Calcular plano de compras otimizado";
-  }
-
-  function normalize(s) {
-    return s.toLowerCase().trim();
-  }
-
-  function optimize() {
-    const activeStores = Object.entries(stores).filter(([, v]) => v !== null);
-    const chipClass = ["chip1", "chip2", "chip3"];
-    const avClass = ["av1", "av2", "av3"];
-
-    const found = [];
-    const notFound = [];
-
-    lista.forEach(item => {
-      const matches = [];
-      activeStores.forEach(([sid, rows]) => {
-        const row = rows.find(
-          r =>
-            normalize(r.produto) === normalize(item) ||
-            normalize(r.produto).includes(normalize(item)) ||
-            normalize(item).includes(normalize(r.produto)),
-        );
-        if (row)
-          matches.push({
-            sid,
-            preco: row.preco,
-            is_promo: row.is_promo,
-            nome: row.produto,
-          });
-      });
-      if (matches.length === 0) {
-        notFound.push(item);
-        return;
+          )
+          .join("");
+        document.getElementById("listaCount").textContent =
+          lista.length +
+          " ite" +
+          (lista.length === 1 ? "m" : "ns") +
+          " na lista";
       }
-      matches.sort((a, b) => a.preco - b.preco);
-      const best = matches[0];
-      const worst = matches[matches.length - 1];
-      found.push({
-        item,
-        best,
-        worst,
-        allMatches: matches,
-        economia: matches.length > 1 ? worst.preco - best.preco : 0,
-      });
-    });
 
-    const byStore = {};
-    activeStores.forEach(([sid]) => {
-      byStore[sid] = { items: [], total: 0 };
-    });
-    found.forEach(f => {
-      const sid = f.best.sid;
-      byStore[sid].items.push(f);
-      byStore[sid].total += f.best.preco;
-    });
+      function checkReady() {
+        const loaded = Object.values(stores).filter(s => s !== null).length;
+        const hasItems = lista.length > 0;
+        const btn = document.getElementById("runBtn");
+        btn.disabled = !(loaded >= 2 && hasItems);
+        if (loaded >= 2 && hasItems)
+          btn.textContent = `Calcular plano de compras (${lista.length} ite${lista.length === 1 ? "m" : "ns"}, ${loaded} supermercados)`;
+        else btn.textContent = "Calcular plano de compras otimizado";
+      }
 
-    const totalOtimizado = found.reduce((s, f) => s + f.best.preco, 0);
-    const totalSemOtimizar = found.reduce((s, f) => s + f.worst.preco, 0);
-    const economiaTotal = totalSemOtimizar - totalOtimizado;
-    const economiaPct =
-      totalSemOtimizar > 0
-        ? Math.round((economiaTotal / totalSemOtimizar) * 100)
-        : 0;
-    const lojas = Object.values(byStore).filter(b => b.items.length > 0).length;
+      function normalize(s) {
+        return s.toLowerCase().trim();
+      }
 
-    document.getElementById("metricsRow").innerHTML = `
+      function optimize() {
+        const activeStores = Object.entries(stores).filter(
+          ([, v]) => v !== null,
+        );
+        const chipClass = ["chip1", "chip2", "chip3"];
+        const avClass = ["av1", "av2", "av3"];
+
+        const found = [];
+        const notFound = [];
+
+        lista.forEach(item => {
+          const matches = [];
+          activeStores.forEach(([sid, rows]) => {
+            const row = rows.find(
+              r =>
+                normalize(r.produto) === normalize(item) ||
+                normalize(r.produto).includes(normalize(item)) ||
+                normalize(item).includes(normalize(r.produto)),
+            );
+            if (row)
+              matches.push({
+                sid,
+                preco: row.preco,
+                is_promo: row.is_promo,
+                nome: row.produto,
+              });
+          });
+          if (matches.length === 0) {
+            notFound.push(item);
+            return;
+          }
+          matches.sort((a, b) => a.preco - b.preco);
+          const best = matches[0];
+          const worst = matches[matches.length - 1];
+          found.push({
+            item,
+            best,
+            worst,
+            allMatches: matches,
+            economia: matches.length > 1 ? worst.preco - best.preco : 0,
+          });
+        });
+
+        const byStore = {};
+        activeStores.forEach(([sid]) => {
+          byStore[sid] = { items: [], total: 0 };
+        });
+        found.forEach(f => {
+          const sid = f.best.sid;
+          byStore[sid].items.push(f);
+          byStore[sid].total += f.best.preco;
+        });
+
+        const totalOtimizado = found.reduce((s, f) => s + f.best.preco, 0);
+        const totalSemOtimizar = found.reduce((s, f) => s + f.worst.preco, 0);
+        const economiaTotal = totalSemOtimizar - totalOtimizado;
+        const economiaPct =
+          totalSemOtimizar > 0
+            ? Math.round((economiaTotal / totalSemOtimizar) * 100)
+            : 0;
+        const lojas = Object.values(byStore).filter(
+          b => b.items.length > 0,
+        ).length;
+
+        document.getElementById("metricsRow").innerHTML = `
     <div class="metric"><div class="mlabel">Total otimizado</div><div class="mval">R$ ${totalOtimizado.toFixed(2)}</div><div class="msub">${found.length} ite${found.length === 1 ? "m" : "ns"} encontrados</div></div>
     <div class="metric"><div class="mlabel">Sem otimizar</div><div class="mval">R$ ${totalSemOtimizar.toFixed(2)}</div><div class="msub">pagando sempre mais caro</div></div>
     <div class="metric"><div class="mlabel">Economia total</div><div class="mval" style="color:#0F6E56">R$ ${economiaTotal.toFixed(2)}</div><div class="msub">${economiaPct}% a menos</div></div>
     <div class="metric"><div class="mlabel">Lojas no roteiro</div><div class="mval">${lojas}</div><div class="msub">de ${activeStores.length} disponíveis</div></div>
   `;
 
-    const maxTotal = Math.max(...Object.values(byStore).map(b => b.total), 1);
-    const sortedStores = activeStores
-      .map(([sid]) => sid)
-      .sort((a, b) => byStore[b].total - byStore[a].total);
-    const winnerStore = activeStores
-      .map(([sid]) => sid)
-      .sort((a, b) => byStore[b].items.length - byStore[a].items.length)[0];
-
-    document.getElementById("storeCards").innerHTML = sortedStores
-      .map((sid, i) => {
-        const sd = byStore[sid];
-        if (sd.items.length === 0) return "";
-        const isWinner =
-          String(sid) === String(winnerStore) && sd.items.length > 0;
-        const avIdx = activeStores.findIndex(
-          ([s]) => String(s) === String(sid),
+        const maxTotal = Math.max(
+          ...Object.values(byStore).map(b => b.total),
+          1,
         );
-        const avCls = avClass[avIdx] || "av1";
-        const chipCls = chipClass[avIdx] || "chip1";
-        const initials = storeNames[sid]
-          .split(" ")
-          .map(w => w[0])
-          .join("")
-          .slice(0, 2)
-          .toUpperCase();
-        const itemRows = sd.items
-          .map(
-            f => `
+        const sortedStores = activeStores
+          .map(([sid]) => sid)
+          .sort((a, b) => byStore[b].total - byStore[a].total);
+        const winnerStore = activeStores
+          .map(([sid]) => sid)
+          .sort((a, b) => byStore[b].items.length - byStore[a].items.length)[0];
+
+        document.getElementById("storeCards").innerHTML = sortedStores
+          .map((sid, i) => {
+            const sd = byStore[sid];
+            if (sd.items.length === 0) return "";
+            const isWinner =
+              String(sid) === String(winnerStore) && sd.items.length > 0;
+            const avIdx = activeStores.findIndex(
+              ([s]) => String(s) === String(sid),
+            );
+            const avCls = avClass[avIdx] || "av1";
+            const chipCls = chipClass[avIdx] || "chip1";
+            const initials = storeNames[sid]
+              .split(" ")
+              .map(w => w[0])
+              .join("")
+              .slice(0, 2)
+              .toUpperCase();
+            const itemRows = sd.items
+              .map(
+                f => `
       <div class="sc-row">
         <span class="sc-prod">${f.item}</span>
         <span class="sc-price">R$ ${f.best.preco.toFixed(2)}${f.best.is_promo ? '<span class="badge-promo">promo</span>' : ""}</span>
       </div>
     `,
-          )
-          .join("");
-        return `<div class="store-card${isWinner ? " winner" : ""}">
+              )
+              .join("");
+            return `<div class="store-card${isWinner ? " winner" : ""}">
       <div class="sc-head">
         <div class="sc-avatar ${avCls}">${initials}</div>
         <div>
@@ -1178,88 +560,88 @@
       <div class="sc-items">${sd.items.length} ite${sd.items.length === 1 ? "m" : "ns"} desta lista</div>
       <div class="sc-list">${itemRows}</div>
     </div>`;
-      })
-      .join("");
+          })
+          .join("");
 
-    if (notFound.length > 0) {
-      document.getElementById("notFoundSection").style.display = "block";
-      document.getElementById("notFoundList").innerHTML = notFound
-        .map(it => `<span class="nf-tag">${it}</span>`)
-        .join("");
-    } else {
-      document.getElementById("notFoundSection").style.display = "none";
-    }
+        if (notFound.length > 0) {
+          document.getElementById("notFoundSection").style.display = "block";
+          document.getElementById("notFoundList").innerHTML = notFound
+            .map(it => `<span class="nf-tag">${it}</span>`)
+            .join("");
+        } else {
+          document.getElementById("notFoundSection").style.display = "none";
+        }
 
-    const maxEcon = Math.max(...found.map(f => f.economia), 1);
-    const foundSorted = [...found].sort((a, b) => {
-      const storeA = storeNames[a.best.sid].toLowerCase();
-      const storeB = storeNames[b.best.sid].toLowerCase();
-      if (storeA !== storeB) return storeA.localeCompare(storeB);
-      return a.item.localeCompare(b.item);
-    });
-    document.getElementById("summaryBody").innerHTML =
-      foundSorted
-        .map(f => {
-          const avIdx = activeStores.findIndex(
-            ([s]) => String(s) === String(f.best.sid),
-          );
-          const chipCls = chipClass[avIdx] || "chip1";
-          const barW = Math.round((f.economia / maxEcon) * 80);
-          return `<tr>
+        const maxEcon = Math.max(...found.map(f => f.economia), 1);
+        const foundSorted = [...found].sort((a, b) => {
+          const storeA = storeNames[a.best.sid].toLowerCase();
+          const storeB = storeNames[b.best.sid].toLowerCase();
+          if (storeA !== storeB) return storeA.localeCompare(storeB);
+          return a.item.localeCompare(b.item);
+        });
+        document.getElementById("summaryBody").innerHTML =
+          foundSorted
+            .map(f => {
+              const avIdx = activeStores.findIndex(
+                ([s]) => String(s) === String(f.best.sid),
+              );
+              const chipCls = chipClass[avIdx] || "chip1";
+              const barW = Math.round((f.economia / maxEcon) * 80);
+              return `<tr>
       <td style="font-weight:500">${f.item}</td>
       <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
       <td>R$ ${f.best.preco.toFixed(2)}</td>
       <td><span style="display:inline-flex;align-items:center;padding:0.2rem 0.55rem;border-radius:999px;font-size:0.78rem;font-weight:700;background:rgba(34,197,94,0.16);color:#22c55e">${f.economia > 0 ? "R$ " + f.economia.toFixed(2) : "—"}</span></td>
     </tr>`;
-        })
-        .join("") +
-      notFound
-        .map(
-          it =>
-            `<tr><td style="color:var(--color-text-secondary);font-style:italic">${it}</td><td colspan="4" style="color:var(--color-text-secondary);font-size:12px">não encontrado nos CSVs</td></tr>`,
-        )
-        .join("");
+            })
+            .join("") +
+          notFound
+            .map(
+              it =>
+                `<tr><td style="color:var(--color-text-secondary);font-style:italic">${it}</td><td colspan="4" style="color:var(--color-text-secondary);font-size:12px">não encontrado nos CSVs</td></tr>`,
+            )
+            .join("");
 
-    document.getElementById("resultsArea").style.display = "block";
-    document
-      .getElementById("resultsArea")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+        document.getElementById("resultsArea").style.display = "block";
+        document
+          .getElementById("resultsArea")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
 
-  function loadDemo() {
-    const d1 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,22.90,false\n2025-04-01,Feijão 1kg,8.50,true\n2025-04-01,Óleo de soja 900ml,7.80,false\n2025-04-01,Leite integral 1L,4.20,false\n2025-04-01,Pão de forma,6.90,false\n2025-04-01,Frango resfriado kg,14.50,true\n2025-04-01,Açúcar 1kg,5.30,false\n2025-04-01,Café 500g,18.90,false\n2025-04-01,Macarrão 500g,4.10,false\n2025-04-01,Tomate kg,6.80,false`;
-    const d2 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,24.50,false\n2025-04-01,Feijão 1kg,7.90,false\n2025-04-01,Óleo de soja 900ml,8.20,true\n2025-04-01,Leite integral 1L,3.99,true\n2025-04-01,Pão de forma,7.20,false\n2025-04-01,Frango resfriado kg,13.80,false\n2025-04-01,Açúcar 1kg,5.80,false\n2025-04-01,Café 500g,20.50,false\n2025-04-01,Macarrão 500g,3.90,true\n2025-04-01,Tomate kg,5.90,true`;
-    const d3 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,21.90,true\n2025-04-01,Feijão 1kg,9.10,false\n2025-04-01,Óleo de soja 900ml,7.50,false\n2025-04-01,Leite integral 1L,4.50,false\n2025-04-01,Pão de forma,6.50,true\n2025-04-01,Frango resfriado kg,15.20,false\n2025-04-01,Açúcar 1kg,4.90,true\n2025-04-01,Café 500g,17.80,true\n2025-04-01,Macarrão 500g,4.50,false\n2025-04-01,Tomate kg,7.20,false`;
-    storeNames = {
-      1: "Mercadão Central",
-      2: "Superprix",
-      3: "Atacadão Bom Preço",
-    };
-    [
-      [1, d1],
-      [2, d2],
-      [3, d3],
-    ].forEach(([n, txt]) => {
-      stores[n] = parseCSV(txt);
-      document.getElementById("sn" + n).textContent = storeNames[n];
-      document.getElementById("d" + n).classList.add("ok");
-      document.getElementById("upcard" + n).classList.add("loaded");
-      document.getElementById("ss" + n).textContent = "10 produtos";
-    });
-    lista = [
-      "arroz 5kg",
-      "feijão 1kg",
-      "leite integral 1l",
-      "café 500g",
-      "frango resfriado kg",
-      "açúcar 1kg",
-      "pão de forma",
-      "macarrão 500g",
-    ];
-    renderLista();
-    checkReady();
-    setTimeout(optimize, 100);
-  }
-</script>
-</body>
+      function loadDemo() {
+        const d1 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,22.90,false\n2025-04-01,Feijão 1kg,8.50,true\n2025-04-01,Óleo de soja 900ml,7.80,false\n2025-04-01,Leite integral 1L,4.20,false\n2025-04-01,Pão de forma,6.90,false\n2025-04-01,Frango resfriado kg,14.50,true\n2025-04-01,Açúcar 1kg,5.30,false\n2025-04-01,Café 500g,18.90,false\n2025-04-01,Macarrão 500g,4.10,false\n2025-04-01,Tomate kg,6.80,false`;
+        const d2 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,24.50,false\n2025-04-01,Feijão 1kg,7.90,false\n2025-04-01,Óleo de soja 900ml,8.20,true\n2025-04-01,Leite integral 1L,3.99,true\n2025-04-01,Pão de forma,7.20,false\n2025-04-01,Frango resfriado kg,13.80,false\n2025-04-01,Açúcar 1kg,5.80,false\n2025-04-01,Café 500g,20.50,false\n2025-04-01,Macarrão 500g,3.90,true\n2025-04-01,Tomate kg,5.90,true`;
+        const d3 = `data,produto,preco,is_promocao\n2025-04-01,Arroz 5kg,21.90,true\n2025-04-01,Feijão 1kg,9.10,false\n2025-04-01,Óleo de soja 900ml,7.50,false\n2025-04-01,Leite integral 1L,4.50,false\n2025-04-01,Pão de forma,6.50,true\n2025-04-01,Frango resfriado kg,15.20,false\n2025-04-01,Açúcar 1kg,4.90,true\n2025-04-01,Café 500g,17.80,true\n2025-04-01,Macarrão 500g,4.50,false\n2025-04-01,Tomate kg,7.20,false`;
+        storeNames = {
+          1: "Mercadão Central",
+          2: "Superprix",
+          3: "Atacadão Bom Preço",
+        };
+        [
+          [1, d1],
+          [2, d2],
+          [3, d3],
+        ].forEach(([n, txt]) => {
+          stores[n] = parseCSV(txt);
+          document.getElementById("sn" + n).textContent = storeNames[n];
+          document.getElementById("d" + n).classList.add("ok");
+          document.getElementById("upcard" + n).classList.add("loaded");
+          document.getElementById("ss" + n).textContent = "10 produtos";
+        });
+        lista = [
+          "arroz 5kg",
+          "feijão 1kg",
+          "leite integral 1l",
+          "café 500g",
+          "frango resfriado kg",
+          "açúcar 1kg",
+          "pão de forma",
+          "macarrão 500g",
+        ];
+        renderLista();
+        checkReady();
+        setTimeout(optimize, 100);
+      }
+    </script>
+  </body>
 </html>
