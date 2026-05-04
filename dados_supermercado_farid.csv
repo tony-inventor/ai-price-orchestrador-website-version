@@ -1,102 +1,173 @@
-data,produto,preço,is_promoção
-2026-04-29,Arroz Agulhinha 5kg (Marca A - 0),35.14,False
-2026-04-29,Feijão Carioca 1kg (Premium - 1),8.12,False
-2026-04-29,Açúcar Refinado 1kg (Marca A - 2),40.7,True
-2026-04-29,Café Torrado 500g (Premium - 3),7.7,False
-2026-04-29,Óleo de Soja 900ml (Marca A - 4),21.09,False
-2026-04-29,Leite Integral 1L (Marca B - 5),15.88,True
-2026-04-29,Macarrão Espaguete 500g (Marca B - 6),46.14,False
-2026-04-29,Molho de Tomate 340g (Econômica - 7),22.52,True
-2026-04-29,Sal Refinado 1kg (Premium - 8),19.57,True
-2026-04-29,Farinha de Trigo 1kg (Econômica - 9),37.47,False
-2026-04-29,Manteiga com Sal 200g (Econômica - 10),18.73,False
-2026-04-29,Ovos Brancos 12un (Marca B - 11),10.76,True
-2026-04-29,Pão de Forma 500g (Premium - 12),40.81,True
-2026-04-29,Frango Inteiro kg (Marca B - 13),43.28,False
-2026-04-29,Carne Moída Patinho kg (Marca B - 14),40.51,False
-2026-04-29,Detergente Líquido 500ml (Premium - 15),39.61,False
-2026-04-29,Sabão em Pó 1kg (Marca B - 16),22.84,True
-2026-04-29,Papel Higiênico 12un (Marca B - 17),10.3,False
-2026-04-29,Creme Dental 90g (Marca A - 18),33.21,False
-2026-04-29,Shampoo 400ml (Econômica - 19),36.38,False
-2026-04-29,Sabonete 90g (Marca A - 20),29.65,True
-2026-04-29,Banana Prata kg (Marca B - 21),22.24,True
-2026-04-29,Maçã Gala kg (Premium - 22),35.31,True
-2026-04-29,Cebola kg (Marca B - 23),21.47,False
-2026-04-29,Alho 200g (Marca A - 24),11.42,False
-2026-04-29,Batata Inglesa kg (Marca B - 25),8.05,False
-2026-04-29,Tomate Italiano kg (Marca A - 26),33.97,True
-2026-04-29,Biscoito Recheado 130g (Marca A - 27),7.67,False
-2026-04-29,Suco de Uva 1L (Econômica - 28),22.29,False
-2026-04-29,Cerveja Lata 350ml (Econômica - 29),13.92,False
-2026-04-29,Arroz Agulhinha 5kg (Marca A - 30),8.47,True
-2026-04-29,Feijão Carioca 1kg (Marca A - 31),15.02,True
-2026-04-29,Açúcar Refinado 1kg (Marca B - 32),14.53,False
-2026-04-29,Café Torrado 500g (Marca A - 33),18.18,True
-2026-04-29,Óleo de Soja 900ml (Econômica - 34),31.72,False
-2026-04-29,Leite Integral 1L (Marca A - 35),22.79,True
-2026-04-29,Macarrão Espaguete 500g (Marca B - 36),21.78,False
-2026-04-29,Molho de Tomate 340g (Econômica - 37),22.48,False
-2026-04-29,Sal Refinado 1kg (Econômica - 38),35.47,True
-2026-04-29,Farinha de Trigo 1kg (Econômica - 39),39.53,True
-2026-04-29,Manteiga com Sal 200g (Marca A - 40),5.36,True
-2026-04-29,Ovos Brancos 12un (Premium - 41),16.83,True
-2026-04-29,Pão de Forma 500g (Marca A - 42),31.1,True
-2026-04-29,Frango Inteiro kg (Marca B - 43),32.1,False
-2026-04-29,Carne Moída Patinho kg (Marca A - 44),28.71,False
-2026-04-29,Detergente Líquido 500ml (Econômica - 45),40.93,True
-2026-04-29,Sabão em Pó 1kg (Marca A - 46),43.4,False
-2026-04-29,Papel Higiênico 12un (Premium - 47),21.28,False
-2026-04-29,Creme Dental 90g (Marca B - 48),9.74,False
-2026-04-29,Shampoo 400ml (Econômica - 49),15.35,True
-2026-04-29,Sabonete 90g (Premium - 50),44.92,False
-2026-04-29,Banana Prata kg (Premium - 51),18.43,False
-2026-04-29,Maçã Gala kg (Econômica - 52),8.09,True
-2026-04-29,Cebola kg (Econômica - 53),26.37,False
-2026-04-29,Alho 200g (Marca A - 54),39.18,False
-2026-04-29,Batata Inglesa kg (Premium - 55),28.83,True
-2026-04-29,Tomate Italiano kg (Marca B - 56),37.42,True
-2026-04-29,Biscoito Recheado 130g (Marca A - 57),17.65,False
-2026-04-29,Suco de Uva 1L (Premium - 58),21.68,False
-2026-04-29,Cerveja Lata 350ml (Marca B - 59),5.42,False
-2026-04-29,Arroz Agulhinha 5kg (Premium - 60),21.41,False
-2026-04-29,Feijão Carioca 1kg (Marca A - 61),14.47,True
-2026-04-29,Açúcar Refinado 1kg (Premium - 62),19.47,True
-2026-04-29,Café Torrado 500g (Marca B - 63),36.81,False
-2026-04-29,Óleo de Soja 900ml (Marca B - 64),46.99,False
-2026-04-29,Leite Integral 1L (Econômica - 65),41.57,False
-2026-04-29,Macarrão Espaguete 500g (Premium - 66),5.25,False
-2026-04-29,Molho de Tomate 340g (Econômica - 67),17.79,False
-2026-04-29,Sal Refinado 1kg (Econômica - 68),25.68,False
-2026-04-29,Farinha de Trigo 1kg (Econômica - 69),39.28,True
-2026-04-29,Manteiga com Sal 200g (Premium - 70),22.2,False
-2026-04-29,Ovos Brancos 12un (Marca A - 71),5.76,False
-2026-04-29,Pão de Forma 500g (Marca A - 72),25.97,True
-2026-04-29,Frango Inteiro kg (Marca B - 73),23.65,False
-2026-04-29,Carne Moída Patinho kg (Marca B - 74),36.61,True
-2026-04-29,Detergente Líquido 500ml (Premium - 75),11.89,True
-2026-04-29,Sabão em Pó 1kg (Marca B - 76),18.38,True
-2026-04-29,Papel Higiênico 12un (Econômica - 77),5.33,False
-2026-04-29,Creme Dental 90g (Marca A - 78),28.84,False
-2026-04-29,Shampoo 400ml (Marca B - 79),33.99,True
-2026-04-29,Sabonete 90g (Marca A - 80),40.56,True
-2026-04-29,Banana Prata kg (Marca A - 81),8.2,True
-2026-04-29,Maçã Gala kg (Marca B - 82),18.79,True
-2026-04-29,Cebola kg (Premium - 83),22.22,True
-2026-04-29,Alho 200g (Marca B - 84),15.71,False
-2026-04-29,Batata Inglesa kg (Econômica - 85),34.22,True
-2026-04-29,Tomate Italiano kg (Marca A - 86),28.43,True
-2026-04-29,Biscoito Recheado 130g (Marca A - 87),37.24,True
-2026-04-29,Suco de Uva 1L (Premium - 88),15.0,True
-2026-04-29,Cerveja Lata 350ml (Econômica - 89),23.57,True
-2026-04-29,Arroz Agulhinha 5kg (Marca B - 90),15.92,False
-2026-04-29,Feijão Carioca 1kg (Marca A - 91),26.17,False
-2026-04-29,Açúcar Refinado 1kg (Econômica - 92),18.35,True
-2026-04-29,Café Torrado 500g (Marca A - 93),45.9,False
-2026-04-29,Óleo de Soja 900ml (Premium - 94),41.19,True
-2026-04-29,Leite Integral 1L (Marca B - 95),19.82,False
-2026-04-29,Macarrão Espaguete 500g (Marca B - 96),32.56,False
-2026-04-29,Molho de Tomate 340g (Premium - 97),32.52,True
-2026-04-29,Sal Refinado 1kg (Marca A - 98),12.08,True
-2026-04-29,Farinha de Trigo 1kg (Premium - 99),18.41,False
-2026-04-29,Bisteca Suína 1kg,14.8,True
+data,produto,preço,is_promocao
+2026-05-04,Arroz Prato Fino 5kg,"R$ 26,80 un",False
+2026-05-04,Arroz Tipo 1 Vasconcelos 5kg,"R$ 23,90 un",False
+2026-05-04,Arroz Tipo 1 Patosul Vasconcelos 5kg,"R$ 17,90 un",False
+2026-05-04,Arroz Sempre Bom Tp1 5kg,"R$ 19,90 un",False
+2026-05-04,Arroz Camil Tp1 5k,"R$ 19,90 un",False
+2026-05-04,Arroz Ciagro Tp1 5kg,"R$ 22,90 un",False
+2026-05-04,Arroz Tipo 1 Beira Rio 5kg,"R$ 21,90 un",False
+2026-05-04,Arroz Tipo1 Albaruska 5k,"R$ 27,90 un",False
+2026-05-04,Arroz Prato Fino Parboilizado 5kg,"R$ 26,80 un",False
+2026-05-04,Arroz Rei Arthur Tp1 5kg,"R$ 23,98 un",False
+2026-05-04,Arroz Oryza Tp1 5k,"R$ 21,90 un",False
+2026-05-04,Arroz Streck Tp1 5k,"R$ 21,90 un",False
+2026-05-04,Arroz Campineiro Tp1 5k,"R$ 14,80 un",False
+2026-05-04,Arroz Prato Fino Parboilizado Integral 5kg,"R$ 27,90 un",False
+2026-05-04,Arroz Ciagro Parboilizado Tp1 5kg,"R$ 22,90 un",False
+2026-05-04,Arroz Vasconcelos Parboilizado 5k,"R$ 24,90 un",False
+2026-05-04,Arroz Filé 5k,"R$ 16,90 un",False
+2026-05-04,Feijão Carioca Tipuá Tp1 1kg,"R$ 7,99 un",False
+2026-05-04,Feijão Carioca Anchieta 1kg,"R$ 8,98 un",False
+2026-05-04,Feijão Preto Tipuá Tp1 1kg,"R$ 5,98 un",False
+2026-05-04,Feijão Carioca Belo Grão Tp1 1kg,"R$ 5,98 un",False
+2026-05-04,Feijão Carioca Galante Tp1 1kg,"R$ 12,98 un",False
+2026-05-04,Feijao Carioca Vasconcelos Nobre Tp1 1k,"R$ 10,98 un",False
+2026-05-04,Feijão Vermelho Tipuá Tp1 1kg,"R$ 7,98 un",False
+2026-05-04,Feijao Vermelho Anchieta Tp1 1k,"R$ 7,48 un",False
+2026-05-04,Feijao Preto Anchieta Tp1 1k,"R$ 5,98 un",False
+2026-05-04,Feijão Preto Galante Tp1 1kg,"R$ 8,98 un",False
+2026-05-04,Feijão Vermelho Galante Tp1 1kg,"R$ 12,98 un",False
+2026-05-04,Feijão Carioca Patureba T1 1k,"R$ 9,98 un",False
+2026-05-04,Feijão Preto Vasconcelos Tp1 1k,"R$ 6,98 un",False
+2026-05-04,Feijão Jalo Tipuá Tp1 1kg,"R$ 8,98 un",False
+2026-05-04,Feijão Carioca Farid 1kg,"R$ 8,58 un",False
+2026-05-04,Feijão Jalo Vasconcelos Tp1 1k,"R$ 11,98 un",False
+2026-05-04,Batata Inglesa,"R$ 8,98 kg",False
+2026-05-04,Batata Doce Roxa,"R$ 2,98 kg",False
+2026-05-04,Batata Palha Feita 300g,"R$ 9,98 un",False
+2026-05-04,Batata Mix Alho Na Manteiga 180g,"R$ 10,98 un",False
+2026-05-04,Batata Palha Fritas Ita 300g,"R$ 11,48 un",False
+2026-05-04,Batata Palha Creck 300g,"R$ 11,98 un",False
+2026-05-04,Batata Palito Mais Batata 2kg,"R$ 27,90 un",False
+2026-05-04,Batata Mix Frango Grelhado 180g,"R$ 10,98 un",False
+2026-05-04,Batata Mix Tradicional 230g,"R$ 14,99 un",False
+2026-05-04,Batata Mix Tradicional 480g,"R$ 29,99 un",False
+2026-05-04,Batata Palha Creck 120g,"R$ 4,98 un",False
+2026-05-04,Batata Palha Yoki 100g Extra Fina,"R$ 10,98 un",False
+2026-05-04,Batata Palha Fritas Ita 150g,"R$ 5,99 un",False
+2026-05-04,Batata Doce Branca,"R$ 8,98 kg",False
+2026-05-04,Batata Palito Mais Batata 1kg,"R$ 17,98 un",False
+2026-05-04,Batata Palha Yoki 105g Tradicional,"R$ 10,98 un",False
+2026-05-04,"Batata Pré-Frita Crinkle Congelada Bem Brasil Pacote 1,05kg","R$ 16,99 un",False
+2026-05-04,Batata Mix 36g Alho Na Manteiga,"R$ 3,19 un",False
+2026-05-04,Batata Pringles Queijo 109g,"R$ 14,90 un",False
+2026-05-04,Batata Palha Yoki 100g Extra Fina Cebola e Salsa,"R$ 10,98 un",False
+2026-05-04,Batata Palha Yoki 100g Extra Fina Parmesão,"R$ 10,98 un",False
+2026-05-04,Batata Palha Fritas Ita Clara 800g,"R$ 25,90 un",False
+2026-05-04,Batata Palha Feita 150g,"R$ 5,98 un",False
+2026-05-04,Batata Palito Pif Paf 400g,"R$ 7,99 un",False
+2026-05-04,Batata Miuda,"R$ 1,74 un",False
+2026-05-04,Batata Palito Uai 2kg,"R$ 21,90 un",False
+2026-05-04,Batata Palha Yoki 100g Extra Fina Hot Dog,"R$ 10,98 un",False
+2026-05-04,Batata Mix Churrasco 36g,"R$ 3,19 un",False
+2026-05-04,Batata Mix 36g Cebola e Salsa,"R$ 3,19 un",False
+2026-05-04,Batata Pré-Frita Carinhas Congelada Bem Brasil Pacote 400g,"R$ 7,99 un",False
+2026-05-04,Batata Palha Yoki Lv105 Pg90g,"R$ 8,10 un",False
+2026-05-04,Batata Palito Bem Brasil 400g,"R$ 8,48 un",False
+2026-05-04,Batata Bolinha Fazenda Pinhal Pct 1kg,"R$ 5,99 un",False
+2026-05-04,Batata Asterix,"R$ 6,98 kg",False
+2026-05-04,Batata Kerus Deora 30g Cebola e Salsa,"R$ 3,59 un",False
+2026-05-04,Batata Bolinha Redinha Pct 1k,"R$ 3,98 un",False
+2026-05-04,Batata Palito Nobre 2kg,"R$ 27,90 un",False
+2026-05-04,Batata Palito Pif Paf 2kg,"R$ 19,98 un",False
+2026-05-04,Batata Palha Yoki 195g Tradicional,"R$ 14,98 un",False
+2026-05-04,Batata Palha Yoki 190g Extra Fina,"R$ 14,98 un",False
+2026-05-04,"Batata Bem Brasil Tradicional 1,5k","R$ 19,99 un",False
+2026-05-04,Batata Chips Espanhola Presunto 125g,"R$ 25,90 un",False
+2026-05-04,Batata Bem Brasil Air Fryer 700g,"R$ 15,99 un",False
+2026-05-04,Pão Fp Batata,"R$ 29,90 kg",False
+2026-05-04,Pao Vale do Sol 250g Batata,"R$ 8,39 un",False
+2026-05-04,Bifinho Quatree Snacks Palitus Cordeiro e Batata Doce 60g,"R$ 5,49 un",False
+2026-05-04,Bebida Láctea Yopro 250ml 15 Protein Batata Doce,"R$ 8,98 un",False
+2026-05-04,Elma Chips Batata Palha 100g Tradicional,"R$ 10,98 un",False
+2026-05-04,Bifinho Quatree Snacks Palitus Carne e Batata Doce 60g,"R$ 5,49 un",False
+2026-05-04,Dadinho Bem Brasil Batata 400g,"R$ 8,99 un",False
+2026-05-04,Elma Chips Batata Palha 90g Extra Fina,"R$ 10,98 un",False
+2026-05-04,Pao Delicias do Trigo Paezinhos Batata 250g,"R$ 9,99 un",False
+2026-05-04,Elma Chips Batata Lays Rústica Sal Marinho 68g,"R$ 11,99 un",False
+2026-05-04,Elma Chips Batata Lays Rústica Cream Cheese 68g,"R$ 11,99 un",False
+2026-05-04,Bifinho Quatree Snacks Palitus Carne e Batata Doce 500g,"R$ 35,90 un",False
+2026-05-04,Elma Chips Batata Lays Clássica 115g,"R$ 16,99 un",False
+2026-05-04,Elma Chips Batata Lays Clássica 70g,"R$ 10,98 un",False
+2026-05-04,Pão Vale do Sol Hamburguer Batata 260g,"R$ 11,98 un",False
+2026-05-04,Macarrão Nissin Lámen Carne com Batata 75g,"R$ 2,98 un",False
+2026-05-04,Elma Chips Ruffles Sal 115g,"R$ 14,99 un",False
+2026-05-04,Elma Chips Ruffles Churrasco 115g,"R$ 14,99 un",False
+2026-05-04,Bebida Lactea Itambe Whey Coco 250g,"R$ 6,98 un",False
+2026-05-04,Elma Chips Ruffles Sal 167g,"R$ 19,99 un",False
+2026-05-04,Elma Chips Ruffles Cebola/Salsa 115g,"R$ 14,99 un",False
+2026-05-04,Sopa Vono 18g Bat/Car.Desf,"R$ 4,59 un",False
+2026-05-04,Elma Chips Ruffles Cebola/Salsa 68g,"R$ 10,99 un",False
+2026-05-04,Elma Chips Ruffles Churrasco 68g,"R$ 10,99 un",False
+2026-05-04,Elma Chips Ruffles Sal 68g,"R$ 10,99 un",False
+2026-05-04,Elma Chips Sensações Frango 125g,"R$ 16,98 un",False
+2026-05-04,Elma Chips Sensações Frango 70g,"R$ 11,99 un",False
+2026-05-04,Elma Chips Sensações Peru 70g,"R$ 11,99 un",False
+2026-05-04,Elma Chips Ruffles 100g Original,"R$ 12,99 un",False
+2026-05-04,Papinha Papapa Organico 100g Maca/Batata Doce/Cenoura,"R$ 12,99 un",False
+2026-05-04,Salgadinho Club Social Snack Cebola e Salsa 68g,"R$ 6,99 un",False
+2026-05-04,Batata Mix 36g Trad,"R$ 3,19 un",False
+2026-05-04,Batata Chips Chinesa Chiruca Creme/Cebola 110g,"R$ 13,99 un",False
+2026-05-04,Batata Chips Chinesa Chiruca Original 110g,"R$ 13,99 un",False
+2026-05-04,Batata Chips Feita 30g Churr,"R$ 1,79 un",False
+2026-05-04,Batata Chips Feita 30g Ceb/Salsa,"R$ 1,79 un",False
+2026-05-04,Batata Kerus Deora 30g,"R$ 3,59 un",False
+2026-05-04,Batata Chips Feita 30g Nat,"R$ 1,79 un",False
+2026-05-04,Batata Kerus Deora 30g Churrasco,"R$ 3,59 un",False
+2026-05-04,Batata Yacon Bandeja,"R$ 6,98 un",False
+2026-05-04,Batata Palha Batata Mix 300g,"R$ 14,99 un",False
+2026-05-04,Batata Doce Organica de Minas Bandeija 400g,"R$ 9,98 un",False
+2026-05-04,Batata Chips Espanhola Rubio Barbecue 125g,"R$ 25,90 un",False
+2026-05-04,Batata Chips Espanhola Rubio Original 130g,"R$ 25,90 un",False
+2026-05-04,Batata Pringles 100g Frango Oriental,"R$ 14,90 un",False
+2026-05-04,Batata Pringles 100g Maionese Picante,"R$ 14,90 un",False
+2026-05-04,Batata Pringles 100g Netflix Steak,"R$ 14,90 un",False
+2026-05-04,Batata Mix Churrasco 150g,"R$ 9,99 un",False
+2026-05-04,Batata Mix Tradicional 150g,"R$ 9,99 un",False
+2026-05-04,Batata Mix Cebola e Salsa 150g,"R$ 9,99 un",False
+2026-05-04,Elma Chips Batata Palha 180g Extra Fina,"R$ 18,90 un",False
+2026-05-04,Elma Chips Batata Lays Sour Cream 62g,"R$ 6,99 un",False
+2026-05-04,Elma Chips Batata Lays Clássica 62g,"R$ 6,99 un",False
+2026-05-04,Elma Chips Batata Lays 62g Sal/Vinagre,"R$ 6,99 un",False
+2026-05-04,Elma Chips Batata Lays Clássica 257g,"R$ 29,98 un",False
+2026-05-04,Elma Chips Batata Lays Clássica 183g,"R$ 19,90 un",False
+2026-05-04,Elma Chips Batata Lays 62g Copa Picanha,"R$ 6,99 un",False
+2026-05-04,Elma Chips Batata Lays 62g Taco Mexicano,"R$ 6,99 un",False
+2026-05-04,Elma Chips Batata Lays 62g Copa Queijo,"R$ 6,99 un",False
+2026-05-04,"Batata Palito Mccain Tradicional 1,5kg","R$ 23,98 un",False
+2026-05-04,Batata Pringles Churrasco 109g,"R$ 14,90 un",False
+2026-05-04,Batata Mix Costelinha com Limão 36g,"R$ 3,19 un",False
+2026-05-04,Batata Palha Boa 800g,"R$ 19,90 un",False
+2026-05-04,Batata Palha Croques 100g Temperada,"R$ 6,59 un",False
+2026-05-04,Batata Palha Yoki Tradicional 380g,"R$ 26,98 un",False
+2026-05-04,Yokitos Batata Onda 180g,"R$ 17,90 un",False
+2026-05-04,Yokitos 50g Batata Ond.Cebola Salsa,"R$ 3,97 un",False
+2026-05-04,Yokitos 50g Batata Ond.Natural,"R$ 3,97 un",False
+2026-05-04,Yokitos Batata Ondulada 100g,"R$ 10,99 un",False
+2026-05-04,Yokitos 100g Batata Ond.Cebola Salsa,"R$ 10,99 un",False
+2026-05-04,Yokitos Batata Ondulada Churrasco 90g,"R$ 10,98 un",False
+2026-05-04,Yokitos 50g Batata Ond.Churrasco,"R$ 4,47 un",False
+2026-05-04,Yokitos Batata Lisa Natural 100g,"R$ 10,99 un",False
+2026-05-04,Elma Chips Batata Lays Sour Cream 115g,"R$ 10,99 un",False
+2026-05-04,Yokitos Queijo Lua 50/45g,"R$ 3,79 un",False
+2026-05-04,Yokitos Queijo Redinha 150/135g,"R$ 10,99 un",False
+2026-05-04,Yokitos Conchinha Sabor Presunto 153g,"R$ 10,99 un",False
+2026-05-04,Yokitos Cebola 60/54g,"R$ 3,79 un",False
+2026-05-04,Yokitos Cebola 120/108g,"R$ 10,99 un",False
+2026-05-04,Yokitos Queijo Conchinha 153g,"R$ 10,99 un",False
+2026-05-04,Yokitos 150/135g Queijo Lua,"R$ 10,99 un",False
+2026-05-04,Yokitos 50/45g Queijo Redinha,"R$ 3,79 un",False
+2026-05-04,Yokitos 60/54g Queijo Conch,"R$ 3,79 un",False
+2026-05-04,Yokitos Presunto Conchinha 54g,"R$ 3,79 un",False
+2026-05-04,Batata Palha Yoki 375g Extra Fina,"R$ 26,98 un",False
+2026-05-04,Pao Batata Doce Artisan Foods 300g C/Frango,"R$ 29,90 un",False
+2026-05-04,Óleo de Soja Liza 900ml,"R$ 7,09 un",False
+2026-05-04,Óleo de Girassol Sinhá 900ml,"R$ 11,98 un",False
+2026-05-04,Óleo de Milho Sinhá 900ml,"R$ 13,98 un",False
+2026-05-04,Óleo de Canola Sinhá 900ml,"R$ 14,98 un",False
+2026-05-04,Óleo de Girassol Liza 900ml,"R$ 14,98 un",False
+2026-05-04,Óleo de Milho Liza 900ml,"R$ 17,98 un",False
+2026-05-04,Óleo de Canola Liza 900ml,"R$ 18,98 un",False
+2026-05-04,Óleo Girassol Soya 900ml,"R$ 12,98 un",False
+2026-05-04,Óleo de Milho Soya 900ml,"R$ 16,98 un",False
+2026-05-04,Oleo Milho Mazola 900ml,"R$ 19,90 un",False
