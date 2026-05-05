@@ -53,12 +53,16 @@
                 id="itemInput"
                 placeholder="Ex: Arroz 5kg"
                 autocomplete="off"
-                style="background-color: rgb(85, 1, 1);"
+                style="background-color: rgb(85, 1, 1)"
                 oninput="onInputChange()"
                 onkeydown="onInputKeydown(event)" />
               <div class="autocomplete-dropdown" id="acDropdown"></div>
             </div>
-            <button onclick="addItem()" style="background: rgb(4, 89, 95) !important; color: white;">Adicionar</button>
+            <button
+              onclick="addItem()"
+              style="background: rgb(4, 89, 95) !important; color: white">
+              Adicionar
+            </button>
           </div>
           <div class="lista-items" id="listaItems"></div>
           <div
@@ -286,19 +290,23 @@
       let acIndex = -1;
 
       function getAllProducts() {
-        const seen = new Set();
-        const results = [];
+        const products = new Map();
         Object.entries(stores).forEach(([sid, rows]) => {
           if (!rows) return;
           rows.forEach(r => {
             const key = r.produto.toLowerCase();
-            if (!seen.has(key)) {
-              seen.add(key);
-              results.push({ nome: r.produto, sid });
+            const existing = products.get(key);
+            if (!existing || r.preco < existing.preco) {
+              products.set(key, {
+                nome: r.produto,
+                preco: r.preco,
+                sid,
+                is_promo: r.is_promo,
+              });
             }
           });
         });
-        return results;
+        return Array.from(products.values());
       }
 
       function matchesAllWords(produto, query) {
@@ -340,7 +348,8 @@
           .map(
             (p, i) =>
               `<div class="ac-item" data-val="${p.nome}" onmousedown="pickSuggestion('${p.nome.replace(/'/g, "\\'")}')">
-        ${highlightWords(p.nome, val)}
+        <span class="ac-suggestion-label">${highlightWords(p.nome, val)}</span>
+        <span class="ac-price-badge">R$ ${p.preco.toFixed(2)}${p.is_promo ? "*" : ""}</span>
         <span class="ac-store-badge">${storeNames[p.sid]}</span>
       </div>`,
           )

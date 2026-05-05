@@ -262,6 +262,28 @@ body {
   color: var(--color-text-secondary);
   white-space: nowrap;
 }
+.ac-price-badge {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.12);
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.ac-price-badge::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.8);
+  margin-left: 0.45rem;
+  opacity: 0;
+}
+.ac-item:hover .ac-price-badge,
+.ac-item.active .ac-price-badge {
+  background: rgba(56, 189, 248, 0.18);
+}
 .lista-items {
   display: flex;
   flex-direction: column;
