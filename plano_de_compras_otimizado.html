@@ -8,6 +8,9 @@
       content="Planejador de compras otimizado — monte sua lista, carregue os CSVs dos supermercados e veja em qual loja comprar cada item para gastar o mínimo total." />
     <title>Planejador de compras otimizado</title>
     <link rel="stylesheet" href="plano_de_compras_otimizado.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
   </head>
   <body>
     <div class="page-shell">
@@ -106,16 +109,18 @@
                 <th style="width: 35%">Produto</th>
                 <th style="width: 22%">Melhor loja</th>
                 <th style="width: 14%">Preço</th>
-
                 <th style="width: 15%">Economia</th>
               </tr>
             </thead>
             <tbody id="summaryBody"></tbody>
           </table>
         </div>
+
+        <button class="pdf-btn" onclick="generatePDF()">
+          Gerar PDF da lista de produtos
+        </button>
       </div>
 
-      <!-- CSV Picker Modal -->
       <div
         class="modal-overlay"
         id="modalOverlay"
@@ -208,7 +213,6 @@
       function labelFromFilename(file) {
         const match = KNOWN_CSVS.find(c => c.file === file);
         if (match) return match.label;
-        // fallback: strip known prefixes and uppercase remainder
         const parts = file.replace(/\.csv$/i, "").split("_");
         const filtered = parts.filter(
           p =>
@@ -228,15 +232,19 @@
         document.getElementById("modalTitle").textContent =
           `Supermercado ${n} — escolher CSV`;
         const list = document.getElementById("csvOptionsList");
-        list.innerHTML = KNOWN_CSVS.map(csv => {
-          return `<div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
-        <div class="csv-icon">CSV</div>
-        <div>
-          <div class="csv-name">${csv.label}</div>
-          <div class="csv-hint">${csv.file}</div>
-        </div>
-      </div>`;
-        }).join("");
+        const clearButton = stores[n]
+          ? `<button class="modal-clear" onclick="removeStore(${n})">Remover supermercado</button>`
+          : "";
+        list.innerHTML =
+          KNOWN_CSVS.map(csv => {
+            return `<div class="csv-option" onclick="loadFromUrl('${csv.file}', '${csv.label}')">
+            <div class="csv-icon">CSV</div>
+            <div>
+              <div class="csv-name">${csv.label}</div>
+              <div class="csv-hint">${csv.file}</div>
+            </div>
+          </div>`;
+          }).join("") + clearButton;
         document.getElementById("modalOverlay").classList.add("open");
       }
 
@@ -283,8 +291,15 @@
         checkReady();
       }
 
-      function loadFile(n) {
-        // legacy — kept for demo compatibility
+      function removeStore(n) {
+        stores[n] = null;
+        storeNames[n] = `Supermercado ${n}`;
+        document.getElementById("sn" + n).textContent = storeNames[n];
+        document.getElementById("d" + n).classList.remove("ok");
+        document.getElementById("upcard" + n).classList.remove("loaded");
+        document.getElementById("ss" + n).textContent = "escolher CSV";
+        checkReady();
+        closeModal();
       }
 
       let acIndex = -1;
@@ -348,10 +363,10 @@
           .map(
             (p, i) =>
               `<div class="ac-item" data-val="${p.nome}" onmousedown="pickSuggestion('${p.nome.replace(/'/g, "\\'")}')">
-        <span class="ac-suggestion-label">${highlightWords(p.nome, val)}</span>
-        <span class="ac-price-badge">R$ ${p.preco.toFixed(2)}${p.is_promo ? "*" : ""}</span>
-        <span class="ac-store-badge">${storeNames[p.sid]}</span>
-      </div>`,
+            <span class="ac-suggestion-label">${highlightWords(p.nome, val)}</span>
+            <span class="ac-price-badge">R$ ${p.preco.toFixed(2)}${p.is_promo ? "*" : ""}</span>
+            <span class="ac-store-badge">${storeNames[p.sid]}</span>
+          </div>`,
           )
           .join("");
         dd.classList.add("open");
@@ -421,11 +436,11 @@
         document.getElementById("listaItems").innerHTML = lista
           .map(
             (it, i) => `
-    <div class="lista-item">
-      <span>${it}</span>
-      <button onclick="removeItem(${i})">×</button>
-    </div>
-  `,
+        <div class="lista-item">
+          <span>${it}</span>
+          <button onclick="removeItem(${i})">×</button>
+        </div>
+      `,
           )
           .join("");
         document.getElementById("listaCount").textContent =
@@ -514,11 +529,11 @@
         ).length;
 
         document.getElementById("metricsRow").innerHTML = `
-    <div class="metric"><div class="mlabel">Total otimizado</div><div class="mval">R$ ${totalOtimizado.toFixed(2)}</div><div class="msub">${found.length} ite${found.length === 1 ? "m" : "ns"} encontrados</div></div>
-    <div class="metric"><div class="mlabel">Sem otimizar</div><div class="mval">R$ ${totalSemOtimizar.toFixed(2)}</div><div class="msub">pagando sempre mais caro</div></div>
-    <div class="metric"><div class="mlabel">Economia total</div><div class="mval" style="color:#0F6E56">R$ ${economiaTotal.toFixed(2)}</div><div class="msub">${economiaPct}% a menos</div></div>
-    <div class="metric"><div class="mlabel">Lojas no roteiro</div><div class="mval">${lojas}</div><div class="msub">de ${activeStores.length} disponíveis</div></div>
-  `;
+        <div class="metric"><div class="mlabel">Total otimizado</div><div class="mval">R$ ${totalOtimizado.toFixed(2)}</div><div class="msub">${found.length} ite${found.length === 1 ? "m" : "ns"} encontrados</div></div>
+        <div class="metric"><div class="mlabel">Sem otimizar</div><div class="mval">R$ ${totalSemOtimizar.toFixed(2)}</div><div class="msub">pagando sempre mais caro</div></div>
+        <div class="metric"><div class="mlabel">Economia total</div><div class="mval" style="color:#0F6E56">R$ ${economiaTotal.toFixed(2)}</div><div class="msub">${economiaPct}% a menos</div></div>
+        <div class="metric"><div class="mlabel">Lojas no roteiro</div><div class="mval">${lojas}</div><div class="msub">de ${activeStores.length} disponíveis</div></div>
+      `;
 
         const maxTotal = Math.max(
           ...Object.values(byStore).map(b => b.total),
@@ -551,25 +566,25 @@
             const itemRows = sd.items
               .map(
                 f => `
-      <div class="sc-row">
-        <span class="sc-prod">${f.item}</span>
-        <span class="sc-price">R$ ${f.best.preco.toFixed(2)}${f.best.is_promo ? '<span class="badge-promo">promo</span>' : ""}</span>
-      </div>
-    `,
+          <div class="sc-row">
+            <span class="sc-prod">${f.item}</span>
+            <span class="sc-price">R$ ${f.best.preco.toFixed(2)}${f.best.is_promo ? '<span class="badge-promo">promo</span>' : ""}</span>
+          </div>
+        `,
               )
               .join("");
             return `<div class="store-card${isWinner ? " winner" : ""}">
-      <div class="sc-head">
-        <div class="sc-avatar ${avCls}">${initials}</div>
-        <div>
-          <div class="sc-name">${storeNames[sid]}</div>
-          ${isWinner ? '<span class="chip ' + chipCls + '" style="font-size:10px">maior parte da lista</span>' : ""}
-        </div>
-      </div>
-      <div class="sc-total">R$ ${sd.total.toFixed(2)}</div>
-      <div class="sc-items">${sd.items.length} ite${sd.items.length === 1 ? "m" : "ns"} desta lista</div>
-      <div class="sc-list">${itemRows}</div>
-    </div>`;
+          <div class="sc-head">
+            <div class="sc-avatar ${avCls}">${initials}</div>
+            <div>
+              <div class="sc-name">${storeNames[sid]}</div>
+              ${isWinner ? '<span class="chip ' + chipCls + '" style="font-size:10px">maior parte da lista</span>' : ""}
+            </div>
+          </div>
+          <div class="sc-total">R$ ${sd.total.toFixed(2)}</div>
+          <div class="sc-items">${sd.items.length} ite${sd.items.length === 1 ? "m" : "ns"} desta lista</div>
+          <div class="sc-list">${itemRows}</div>
+        </div>`;
           })
           .join("");
 
@@ -596,13 +611,12 @@
                 ([s]) => String(s) === String(f.best.sid),
               );
               const chipCls = chipClass[avIdx] || "chip1";
-              const barW = Math.round((f.economia / maxEcon) * 80);
               return `<tr>
-      <td style="font-weight:500">${f.item}</td>
-      <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
-      <td>R$ ${f.best.preco.toFixed(2)}</td>
-      <td><span style="display:inline-flex;align-items:center;padding:0.2rem 0.55rem;border-radius:999px;font-size:0.78rem;font-weight:700;background:rgba(34,197,94,0.16);color:#22c55e">${f.economia > 0 ? "R$ " + f.economia.toFixed(2) : "—"}</span></td>
-    </tr>`;
+          <td style="font-weight:500">${f.item}</td>
+          <td><span class="chip ${chipCls}">${storeNames[f.best.sid]}</span></td>
+          <td>R$ ${f.best.preco.toFixed(2)}</td>
+          <td><span style="display:inline-flex;align-items:center;padding:0.2rem 0.55rem;border-radius:999px;font-size:0.78rem;font-weight:700;background:rgba(34,197,94,0.16);color:#22c55e">${f.economia > 0 ? "R$ " + f.economia.toFixed(2) : "—"}</span></td>
+        </tr>`;
             })
             .join("") +
           notFound
@@ -616,6 +630,126 @@
         document
           .getElementById("resultsArea")
           .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function generatePDF() {
+        const metricsRow = document.getElementById("metricsRow");
+        const storeCards = document.getElementById("storeCards");
+
+        if (!metricsRow || metricsRow.innerHTML.trim() === "") {
+          alert(
+            "Execute o plano de compras primeiro (clique em 'Calcular plano de compras otimizado')",
+          );
+          return;
+        }
+
+        // 1. Access jsPDF from the window object
+        const { jsPDF } = window.jspdf;
+
+        // 2. Initialize a new jsPDF instance
+        const doc = new jsPDF();
+
+        let y = 20;
+
+        // Title
+        doc.setFont("Helvetica", "bold");
+        doc.setFontSize(20);
+        doc.text("Plano de Compras Otimizado", 15, y);
+        y += 12;
+
+        // Summary Financials
+        doc.setFontSize(14);
+        doc.text("Resumo Financeiro", 15, y);
+        y += 8;
+
+        doc.setFont("Helvetica", "normal");
+        doc.setFontSize(10);
+        const metricDivs = metricsRow.querySelectorAll(".metric");
+        metricDivs.forEach(metric => {
+          const label = metric.querySelector(".mlabel")?.textContent || "";
+          const value = metric.querySelector(".mval")?.textContent || "";
+          const sub = metric.querySelector(".msub")?.textContent || "";
+
+          doc.text(`${label}: ${value} (${sub})`, 15, y);
+          y += 6;
+        });
+
+        y += 8;
+
+        // Shopping route by store
+        doc.setFont("Helvetica", "bold");
+        doc.setFontSize(14);
+        doc.text("Roteiro de Compras por Loja", 15, y);
+        y += 8;
+
+        if (storeCards) {
+          const cards = storeCards.querySelectorAll(".store-card");
+          cards.forEach(card => {
+            const storeName =
+              card.querySelector(".sc-name")?.textContent || "Loja";
+            const storeTotal =
+              card.querySelector(".sc-total")?.textContent || "R$ 0.00";
+            const storeItems =
+              card.querySelector(".sc-items")?.textContent || "0 itens";
+
+            doc.setFont("Helvetica", "bold");
+            doc.setFontSize(10);
+            doc.text(
+              `${storeName} - Total: ${storeTotal} (${storeItems})`,
+              15,
+              y,
+            );
+            y += 6;
+
+            const itemRows = card.querySelectorAll(".sc-row");
+            itemRows.forEach(row => {
+              // Check if adding this line would go beyond the page height
+              if (y > 275) {
+                doc.addPage();
+                y = 20;
+              }
+            });
+            y += 4;
+          });
+        }
+
+        // Summary table using autoTable plugin
+        y += 5;
+        doc.setFont("Helvetica", "bold");
+        doc.setFontSize(14);
+        doc.text("Resumo por Item", 15, y);
+        y += 6;
+
+        const summaryBody = document.getElementById("summaryBody");
+        if (summaryBody) {
+          const tableData = [];
+          const rows = summaryBody.querySelectorAll("tr");
+          rows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            if (cells.length >= 4) {
+              const prodName = cells[0].textContent.trim();
+              const bestStore = cells[1].textContent.trim();
+              const price = cells[2].textContent.trim();
+              const economy = cells[3].textContent.trim();
+
+              tableData.push([prodName, bestStore, price, economy]);
+            }
+          });
+
+          if (tableData.length > 0 && typeof doc.autoTable === "function") {
+            doc.autoTable({
+              startY: y,
+              head: [["Produto", "Melhor Loja", "Preço", "Economia"]],
+              body: tableData,
+              margin: { left: 15, right: 15 },
+              theme: "striped",
+              styles: { fontSize: 9, cellPadding: 2 },
+              headStyles: { fillColor: [4, 89, 95] }, // Cor que combina com os botões
+            });
+          }
+        }
+
+        doc.save("plano_de_compras.pdf");
       }
 
       function loadDemo() {
