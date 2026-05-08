@@ -147,6 +147,9 @@ export default function App() {
     if (!trimmedName) return;
     if (!shoppingList.some(item => item.name.toLowerCase() === trimmedName.toLowerCase())) {
       setShoppingList(prev => [...prev, { id: crypto.randomUUID(), name: trimmedName }]);
+      // Reset calculation state so the button reappears
+      setIsCalculated(false);
+      setResults(null);
     }
     setInputValue('');
     setAcIndex(-1);
@@ -154,6 +157,9 @@ export default function App() {
 
   const removeItem = (id: string) => {
     setShoppingList(prev => prev.filter(item => item.id !== id));
+    // Reset calculation state so the button reappears
+    setIsCalculated(false);
+    setResults(null);
   };
 
   // Optimization Logic
@@ -475,31 +481,125 @@ export default function App() {
           </div>
         </section>
         
-        {/* Results / Empty View Transition */}
+        {/* Calculate Action */}
+        <button 
+          disabled={stores.filter(s => s.status === 'loaded' && s.enabled).length < 2 || shoppingList.length === 0}
+          onClick={optimize}
+          className="w-full py-5 bg-[#0f172a] hover:bg-[#1e293b] border border-slate-700/50 text-slate-400 hover:text-white disabled:opacity-20 font-black uppercase tracking-[0.3em] text-xs transition-all flex items-center justify-center gap-3 rounded-xl shadow-2xl active:scale-[0.98]"
+        >
+          <Calculator className="w-4 h-4" />
+          <span>{isCalculated ? 'Atualizar plano de compras' : 'Calcular plano de compras otimizado'}</span>
+        </button>
+        
+        {/* Results Transition */}
         <AnimatePresence mode="wait">
-          {isCalculated && results ? (
+          {isCalculated && results && (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               key="results"
               className="space-y-8"
             >
-              {/* Results Content (keep current logic but update styles) */}
+              {/* Results Content */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-slate-900/40 border border-slate-800/50 p-8 rounded-3xl shadow-xl">
-                   <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-2">Total Otimizado</p>
-                   <p className="text-3xl font-black">R$ {results.totalOtimizado.toFixed(2)}</p>
+                <div className="bg-slate-900/40 border border-slate-800/50 p-6 md:p-8 rounded-3xl shadow-xl backdrop-blur-md relative overflow-hidden group">
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 blur-3xl rounded-full" />
+                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-2 relative z-10">Total Otimizado</p>
+                   <p className="text-3xl font-black relative z-10">R$ {results.totalOtimizado.toFixed(2)}</p>
                 </div>
-                <div className="bg-emerald-500/10 border border-emerald-500/20 p-8 rounded-3xl shadow-xl">
-                   <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest mb-2">Economia Total</p>
-                   <div className="flex items-baseline gap-3">
+                <div className="bg-emerald-500/10 border border-emerald-500/20 p-6 md:p-8 rounded-3xl shadow-xl backdrop-blur-md relative overflow-hidden group">
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-3xl rounded-full" />
+                   <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-2 relative z-10">Economia Total</p>
+                   <div className="flex items-baseline gap-3 relative z-10">
                      <p className="text-3xl font-black text-emerald-400">R$ {results.economiaTotal.toFixed(2)}</p>
                      <span className="text-xs font-bold text-emerald-500/50">({results.economiaPct.toFixed(1)}%)</span>
                    </div>
                 </div>
-                <div className="bg-slate-900/40 border border-slate-800/50 p-8 rounded-3xl shadow-xl">
-                   <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-2">Lojas Utilizadas</p>
-                   <p className="text-3xl font-black">{results.summaries.length}</p>
+                <div className="bg-slate-900/40 border border-slate-800/50 p-6 md:p-8 rounded-3xl shadow-xl backdrop-blur-md relative overflow-hidden group">
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 blur-3xl rounded-full" />
+                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-2 relative z-10">Lojas Utilizadas</p>
+                   <p className="text-3xl font-black relative z-10">{results.summaries.length}</p>
+                </div>
+              </div>
+
+              {/* Store Summaries Breakdown */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {results.summaries.map((summary, idx) => {
+                  const store = stores.find(s => s.id === summary.storeId);
+                  return (
+                    <motion.div 
+                      key={summary.storeId}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="bg-slate-900/40 border border-slate-800/50 p-6 rounded-3xl shadow-xl backdrop-blur-md relative group overflow-hidden"
+                    >
+                      <div className="absolute -bottom-2 -right-2 text-white/[0.02] rotate-12 transition-transform group-hover:scale-110">
+                        <StoreIcon className="w-16 h-16" />
+                      </div>
+                      <h3 className="text-[10px] text-cyan-400 font-black uppercase tracking-[0.2em] mb-4 relative z-10">
+                        {store?.name}
+                      </h3>
+                      <div className="space-y-4 relative z-10">
+                        <div className="flex justify-between items-baseline">
+                          <span className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Total Gasto</span>
+                          <span className="text-xl font-black text-white">R$ {summary.total.toFixed(2)}</span>
+                        </div>
+                        <div className="flex justify-between items-baseline">
+                          <span className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Produtos</span>
+                          <span className="text-xl font-black text-white">{summary.items.length}</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Detailed Table */}
+              <div className="bg-slate-950/60 border border-slate-800/50 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
+                <div className="p-6 border-b border-slate-800/50 flex items-center justify-between">
+                  <h2 className="text-xs font-black text-cyan-400 uppercase tracking-[0.2em]">
+                    Detalhamento por Item
+                  </h2>
+                </div>
+                <div className="overflow-x-auto overflow-y-auto max-h-[600px] custom-scrollbar">
+                  <table className="w-full text-left border-collapse">
+                    <thead className="sticky top-0 bg-slate-900 z-10">
+                      <tr className="text-[10px] text-slate-500 uppercase tracking-widest font-black border-b border-slate-800">
+                        <th className="p-6">Produto</th>
+                        <th className="p-6">Onde Comprar</th>
+                        <th className="p-6">Melhor Preço</th>
+                        <th className="p-6 text-right">Economia</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-sm divide-y divide-slate-800/50">
+                      {results.found.map((f, i) => (
+                        <tr key={i} className="group hover:bg-white/[0.02] transition-colors">
+                          <td className="p-6 text-slate-300 font-medium group-hover:text-white transition-colors">{f.product}</td>
+                          <td className="p-6">
+                            <span className="text-yellow-500/70 italic border-b border-yellow-500/10 font-medium">
+                              {stores.find(s => s.id === f.bestStoreId)?.name}
+                            </span>
+                          </td>
+                          <td className="p-6 font-bold text-white/90">R$ {f.bestPrice.toFixed(2)}</td>
+                          <td className="p-6 text-right">
+                            {f.economy > 0 ? (
+                              <span className="text-yellow-700/60 font-bold font-mono">R$ {f.economy.toFixed(2)}</span>
+                            ) : (
+                              <span className="text-slate-800 opacity-20">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                      {results.notFound.map((item, i) => (
+                        <tr key={`nf-${i}`} className="bg-red-500/[0.03] opacity-60">
+                          <td className="p-6 text-red-400 font-bold italic">{item}</td>
+                          <td className="p-6 text-[10px] text-red-500 uppercase tracking-widest font-black" colSpan={3}>Item não localizado em nenhuma loja ativa</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
@@ -507,27 +607,19 @@ export default function App() {
               <div className="flex flex-col sm:flex-row gap-4 pb-12">
                 <button 
                   onClick={generatePDF}
-                  className="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-3"
+                  className="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
                 >
                   <FileDown className="w-4 h-4" />
-                  <span>Exportar PDF</span>
+                  <span>Exportar Roteiro PDF</span>
                 </button>
                 <button 
                   onClick={() => { setIsCalculated(false); setResults(null); }}
-                  className="px-12 py-4 bg-slate-900/50 text-slate-400 hover:text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-800 transition-all"
+                  className="px-12 py-4 bg-slate-900/50 text-slate-400 hover:text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-800 transition-all active:scale-[0.98]"
                 >
-                  Revisar Lista
+                  Limpar Resultados
                 </button>
               </div>
             </motion.div>
-          ) : (
-            <button 
-              disabled={stores.filter(s => s.status === 'loaded' && s.enabled).length < 2 || shoppingList.length === 0}
-              onClick={optimize}
-              className="w-full py-5 bg-[#0f172a] hover:bg-[#1e293b] border border-slate-700/50 text-slate-400 hover:text-white disabled:opacity-20 font-black uppercase tracking-[0.3em] text-xs transition-all flex items-center justify-center gap-3 rounded-xl shadow-2xl active:scale-[0.98]"
-            >
-              <span>Calcular plano de compras otimizado</span>
-            </button>
           )}
         </AnimatePresence>
       </main>
