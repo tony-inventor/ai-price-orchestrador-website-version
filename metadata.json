@@ -1,0 +1,6 @@
+{
+  "name": "AI Price Orchestrator",
+  "description": "Optimized shopping planner that compares prices across supermarkets using CSV data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

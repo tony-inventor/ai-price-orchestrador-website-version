@@ -1,4 +1,4 @@
-data,produto,preço,is_promoção
+data,produto,preço,is_promocao
 2026-04-29,Feijão Carioca 1kg (Premium - 1),12.65,True
 2026-04-29,Açúcar Refinado 1kg (Marca A - 2),36.02,False
 2026-04-29,Café Torrado 500g (Premium - 3),15.09,True
