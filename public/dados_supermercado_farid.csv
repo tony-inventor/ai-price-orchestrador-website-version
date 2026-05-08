@@ -1,0 +1,636 @@
+data,produto,preço,is_promocao
+2026-05-05,Feijão Carioca Tipuá Tp1 1kg,7.99,False
+2026-05-05,Feijão Carioca Anchieta 1kg,8.98,False
+2026-05-05,Feijão Preto Tipuá Tp1 1kg,5.98,False
+2026-05-05,Feijão Carioca Belo Grão Tp1 1kg,5.98,False
+2026-05-05,Feijão Carioca Galante Tp1 1kg,12.98,False
+2026-05-05,Feijao Carioca Vasconcelos Nobre Tp1 1k,10.98,False
+2026-05-05,Feijão Vermelho Tipuá Tp1 1kg,7.98,False
+2026-05-05,Feijao Vermelho Anchieta Tp1 1k,7.48,False
+2026-05-05,Feijao Preto Anchieta Tp1 1k,5.98,False
+2026-05-05,Feijão Preto Galante Tp1 1kg,8.98,False
+2026-05-05,Feijão Vermelho Galante Tp1 1kg,12.98,False
+2026-05-05,Feijão Carioca Patureba T1 1k,9.98,False
+2026-05-05,Feijão Preto Vasconcelos Tp1 1k,6.98,False
+2026-05-05,Feijão Jalo Tipuá Tp1 1kg,8.98,False
+2026-05-05,Feijão Carioca Farid 1kg,8.58,False
+2026-05-05,Feijão Jalo Vasconcelos Tp1 1k,11.98,False
+2026-05-05,Arroz Prato Fino 5kg,26.80,False
+2026-05-05,Arroz Tipo 1 Vasconcelos 5kg,23.90,False
+2026-05-05,Arroz Tipo 1 Patosul Vasconcelos 5kg,17.90,False
+2026-05-05,Arroz Sempre Bom Tp1 5kg,19.90,False
+2026-05-05,Arroz Camil Tp1 5k,19.90,False
+2026-05-05,Arroz Ciagro Tp1 5kg,22.90,False
+2026-05-05,Arroz Tipo 1 Beira Rio 5kg,21.90,False
+2026-05-05,Arroz Tipo1 Albaruska 5k,27.90,False
+2026-05-05,Arroz Prato Fino Parboilizado 5kg,26.80,False
+2026-05-05,Arroz Rei Arthur Tp1 5kg,23.98,False
+2026-05-05,Arroz Oryza Tp1 5k,21.90,False
+2026-05-05,Arroz Streck Tp1 5k,21.90,False
+2026-05-05,Arroz Campineiro Tp1 5k,14.80,False
+2026-05-05,Arroz Prato Fino Parboilizado Integral 5kg,27.90,False
+2026-05-05,Arroz Ciagro Parboilizado Tp1 5kg,22.90,False
+2026-05-05,Arroz Vasconcelos Parboilizado 5k,24.90,False
+2026-05-05,Arroz Filé 5k,16.90,False
+2026-05-05,Óleo de Soja Liza 900ml,7.09,False
+2026-05-05,Óleo de Girassol Sinhá 900ml,11.98,False
+2026-05-05,Óleo de Milho Sinhá 900ml,13.98,False
+2026-05-05,Óleo de Canola Sinhá 900ml,14.98,False
+2026-05-05,Óleo de Girassol Liza 900ml,14.98,False
+2026-05-05,Óleo de Milho Liza 900ml,17.98,False
+2026-05-05,Óleo de Canola Liza 900ml,18.98,False
+2026-05-05,Óleo Girassol Soya 900ml,12.98,False
+2026-05-05,Óleo de Milho Soya 900ml,16.98,False
+2026-05-05,Oleo Milho Mazola 900ml,19.90,False
+2026-05-05,Farinha de Trigo Boa Sorte Especial 1kg,4.59,False
+2026-05-05,Farinha de Trigo Vilma Especial 1kg,4.98,False
+2026-05-05,Farinha de Trigo Anchieta com Fermento 1kg,4.58,False
+2026-05-05,Lasanha Perdigao 1kg Bolon,25.90,False
+2026-05-05,Far.Trigo Kodilar Int.1k,14.98,False
+2026-05-05,Farinha de Trigo Farina Especial 1kg,3.59,False
+2026-05-05,Farinha de Trigo Anchieta Especial 1kg,3.38,False
+2026-05-05,Farinha Trigo Famiglia Venturelli Semolina 1k,11.99,False
+2026-05-05,Manteiga Ita Pt.500g,22.99,False
+2026-05-05,Manteiga Farid 500g com Sal,17.98,False
+2026-05-05,Manteiga P.Alegre 500gr C/Sal,19.98,False
+2026-05-05,Manteiga Itambe 500g,27.98,False
+2026-05-05,Margarina Claybom Cremosa 500g Manteiga,7.99,False
+2026-05-05,Manteiga Cotoches 500g,25.90,False
+2026-05-05,Macarrão Nissin Lámen Pao Na Chapa com Manteiga 85g,2.98,False
+2026-05-05,Manteiga Ita 200g,12.48,False
+2026-05-05,Manteiga Itambe 200g C/Sal,11.98,False
+2026-05-05,Manteiga P.Alegre 200g,10.98,False
+2026-05-05,Manteiga Itambe Extra 200g C/Sal,11.79,False
+2026-05-05,Manteiga Itambe Extra 200g S/Sal,11.79,False
+2026-05-05,Manteiga President Tabl.200g C/Sal,12.99,False
+2026-05-05,Manteiga Cotoches 200g,11.99,False
+2026-05-05,Creme President Ricota Light 200g,8.99,False
+2026-05-05,Manteiga Bom Destino de Búfala 200g,17.90,False
+2026-05-05,Manteiga de Coco Coco Show 200g,15.90,False
+2026-05-05,Creme President Ricota Tradicional 200g,8.99,False
+2026-05-05,Manteiga Gran Mestri Lt.200g Z.Lactose,23.97,False
+2026-05-05,Manteiga President 200g C/Sal,12.99,False
+2026-05-05,Manteiga Farid C/Sal 200g,10.98,False
+2026-05-05,Manteiga Cristaulat 200g C/Sal,9.49,False
+2026-05-05,Manteiga Novato 200g,14.98,False
+2026-05-05,Manteiga Minas Mais 200g,8.98,False
+2026-05-05,Manteiga President Zero Lactose C/Sal Tablete 200g,15.99,False
+2026-05-05,Requeijão President Queijo Blue 200g,14.98,False
+2026-05-05,Requeijão President Queijo Brie 200g,14.98,False
+2026-05-05,Manteiga Porto Alegre 200g Zero Lactose,13.99,False
+2026-05-05,Manteiga Itambe No Lac 200g,11.99,False
+2026-05-05,Manteiga President Tabl.200g S/Sal,12.99,False
+2026-05-05,Manteiga Gran Mestri 200g C/Sal,14.99,False
+2026-05-05,Manteiga Aviacao Tabl.200g C/Sal,15.90,False
+2026-05-05,Margarina Claybom Cremosa com Sal 500g,6.99,False
+2026-05-05,Margarina Claybom Cremosa 1k C/Sal,14.99,False
+2026-05-05,Margarina Claybom Cremosa 500g Manteiga,7.99,False
+2026-05-05,Margarina Doriana Cremosa 500g,7.98,False
+2026-05-05,Margarina Claybom Cremosa 250g C/Sal,4.59,False
+2026-05-05,Margarina Claybom Cremosa 250g Manteiga,4.39,False
+2026-05-05,Margarina Qualy 250g C/Sal Vegetal Colecionável,5.98,False
+2026-05-05,Margarina Doriana Cremosa 1k,15.99,False
+2026-05-05,Margarina Doriana 250g C/Sal,5.99,False
+2026-05-05,Pão Panneves Forma Tradicional 450g,7.98,False
+2026-05-05,Pao Seven Boys Forma 450g,7.49,False
+2026-05-05,Bolo Caçarola,39.90 kg,False
+2026-05-05,Pão Panneves Sanduíche Leite 450g,7.59,False
+2026-05-05,Mortadela Perdigão Ouro Peça/Pedaço Kg,5.20,False
+2026-05-05,Pao Vale do Sol Forma 400g,8.39,False
+2026-05-05,Pão Baldini Bisnaga Leite 300g,7.49,False
+2026-05-05,Bolinho Bauducco Duo 27g Choc,1.68,False
+2026-05-05,Pao Seven Boys Bisnag.300g Trad,6.59,False
+2026-05-05,Pao Vale do Sol Bisnaguinha 250 Gramas Premium Sem Açucar,7.69,False
+2026-05-05,Biscoito Seven Boys Sequilhos 400g,8.99,False
+2026-05-05,Pao Panneves Hambúrguer 600g,11.99,False
+2026-05-05,Mortadela Perdigao Bolognella Peca/Pedaco Kg,19.90 kg,False
+2026-05-05,Bolo Pote,49.90 kg,False
+2026-05-05,Bolo Formigueiro,29.90 kg,False
+2026-05-05,Pao Panneves Hot Dog 600g,11.99,False
+2026-05-05,Pao Wick Bold D.Forno 500g 100 P.Cen.Int,15.99,False
+2026-05-05,Bolo Fp Mesclado,29.90 kg,False
+2026-05-05,"Pao Baldini Forma 400g 39,5 Por Cento Integral Uva Passa",11.59,False
+2026-05-05,Pao Vale do Sol Zero 3 Cereais 400g,11.98,False
+2026-05-05,Bolo Fuba,29.90 kg,False
+2026-05-05,Pao Seven Boys 450g Leite,8.49,False
+2026-05-05,Biscoito So Mineiro Torrad.150g Mineira,12.99,False
+2026-05-05,Bolo de Coco,27.90 kg,False
+2026-05-05,Pao Vale do Sol Integral 20 Grãos 400g,13.98,False
+2026-05-05,Lasanha Pif Paf 600g Bolon,10.98,False
+2026-05-05,Pao Seven Boys L.Premium 400g Cast/Noz,13.99,False
+2026-05-05,Marg.Qualy 250g C/Sal,5.95,False
+2026-05-05,Bolo de Leite Condensado Fp,29.90 kg,False
+2026-05-05,Pão Vale do Sol Naturista Naturista Maça/Canela/Passas 400g,16.99,False
+2026-05-05,Pao Visconti Forma 400g Trad,7.49,False
+2026-05-05,Pão Vale do Sol Integral com Castanha e Nozes 450g,16.99,False
+2026-05-05,Pao Baldini Hambur.600g,12.99,False
+2026-05-05,Pão Baldini Hot Dog 400g,12.99,False
+2026-05-05,Bolo Indiano,49.90 kg,False
+2026-05-05,Pao Vale do Sol Naturista Castanhá Pará/Cacau 400g,16.99,False
+2026-05-05,Pao Vale do Sol Int.370g Uva Passas,14.90,False
+2026-05-05,Mistura para Bolo Vilma Cenoura 400g,4.98,False
+2026-05-05,Pao Wick Bold Tortilha Tá Pronto 270g Original,13.90,False
+2026-05-05,Biscoito So Mineiro Palito 100g Parmesao,10.99,False
+2026-05-05,Pao Wick Bold Tortilha Tá Pronto 270g 100% Integral,13.90,False
+2026-05-05,Biscoito Sô Mineiro 300g Casadinho,12.99,False
+2026-05-05,Bolo de Milho,29.90 kg,False
+2026-05-05,Pão Vale do Sol Sovado 500 Gramas,14.99,False
+2026-05-05,Pao Vale do Sol 250g Batata,8.39,False
+2026-05-05,Marg.Qualy 1k C/Sal,19.90,False
+2026-05-05,Marg.Delicia Crem.250g,4.59,False
+2026-05-05,Marg.Delicia Crem.500g,8.99,False
+2026-05-05,Mistura para Bolo Vilma Fubá 400g,4.98,False
+2026-05-05,Mistura para Bolo Vilma 400g Abac,4.98,False
+2026-05-05,Marg.Delicia Crem.1k,14.98,False
+2026-05-05,Macarrão Nissin Noodles 72g Bolonhesa,5.98,False
+2026-05-05,Biscoito So Mineiro Bolinha 150g Bacon,7.99,False
+2026-05-05,Pao Vale do Sol Integral 500g Grao/Castanha,13.98,False
+2026-05-05,Pão Vale do Sol Integral Malte 400g,13.98,False
+2026-05-05,Marg.Qualy 250g S/Sal,5.99,False
+2026-05-05,Bolo Neutro Fp,29.90 kg,False
+2026-05-05,Pao Vale do Sol Integral Castanha/Quinoa 500g,13.98,False
+2026-05-05,Marg.Qualy 500g S/Sal,10.90,False
+2026-05-05,Mistura para Bolo Anchieta Chocolate 400g,4.79,False
+2026-05-05,Mistura para Bolo Vilma Aipim 400g,4.98,False
+2026-05-05,Macarrão Nissin Lámen Talharim Bolonhesa 99g,3.98,False
+2026-05-05,Mistura para Bolo Vilma Baunilha 400g,4.98,False
+2026-05-05,Mistura para Bolo Vilma 400g L.Cond,4.98,False
+2026-05-05,Pao Seven Boys Leve Semi-Integral 450g,9.99,False
+2026-05-05,Pao Panneves Sovado 300g,8.99,False
+2026-05-05,Molho Tomate Pomarola Bolonhesa Sachê 300g,5.59,False
+2026-05-05,Pao Wick Bold D.Forno 500g Orig,14.99,False
+2026-05-05,Marg.Qualy 250g C/Sal Aerada,5.89,False
+2026-05-05,Mistura para Bolo Vilma 400g Choc.Suave,4.98,False
+2026-05-05,Mistura para Bolo Vilma 400g Lim,4.98,False
+2026-05-05,Mistura para Bolo Vilma 400g Fl.Negra,6.59,False
+2026-05-05,Mistura para Bolo Vilma 400g Milho,4.98,False
+2026-05-05,Pão Vale do Sol Integral S/Açúcar 400g,13.98,False
+2026-05-05,Lasanha Perdigao 600g Bolon,13.98,False
+2026-05-05,Lasanha Sadia 600g Bolon,15.98,False
+2026-05-05,Mistura Bolo Fleischmann 390g Chocolate,9.98,False
+2026-05-05,Mistura Bolo Fleischmann 400g Chocomousse,9.98,False
+2026-05-05,Marg.Claybom Crem.500g S/Sal,7.98,False
+2026-05-05,Macarrão Italiano Almerinda Gnocchi 500g,9.98,False
+2026-05-05,Molho Tarantella Bolonhesa Sahcê 300g,3.39,False
+2026-05-05,Mistura Bolo Anchieta 400g Cenoura,4.39,False
+2026-05-05,Mistura Bolo Anchieta Milho Verde 400g,4.39,False
+2026-05-05,Pao Wick Bold Gr.Sabor 500g Frutas,19.90,False
+2026-05-05,Pao Seven Boys 500g Milho,13.99,False
+2026-05-05,Mistura Bolo Anchieta Baunilha 400g,4.39,False
+2026-05-05,Pao Wick Bold Gr.Sabor Int.400g,16.90,False
+2026-05-05,Mistura Bolo Fleischmann 400g Brownie,9.98,False
+2026-05-05,Mistura Bolo Anchieta Coco 400g,4.39,False
+2026-05-05,Pao Wick Bold Gr.Sabor 400g Pecan/Freeke,17.90,False
+2026-05-05,Cer.Nutry C/3 Bolo Choc.,6.49,False
+2026-05-05,Pao Wick Bold Quad.400g C.Para/Quin,18.90,False
+2026-05-05,Crocantissimo Pullman P.Peru C/Requ.40g,3.99,False
+2026-05-05,Crocantissimo Pullman 40g Salame/Limao,3.99,False
+2026-05-05,Mistura Bolo Fleischmann 390g Aipim,6.98,False
+2026-05-05,Marg.Qualy 500g C/Sal Aerada,10.99,False
+2026-05-05,Lasanha Perdigao 1kg Bolon,25.90,False
+2026-05-05,Pão Panneves Lanchinho 340g,7.99,False
+2026-05-05,Pao da Casa Hamburguer 600g,12.99,False
+2026-05-05,Bolo Seven Boys Laranja 250g,10.99,False
+2026-05-05,Pao Wick Bold Forma 300g S/Glut.,23.99,False
+2026-05-05,Crocantissimo Pullman Queijo/Cebola 40g,3.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Uvas Passas,10.99,False
+2026-05-05,Pao Wick Bold Forma Integral 450g,13.90,False
+2026-05-05,Mistura Bolo Fleischmann 390g Milho,6.98,False
+2026-05-05,Mistura Bolo Fleischmann 390g Laranja,6.98,False
+2026-05-05,Lasanha Flip Bolonhesa 600g,9.90,False
+2026-05-05,Pao Wick Bold Gr.Sabor 400g Chia/Macad,17.90,False
+2026-05-05,Marg.Qualy Light 500g C/Sal,10.59,False
+2026-05-05,Mistura Bolo Fleischmann 390g Coco,6.98,False
+2026-05-05,Pao Delicias do Trigo Paezinhos Batata 250g,9.99,False
+2026-05-05,Pao Seven Boys 350g 7 Graos,13.90,False
+2026-05-05,Mistura Bolo Fleischmann 390g Limão Cremoso,6.98,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Zero,10.99,False
+2026-05-05,Pao Wick Bold Gr.Sabor 500g C.Para/Qui,19.90,False
+2026-05-05,Mistura Bolo Fleischmann 390g Cenoura Up,9.98,False
+2026-05-05,Marg.Qualy Light 250g C/Sal,5.99,False
+2026-05-05,Pao Wick Bold P.Bread 300g Sirio Mini,14.90,False
+2026-05-05,Pao Seven Boys Light 350g 7 Graos,13.90,False
+2026-05-05,Pao Wick Bold Forma 300g S/Glut.Multig,23.99,False
+2026-05-05,Pao Wick Bold Pita 400g Sirio Peq.C/12,23.99,False
+2026-05-05,Pão Bauducco Integral 390g,9.98,False
+2026-05-05,Pao Delicias do Trigo 100 P/Cento Integral Castanhas/Quinoa,15.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral 12 Graos Zero,10.99,False
+2026-05-05,Lasanha Seara 600g Bolon,16.90,False
+2026-05-05,Mistura de Bolo Fleischmann 350g Petit Gateau,9.98,False
+2026-05-05,Fetuccini Perdigão 300g A Bolonhesa,9.99,False
+2026-05-05,Mistura Bolo Anchieta Laranja 400g,4.39,False
+2026-05-05,Pão de Forma Delicias do Trigo 100% Integral Grãos e Castanha450g,15.99,False
+2026-05-05,Pao Delicias do Trigo 100 P/Cento Integral Frutas/Graos Ancestrais,15.99,False
+2026-05-05,Rap 10 Pullman 297g Tradicional,13.99,False
+2026-05-05,Bolo Ana Maria 42g Napolitano,3.39,False
+2026-05-05,Bolo Seven Boys Coco 250g,10.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Banana/Aveia,10.99,False
+2026-05-05,Biscoito Só Mineiro Rosquinha Vovó 300g,12.99,False
+2026-05-05,Pão Panneves Aveia Integral 450g,9.99,False
+2026-05-05,Pao Delicias do Trigo Forma 380g Integral Australiano,10.99,False
+2026-05-05,Mistura para Bolo Oetker Crem.300g Choc,7.99,False
+2026-05-05,Rap 10 Pullman 297g Integral,12.98,False
+2026-05-05,Bolo Seven Boys 250g Choc,10.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Original,10.99,False
+2026-05-05,Bolo Seven Boys Mármore 250g,10.99,False
+2026-05-05,Bolo Seven Boys Formigueiro 250g,10.99,False
+2026-05-05,Marg.Becel 500g C/Sal,13.09,False
+2026-05-05,Mist.Bol.Chuva Yoki 250g Trad,9.99,False
+2026-05-05,Forma Aluminio Metais Souza Resende para Pudim e Bolo N.22,19.90,False
+2026-05-05,Mistura para Bolo Oetker 430g Formigueiro,7.99,False
+2026-05-05,Pao Delicias do Trigo 100 P/Cento Integral 18 Graos Zero,15.99,False
+2026-05-05,Mistura para Bolo Oetker Chocolate Sache 400g,7.99,False
+2026-05-05,Mistura para Bolo Oetker Crem.400g Aipim,7.99,False
+2026-05-05,Mistura para Bolo S.Amalia 400g Cenoura,4.68,False
+2026-05-05,Mistura para Bolo S.Amalia 400g Laranja,4.68,False
+2026-05-05,Mistura para Bolo Oetker Baunilha 400g,7.99,False
+2026-05-05,Mistura para Bolo Oetker Crem.400g Coco,7.99,False
+2026-05-05,Macarrao Italiano Rummo Fettucce 500g,19.98,False
+2026-05-05,Forma Aluminio Metais Souza Resende para Pudim e Bolo N.20,18.90,False
+2026-05-05,Mistura Bolo Fleischmann 390g Choccomouse,9.98,False
+2026-05-05,Mistura para Bolo Oetker Coco Sache 400g,7.99,False
+2026-05-05,Bolo Ana Maria Trad.70g Gt.Choc,5.99,False
+2026-05-05,Pão Bauducco 390g Tradicional,7.98,False
+2026-05-05,Forma Msr para Bolo Alta N.2 R.1967,29.90,False
+2026-05-05,Macarrao Italiano Rummo Spaghetti 500g,19.98,False
+2026-05-05,Pao Nutrella Frutas 500g,25.99,False
+2026-05-05,Bolo Seven Boys Chocolate 30g,1.99,False
+2026-05-05,Pasta Italiana Granoro Grano Duro Conchiglione 500g,25.98,False
+2026-05-05,Macarrão La Pastina Rech.250g Tortel.3 Queij.,19.97,False
+2026-05-05,Pão Integral Castanha-Do-Pará & Quinoa Nutrella Pacote 350g,17.90,False
+2026-05-05,"Pâo Nutrella Semente de Abóbora, Linhaça e Cenoura 350g",17.90,False
+2026-05-05,Azeite Gallo Extra Virgem 500ml,34.80,False
+2026-05-05,Azeite Português Andorinha Extra Virgem 500ml,34.80,False
+2026-05-05,Azeite Cocinero Extra Virgem 500ml,31.90,False
+2026-05-05,Azeite Borges Extra Virgem 500ml,36.90,False
+2026-05-05,Azeite Gallo Puro 500ml,34.90,False
+2026-05-05,Azeite Grego Kalamaki de Oliva Extra Virgem 500ml,64.98,False
+2026-05-05,Azeite Grego Midasextra Virgem Garrafa de Ceramica 500ml,69.98,False
+2026-05-05,Azeite Italiano Canpez Oliva Extra Virgem 500ml,39.98,False
+2026-05-05,Azeite Andorinha Puro 500ml,45.90,False
+2026-05-05,Azeite Portugês Alma Lusa Extra Virgem Vidro 500ml,29.90,False
+2026-05-05,Azeite Português Trás Dos Montes Extra Virgem Vidro 500ml,35.90,False
+2026-05-05,Azeite Turco Efeso Oliva Extra Virgem 500ml,38.90,False
+2026-05-05,Azeite Chileno Las Doscientas Oliva Extra Virgen 500ml,49.90,False
+2026-05-05,Azeite Turco Anatolia Oliva Extra Virgem Pet 500ml,24.98,False
+2026-05-05,Azeite Portugês Ouro da Terra Extra Virgem Vidro 500ml,31.98,False
+2026-05-05,Azeite da Tunisia Allegro de Oliva Extra Virgem 500ml,35.98,False
+2026-05-05,Azeite Andorinha Seleção Extra Virgem 500ml,49.90,False
+2026-05-05,Azeite Uruguaio Colinas de Gárzon Bivarietal Extra Virgem 500ml,100.89,False
+2026-05-05,Leite Longa Vida Ita Integral 1l,5.18,False
+2026-05-05,Leite Longa Vida Itambé Integral 1l,5.98,False
+2026-05-05,Leite Longa Vida Porto Alegre Integral 1l,5.18,False
+2026-05-05,Leite Longa Vida Camponesa Integral 1l,5.48,False
+2026-05-05,Leite Longa Vida Piracanjuba Integral 1l,5.49,False
+2026-05-05,Leite Longa Vida Farid Integral 1l,5.28,False
+2026-05-05,Leite Longa Vida Porto Alegre Integral 1l,6.98,False
+2026-05-05,Leite Longa Vida Itambé Nolac Integral 1l,5.98,False
+2026-05-05,Leite Longa Vida Itambé Nolac Desnatado 1l,6.98,False
+2026-05-05,Leite Longa Vida Piracanjuba Desnatado 1l,4.98,False
+2026-05-05,Leite Longa Vida Itambé Semi Desnatado 1l,5.98,False
+2026-05-05,Leite Longa Vida Itambé Desnatado 1l,5.98,False
+2026-05-05,Leite Longa Vida Itambé Nolac Semidesnatado 1l,6.98,False
+2026-05-05,Leite Longa Vida Camponesa Zero Lactose Integral 1l,6.48,False
+2026-05-05,Leite Longa Vida Ita Desnatado 1l,5.18,False
+2026-05-05,Leite Longa Vida Porto Alegre Semi Desnatado 1l,4.98,False
+2026-05-05,Leite Longa Vida Porto Alegre Desnatado 1l,4.98,False
+2026-05-05,Leite Longa Vida Ninho Vitamina C Semi Desnatado 1l,6.98,False
+2026-05-05,Leite Longa Vida Camponesa Desnatado 1l,5.48,False
+2026-05-05,Leite Longa Vida Itambé 10 Vitaminas 1l,6.98,False
+2026-05-05,Leite Longa Vida Camponesa Origem Integral 1l,6.48,False
+2026-05-05,Leite Longa Vida Camponesa Zero Lactose Desnatado 1l,4.97,False
+2026-05-05,Leite Longa Vida Porto Alegre Zero Lactose Integral 1l,5.78,False
+2026-05-05,Leite Longa Vida Molico Vitamina Desnatado 1 Lt,6.48,False
+2026-05-05,Leite Longa Vida Camponesa Zero Lactose Semidesnatado 1l,5.97,False
+2026-05-05,Leite Longa Vida Camponesa Semi Desnatado 1l,4.98,False
+2026-05-05,Leite Longa Vida Quata Desnatado 1l,5.20,False
+2026-05-05,Leite Longa Vida Itambé Pro Desnatado 1l,7.97,False
+2026-05-05,Leite Longa Vida Piracanjuba Zero Lactose A2 Semi Desnatado 1l,6.98,False
+2026-05-05,Leite Longa Vida Piracanjuba Zero Lactose Semi Desnatado 1l,5.98,False
+2026-05-05,Leite Longa Vida Camponesa Vitamina C e D Desnatado 1 Lt,5.98,False
+2026-05-05,Leite Longa Vida Piracanjuba Zero Lactose Desnatado 1l,6.98,False
+2026-05-05,Leite Longa Vida Quata Semi Desnatado 1l,4.58,False
+2026-05-05,Café Três Corações Tradicional 500g,29.90,False
+2026-05-05,Café Três Corações Extra Forte 500g,29.90,False
+2026-05-05,Café Barão Extra Forte 500g,27.90,False
+2026-05-05,Café Barão 500g,27.90,False
+2026-05-05,Café Farid Extra Forte 500g,27.98,False
+2026-05-05,Café Melitta Tradicional 500g,29.90,False
+2026-05-05,Café Três Corações Tradicional 250g,16.95,False
+2026-05-05,Café Farid Tradicional 500g,27.98,False
+2026-05-05,Café Melitta Extra Forte 500g,29.90,False
+2026-05-05,Café Três Corações Extra Forte 250g,16.95,False
+2026-05-05,Café Pilão 500g,31.90,False
+2026-05-05,Café Pilao 500g Extra Forte,31.90,False
+2026-05-05,Café Torrado e Moído Tradicional Utam Momentos Pacote 500g,29.90,False
+2026-05-05,Café Fino Grão Forte 500g,27.90,False
+2026-05-05,Cafe Utam Momentos Extra Forte 500g,29.90,False
+2026-05-05,Café Barao 250g Extra Forte,14.90,False
+2026-05-05,Café Três Corações Gourmet Mogiana Paulista 250g,29.90,False
+2026-05-05,Refrigerante Coca Cola Café 220ml,2.95,False
+2026-05-05,Cafe Pilao Vácuo Extra Forte 500g,32.90,False
+2026-05-05,Café Três Corações Gourmet Cerrado Mineiro 250g,29.90,False
+2026-05-05,Café Uniao 500g Tradicional,27.90,False
+2026-05-05,Café Três Corações Gourmet Sul de Minas 250g,29.90,False
+2026-05-05,Cafe Uniao Extra Forte 500g,27.90,False
+2026-05-05,Café Biagini 500g,28.90,False
+2026-05-05,Café Fino Grão Tradicional 500g,31.90,False
+2026-05-05,Café Barao 250g,14.90,False
+2026-05-05,Café Fino Grão Extra Forte 500g,31.90,False
+2026-05-05,Café Três Corações Sachê 20g Leite/Calcio,2.58,False
+2026-05-05,Café Pilao Vacuo 500g,32.90,False
+2026-05-05,Café Três Corações Premium 500g,36.90,False
+2026-05-05,Café Três Corações Fort 250g,16.90,False
+2026-05-05,Café Fino Grao M.Forte 250g,13.95,False
+2026-05-05,Cafe Utam Momentos Tradicional 250g,15.90,False
+2026-05-05,Café Três Corações Solúvel Vd 50g Trad,16.90,False
+2026-05-05,Cafe Utam Momentos Extraforte 250g,15.90,False
+2026-05-05,Café Mellita 250g Trad.,15.90,False
+2026-05-05,Café Três Corações Vacuo 250g Descaf,35.90,False
+2026-05-05,Café Três Corações Solúvel 100g Trad,25.99,False
+2026-05-05,Café Tres Capsula 11g Cappuccino Avela,19.98,False
+2026-05-05,Café Fino Grao 250g Extra Forte,16.90,False
+2026-05-05,Filtro Coa Facil Perman.P/Cafe 103,5.99,False
+2026-05-05,Filtro Coa-Facil P/Cafe 103 Pano,5.99,False
+2026-05-05,Café Mellita 250g Extra Forte,15.90,False
+2026-05-05,Filtro Papel Melitta P/Cafet. 2 - C/30,5.59,False
+2026-05-05,Porta Filtro Melitta 103,14.99,False
+2026-05-05,Café Três Corações Premium Vácuo 500g,36.90,False
+2026-05-05,Café Tres Corações 100g Cappuccino Classic Refil,11.99,False
+2026-05-05,Café Tres Capsula Coado com 10 Class,19.98,False
+2026-05-05,Café Cappuccino Três Capsula Havanna Doce de Leite C/10,19.98,False
+2026-05-05,Café Três Corações Vacuo 500g Trad,35.90,False
+2026-05-05,Café com Leite Tres Capsula com 10,19.98,False
+2026-05-05,Filtro Papel Melitta P/Cafet.4 - C/30,6.59,False
+2026-05-05,Café Três Corações Liof.Solúvel 100g 100pc Arab,38.90,False
+2026-05-05,Café Melitta Solúvel Instantâneo Sachê 40g,10.98,False
+2026-05-05,Café Fino Grao 250g Trad,16.90,False
+2026-05-05,Café Três Corações Portinari Menino Soltando Pipas 250g,49.90,False
+2026-05-05,Café Melitta Reg.Brasileir.250g S.Minas,28.90,False
+2026-05-05,Nescafé Orig.Vd 100g,32.90,False
+2026-05-05,Doce de Leite Viçosa 400g com Café,29.90,False
+2026-05-05,Café Três Corações Vacuo 500g Extra Forte,35.90,False
+2026-05-05,Chocolate Hersheys Coffe C.Expresso 85g,8.99,False
+2026-05-05,Café Tres Capsula com 8 Latte Macchiato,19.98,False
+2026-05-05,Café Melitta Reg.Brasileir.250g.Mogiana,28.90,False
+2026-05-05,Café Três Corações Solúvel 200g Trad.Granul,39.99,False
+2026-05-05,Café Melitta Solúvel Instantâneo Extra Forte Sachê 40g,10.98,False
+2026-05-05,Café Melitta Reg.Brasileir.250g Cerrado,28.90,False
+2026-05-05,Porta Filtro Melitta 102,12.99,False
+2026-05-05,Nescafé Dolce Gusto Cappuccino C/10 Capsulas,25.90,False
+2026-05-05,Café Três Corações C/Leite Lata 300g,24.90,False
+2026-05-05,Café Três Corações Vacuo 250g Ext.Fort,19.90,False
+2026-05-05,Bebida Láctea Três Coracoes Cappuccino 260ml Pingado,6.99,False
+2026-05-05,Café Três Corações Vacuo 250g Trad,19.90,False
+2026-05-05,Café Três Corações Portinari Peneirando 250g,49.90,False
+2026-05-05,Café Três Corações Vacuo 250g Gourmet,32.90,False
+2026-05-05,Café Tres Capsula Esp.Com 10 Ameno,19.98,False
+2026-05-05,Café Melitta Vacuo 250g Descaf,34.90,False
+2026-05-05,Nescafé Dolce Gusto Cafe Matinal C/10 Capsulas,25.90,False
+2026-05-05,Café Tres Capsula Esp.Com 10 Supremo,19.98,False
+2026-05-05,Coador de Flanela Medeiros N.102,9.98,False
+2026-05-05,Café Iguaçu Liofilizado Solúvel Vidro Gourmet 100g,35.90,False
+2026-05-05,Café Tres Capsula Esp.Com 10 Pleno,19.98,False
+2026-05-05,Café Tres Capsula Espresso Aluminio C/10 Mogiana Paulista,19.90,False
+2026-05-05,Café Tres Capsula Esp.Com 10 Vibr.,19.98,False
+2026-05-05,Café Três Corações Portinari Cafe 250g,34.97,False
+2026-05-05,Starbucks Cápsula Pike Place Lungo 53g,29.90,False
+2026-05-05,Nescafé Dolce Gusto Espresso Intenso Capsula C/10,25.90,False
+2026-05-05,Café Tres Capsula Esp.S.Esp.Com 8 Ch.Diam,19.98,False
+2026-05-05,Café Três Espresso Forza 10 Cápsulas,19.98,False
+2026-05-05,Café Três Espresso Atento 10 Cápsulas,19.98,False
+2026-05-05,Café Tres Capsula Esp.Rit.Com 8 Cerr.Min,19.98,False
+2026-05-05,Porta Filtro T.Coracoes 102,13.99,False
+2026-05-05,Café Tres Capsula Esp.Reg.Mun.Com 10 Colômbia,19.98,False
+2026-05-05,Café Tres Capsula Espresso Aluminio Intenso 10 Unidades,19.90,False
+2026-05-05,Nescafé Dolce Gusto Au Lait Capsula C/10,25.90,False
+2026-05-05,Café Tres Capsula Esp.Rit.Com 8 Org,19.98,False
+2026-05-05,Café Tres Capsula Espresso Aluminio C/10 Organico,19.90,False
+2026-05-05,Café Tres Capsula Esp.Rit.Com 8 Mog.Paul,19.98,False
+2026-05-05,Tintura Soft Color 477 Cafe,27.90,False
+2026-05-05,Café Três Corações Espresso Gourmet em Grão 1k,169.90,False
+2026-05-05,Toalha Piso Appel Pezinho Café R.13000,16.90,False
+2026-05-05,Cappuccino Nescafe 180g Tradicional,21.90,False
+2026-05-05,Café Nescafé Gold Sachê 250g Equilib.,29.90,False
+2026-05-05,Nescafé Dolce Gusto Mochaccino Capsula com 10,25.90,False
+2026-05-05,Café Três Corações Drip Coffee Florada Premiada Sachê 11g,2.99,False
+2026-05-05,Café Três Corações Gourmet Drip Coffee Dark Sachê 11g,2.99,False
+2026-05-05,Café Starbucks Pike Place 250g,49.90,False
+2026-05-05,Maquina Tres G1 Lov Preto 127v,499.90,False
+2026-05-05,Maquina Tres G1 Lov Vermelho 127v,499.90,False
+2026-05-05,Bala Arcor Butter Toffees Barista Café Expresso 90g,6.98,False
+2026-05-05,Café Três Corações Gourmet 100% Arabica Dark Roast 250g,29.90,False
+2026-05-05,Café Três Corações Forza Intensidade Máxima 250g,34.90,False
+2026-05-05,Café Tres Capsula Esp.Com 10 Star Wars Mestre Yoda,19.98,False
+2026-05-05,Cafe com Leite Tres Capsula Vegetal com 10,19.98,False
+2026-05-05,Cafe Tres Capsula Descafeinado com 10,19.98,False
+2026-05-05,Café Três Corações Solúvel Sachê 40g Trad,8.58,False
+2026-05-05,Café Três Corações Solúvel Sachê 40g Extra Forte,8.58,False
+2026-05-05,Café Nescafé Sache 40g Descafeinado,18.90,False
+2026-05-05,Bebida Láctea Nescafé Chococino 270ml,6.99,False
+2026-05-05,Bebida Láctea Starbucks Fappuccino Mocha 280ml,9.98,False
+2026-05-05,Café Cappuccino Três Capsula Napolitano 110g,19.98,False
+2026-05-05,Café Três Corações Liofilizado Solúvel 100 P.Cento Arabica 50g,11.99,False
+2026-05-05,Café Três Corações Solúvel Descafeinado Granulado 40g,15.90,False
+2026-05-05,Café Três Corações Rituais 250g Exotico,39.99,False
+2026-05-05,Café Três Corações Rituais 250g Frutas Vermelhas,39.99,False
+2026-05-05,Café Três Corações Rituais 250g Frutas Secas,39.99,False
+2026-05-05,Café Tres Capsula Espresso Aluminio C/10 Peru,19.90,False
+2026-05-05,Café Tres Capsula Espresso Aluminio C/10 Colombia,19.90,False
+2026-05-05,Nescafé Andes Compatível C/ Nespresso C/10 Capsulas,29.90,False
+2026-05-05,Nescafé Brasil Compatível C/ Nespresso Cápsula C/10,29.90,False
+2026-05-05,Nescafé Colombia Compatível C/ Nespresso C/10 Cápsulas,29.90,False
+2026-05-05,Nescafé Índia Compatível C/ Nespresso C/10 Cápsulas,29.90,False
+2026-05-05,Nescafé México Compatível C/ Nespresso C/10 Cápsulas,29.90,False
+2026-05-05,Café Três Corações Premium Vácuo Estrada Real 250g,24.90,False
+2026-05-05,Bebida Energética Vida Veg Coffee/Chocolate 240g,12.99,False
+2026-05-05,Café Melitta Regiões Brasileiras Terras Capixabas 250g,28.90,False
+2026-05-05,Café Melitta Sabor da Fazenda Almofada 500g,31.80,False
+2026-05-05,Café da Feira 500g Extra Forte,24.50,False
+2026-05-05,Chocolate Hersheys Special 85g Dark Café e Crocante,10.99,False
+2026-05-05,Suplemento Alimentar Health Labs Cafeina Black C/60 Capsulas,45.90,False
+2026-05-05,Café Vo Olga Tradicional 500g Torrado/Moido,27.98,False
+2026-05-05,Jogo de Xicara Cafe Casa Tem 90ml C/5 R.14661,14.98,False
+2026-05-05,Café Evolutto Tradicional 500g,29.98,False
+2026-05-05,Capsula Café Três Corações de Paçoca C/10,19.98,False
+2026-05-05,Coador para Cafe Baianinha Ref.103,7.99,False
+2026-05-05,Coador para Cafe Baianinha Ref.107,11.49,False
+2026-05-05,Coador para Cafe Baianinha Permanente Ref.103,7.99,False
+2026-05-05,Café Nescafé Gold Sachê 40g Liofilzado,12.98,False
+2026-05-05,Cerveja Ouropretana Cafe Lager 500ml,17.98,False
+2026-05-05,Café com Leite Tres Capsula C/10 Pingado,19.98,False
+2026-05-05,Café Iguaçu Liofilizado Solúvel Gourmet Rf.50g,10.59,False
+2026-05-05,Café Tres Capsula Coado com 10 Gourmet,19.98,False
+2026-05-05,Café Iguacu Spray.Solúvel Tradicional Rf.50g,7.99,False
+2026-05-05,Café Iguaçu Aglom.Solúvel Classico Rf.50g,7.99,False
+2026-05-05,Café Italiano Vettori Torrado/Moido 250g,25.98,False
+2026-05-05,Café Iguacu Spray.Solúvel Rf.50g Extra Forte,7.99,False
+2026-05-05,Café Três Corações Portinari Dripp Cooffe 110g,25.90,False
+2026-05-05,Café Três Capsula Espresso Alex Atala Edção Limitada com 10 Unid.,19.98,False
+2026-05-05,Maquina Multibebidas Tres Modo,399.90,False
+2026-05-05,"Macarrão Nissin Lámen Omelete, Presunto e Queijo 85g",2.98,False
+2026-05-05,Macarrão Nissin Lámen Pao Na Chapa com Manteiga 85g,2.98,False
+2026-05-05,Café Tres Capsula Espresso Ameno 10 Unid,19.98,False
+2026-05-05,Cafe Italiano Vettori Capsula Nespresso C/10 Descafeinado,15.90,False
+2026-05-05,Café Tres Capsula Espresso com 10 Descaf,19.98,False
+2026-05-05,Cafe Italiano Vettori Capsula Dolce Gusto C/16 Blend Italiana,36.90,False
+2026-05-05,Cafe Italiano Vettori Capsula Dolce Gusto C/16 Blend Tradicional,36.90,False
+2026-05-05,Cafe Italiano Vettori Capsula Dolce Gusto C/16 Blend Descafeinado,36.90,False
+2026-05-05,Moedor de Café Mimo Style Manual Vidro/Inox R.Af20218,79.90,False
+2026-05-05,Mini Pao Sal Fp,14.98 kg,False
+2026-05-05,Pão de Sal,14.98 kg,False
+2026-05-05,Salgadinho Torcida Pão de Alho 100g,5.99,False
+2026-05-05,Salgadinho Torcida Pao de Alho 35g,2.39,False
+2026-05-05,Pao Chips Bauducco 90g,8.59,False
+2026-05-05,Pão Panneves Forma Tradicional 450g,7.98,False
+2026-05-05,Pao Seven Boys Forma 450g,7.49,False
+2026-05-05,Pao Vale do Sol Forma 400g,8.39,False
+2026-05-05,Pao Wick Bold D.Forno 500g 100 P.Cen.Int,15.99,False
+2026-05-05,"Pao Baldini Forma 400g 39,5 Por Cento Integral Uva Passa",11.59,False
+2026-05-05,Pao Vale do Sol Zero 3 Cereais 400g,11.98,False
+2026-05-05,Pao Visconti Forma 400g Trad,7.49,False
+2026-05-05,Pao Wick Bold D.Forno 500g Orig,14.99,False
+2026-05-05,Pao Wick Bold Forma 300g S/Glut.,23.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Uvas Passas,10.99,False
+2026-05-05,Pao Wick Bold Forma Integral 450g,13.90,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Zero,10.99,False
+2026-05-05,Pao Wick Bold Forma 300g S/Glut.Multig,23.99,False
+2026-05-05,Pão Bauducco Integral 390g,9.98,False
+2026-05-05,Pao Delicias do Trigo 100 P/Cento Integral Castanhas/Quinoa,15.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral 12 Graos Zero,10.99,False
+2026-05-05,Pão de Forma Delicias do Trigo 100% Integral Grãos e Castanha450g,15.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Banana/Aveia,10.99,False
+2026-05-05,Pao Delicias do Trigo Forma 380g Integral Australiano,10.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Original,10.99,False
+2026-05-05,Pão Bauducco 390g Tradicional,7.98,False
+2026-05-05,Pao Visconti Forma 400g Int,8.99,False
+2026-05-05,Pão Wick Bold S/Casca 400g,18.90,False
+2026-05-05,Pão Wick Bold 5 Zeros Quinoa/ Chia/ Linhaça 400g,10.99,False
+2026-05-05,Pão Wick Bold 5 Zeros Fonte de Fibras 400g,10.99,False
+2026-05-05,Pão Farid Forma Tradicional 400g,4.98,False
+2026-05-05,Pao Pullman Forma Artesano 500g Pao Na Chapa,16.99,False
+2026-05-05,Pao Baldini Forma 400g Tradicional,7.49,False
+2026-05-05,Pao Delicias do Trigo Forma Artesanal 450g Original,12.99,False
+2026-05-05,Pao Delicias do Trigo Forma Artesanal 450g Integral,12.99,False
+2026-05-05,Pao Delicias do Trigo Forma Artesanal 450g Castanha/Nozes,12.99,False
+2026-05-05,Pão Delicias do Trigo Forma S/Casca 400g,17.99,False
+2026-05-05,"Pão Baldini Forma 47,5% Integral 400g",10.99,False
+2026-05-05,Pao Baldini Forma Integral 400g,9.99,False
+2026-05-05,Pao Delicias do Trigo 380g Integral 7 Graos,10.99,False
+2026-05-05,Açúcar Cristal Alvinho 5kg,15.98,False
+2026-05-05,Açúcar Refinado União 1kg,5.48,False
+2026-05-05,Acucar Cristal 1k Delta,3.99,False
+2026-05-05,Lasanha Perdigao 1kg Bolon,25.90,False
+2026-05-05,Acucar Cristal 1k Uniao Org,8.98,False
+2026-05-05,Acucar Uniao 1k Premium,8.98,False
+2026-05-05,Açúcar Refinado Guarani 1kg,4.98,False
+2026-05-05,Açúcar Refinado União Doçúcar 1kg,6.48,False
+2026-05-05,Açúcar União Demerara 1kg,7.98,False
+2026-05-05,Batata Inglesa,8.98 kg,False
+2026-05-05,Batata Doce Roxa,2.98 kg,False
+2026-05-05,Batata Doce Branca,8.98 kg,False
+2026-05-05,Bifinho Quatree Snacks Palitus Cordeiro e Batata Doce 60g,5.49,False
+2026-05-05,Bebida Láctea Yopro 250ml 15 Protein Batata Doce,8.98,False
+2026-05-05,Bifinho Quatree Snacks Palitus Carne e Batata Doce 60g,5.49,False
+2026-05-05,Bifinho Quatree Snacks Palitus Cordeiro e Batata Doce 500g,35.90,False
+2026-05-05,Bifinho Quatree Snacks Palitus Carne e Batata Doce 500g,35.90,False
+2026-05-05,Bebida Lactea Itambe Whey Coco 250g,6.98,False
+2026-05-05,Papinha Papapa Organico 100g Maca/Batata Doce/Cenoura,12.99,False
+2026-05-05,Batata Doce Organica de Minas Bandeija 400g,9.98,False
+2026-05-05,Pao Batata Doce Artisan Foods 300g C/Frango,29.90,False
+2026-05-05,Cenoura Vermelha Fazenda Pinhal Bandeja 200g,4.99,False
+2026-05-05,Mistura para Bolo Vilma Cenoura 400g,4.98,False
+2026-05-05,Mistura Bolo Anchieta 400g Cenoura,4.39,False
+2026-05-05,Mistura Bolo Fleischmann 390g Cenoura Up,9.98,False
+2026-05-05,Mistura para Bolo S.Amalia 400g Cenoura,4.68,False
+2026-05-05,Oleo P/Cab.Ideal 100ml Cenoura,10.99,False
+2026-05-05,"Pâo Nutrella Semente de Abóbora, Linhaça e Cenoura 350g",17.90,False
+2026-05-05,Óleo Cabelo Farmax Cenoura 100ml,11.99,False
+2026-05-05,Mandioquinha Baroa Leve Alimentos Bandeja 500g,8.99,False
+2026-05-05,Iogurte Itambé Copo Laranja/ Cenoura/ Mel 170g,3.98,False
+2026-05-05,Polpa Fruta Demarchi 100g Cen/Lar/Beter.,3.39,False
+2026-05-05,Biscoito Nestle Nesfit 160g Lar/Cen,4.78,False
+2026-05-05,Papinha Papapa Organico 100g Maca/Batata Doce/Cenoura,12.99,False
+2026-05-05,Bolo Fabricação Própria Cenoura com Cobertura Ganache,32.90 kg,False
+2026-05-05,Pao Fp Cenoura,28.90 kg,False
+2026-05-05,Bolo Bauducco Cenoura com Chocolate 200g,9.99,False
+2026-05-05,Meu Menu Perdigão Lombo Ao Molho Oriental e Arroz com Cenoura 300g,10.99,False
+2026-05-05,Mistura Bolo Fleischmann 390g Cenoura,9.98,False
+2026-05-05,Tomate Italiano,12.98 kg,False
+2026-05-05,Pure Tomate Italiano Canpez 680g,19.98,False
+2026-05-05,Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Arrabiata 360g,29.90,False
+2026-05-05,Pure Tomate Italiano Canpez Passara Rústica 680g,19.98,False
+2026-05-05,Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Ricotta 260g,29.90,False
+2026-05-05,Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Berinjela 260g,29.90,False
+2026-05-05,Tomate Longa Vida,12.98 kg,False
+2026-05-05,Laranja Pera,2.98 kg,False
+2026-05-05,Alface Crespa Hortifolhas Unid,4.98,False
+2026-05-05,Alface Crespa Hidropônico Vicosa,5.38,False
+2026-05-05,Alface Crespa Bom Jardim Hidroponico,4.98,False
+2026-05-05,Alface Americana Hortifolhas Unid,5.98,False
+2026-05-05,Alface Roxa Hortifolhas Unidade,4.98,False
+2026-05-05,"Semente de Alface Isla Regina de Verao 1,9g",4.29,False
+2026-05-05,Alface Lisa Hortifolhas,4.98,False
+2026-05-05,Alface Hidrovictus Hidropônico Un,6.38,False
+2026-05-05,Alface Crespa Hid Hidrovictus Un,5.98,False
+2026-05-05,"Sem.Isla Alface Baba de Verao 2,2g",4.29,False
+2026-05-05,Banana da Terra Kg,9.98 kg,False
+2026-05-05,Banana Dacolonia Zero Açúcar 180g,17.90,False
+2026-05-05,Bebida Láctea Yopro 250ml 15 Protein Banana,6.97,False
+2026-05-05,Oléo Banana Ideal 30ml,7.59,False
+2026-05-05,Iogurte Nestle Ninho Maça e Banana 850g,16.98,False
+2026-05-05,Iogurte Verde Campo Lac Free Banana Maçã Mamão 500g,10.98,False
+2026-05-05,Iogurte Nestle Neston Maça e Banana 850g,15.90,False
+2026-05-05,Doce Banana Dacolônia C/Açai Zero 150g,18.98,False
+2026-05-05,Granola Natural Life Banana e Canela 1kg,38.99,False
+2026-05-05,Bebida Mista Rainha da Cana Banana 700ml,29.98,False
+2026-05-05,Iogurte Verde Campo Whey 11proteinas Banana e Canela 140g,8.99,False
+2026-05-05,Acai +Puro Acai com Banana 220ml,9.99,False
+2026-05-05,Farofa Yoki Caseirissima de Banana 200g,6.98,False
+2026-05-05,Iogurte Nestle Ninho Pouch Maca e Banana 100g,3.49,False
+2026-05-05,Iogurte Nestle Ninho 540g,7.98,False
+2026-05-05,Iogurte Itambe 510g Cereais,7.98,False
+2026-05-05,Biscoito Aymoré Cereal Mix 135g Banana/Canela,3.99,False
+2026-05-05,Biscoito Rancheiro Rosquinha 300g Banana/Canela,4.98,False
+2026-05-05,Iogurte Itambe 510g Kids,7.98,False
+2026-05-05,Bala de Gelatina Fini Bananas 80g,7.60,False
+2026-05-05,Biscoito Nestle Nesfit 160g Ban/Aveia/Canela,4.78,False
+2026-05-05,Cereal Nutry Aveia/Banana/Mel C/3 Und,6.49,False
+2026-05-05,Bebida Láctea Nestle Fast 280ml Neston,6.99,False
+2026-05-05,Iogurte Batavo Líquido Cereal 1150g,14.98,False
+2026-05-05,Iogurte Nestle Neston 510g Morango/Maca/Banana,9.98,False
+2026-05-05,Pao Delicias do Trigo 380g Integral Banana/Aveia,10.99,False
+2026-05-05,Iogurte Nestle Neston Liq.170g Maca/Ban,4.29,False
+2026-05-05,Sabonete Palmolive Sv.85g Kids,5.39,False
+2026-05-05,Iogurte Nestle Ninho 170g Mac/Ban,4.59,False
+2026-05-05,Iogurte Verde Campo Lac Free Banana/Mamão/Maça 170g,4.59,False
+2026-05-05,Neston 400g Vit.Mam/Ban/Maca,18.98,False
+2026-05-05,Snack Mucilon 35g Banana/Morango,5.99,False
+2026-05-05,Snack Mucilon 35g Banana/Laranja,5.99,False
+2026-05-05,Mariola Dacolonia 180g C/Goiaba,11.99,False
+2026-05-05,Condicionador Palmolive Kids Minions 350ml,19.90,False
+2026-05-05,Petit Suisse Itambé Banana/ Morango 320g,7.98,False
+2026-05-05,Biscoito Bauducco Amanteigado Banana/Canela 354g,9.59,False
+2026-05-05,Petit Suisse Elege Bob Esponja Morango/Banana 320g,7.59,False
+2026-05-05,Suco Le Verger 1l Banana/Abacaxi,18.98,False
+2026-05-05,Banana Famoso Cremoso de 30g,3.49,False
+2026-05-05,Banana Chips Aritana Cebola e Salsa 50g,4.99,False
+2026-05-05,Banana Famoso Cremoso Zero Açúcar de 30g,3.59,False
+2026-05-05,Petit Suisse Trevinho Morango e Banana 320g,7.48,False
+2026-05-05,Lixa P/Unha Luna Banana Acrigel,5.59,False
+2026-05-05,Biscoito Mabel Rosquinha Banana Canela 300g,5.59,False
+2026-05-05,Condicionador Mahair Banana 300ml,10.99,False
+2026-05-05,Creme Cabelo Mahair 250g Máscara Banana,11.99,False
+2026-05-05,Shampoo Mahair 300ml Banana,10.99,False
+2026-05-05,Gelatina Oetker Fini Banana 20g,2.39,False
+2026-05-05,Barra Nuts Kodilar S/Gluten Banana 25g,7.59,False
+2026-05-05,Petit Suisse Chambinho Maca e Banana 320g,8.99,False
+2026-05-05,Bananada Reserva de Minas 4000g Cremosa,9.98,False
+2026-05-05,Bananada Aye Zero com Ameixa 250g,12.98,False
+2026-05-05,Bananada Vovó Zero 270g,19.90,False
+2026-05-05,Banana Passa Banana Brasil 86g,9.99,False
+2026-05-05,Banana Chips Aritana Tradicional 50g,4.99,False
+2026-05-05,Gelatina Oetker 20g Açaí com Banana,1.95,False
+2026-05-05,Cereal Joy Nuts Zero Banana/Damasco C/2 50g,9.99,False
+2026-05-05,Rolinho Primavera Long Way Banana e Chocolate 225g,26.90,False
+2026-05-05,Shampoo 325ml + Condicionador 200ml Skala Banana,14.99,False

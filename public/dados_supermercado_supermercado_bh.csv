@@ -1,0 +1,103 @@
+data,produto,preço,is_promoção
+2026-04-29,Arroz Prato Fino 5kg,24.80,False
+2026-04-29,Arroz Agulhinha 5kg (Marca A - 0),29.33,True
+2026-04-29,Feijão Carioca 1kg (Premium - 1),13.05,False
+2026-04-29,Açúcar Refinado 1kg (Marca A - 2),39.27,False
+2026-04-29,Café Torrado 500g (Premium - 3),17.86,False
+2026-04-29,Óleo de Soja 900ml (Marca A - 4),14.7,False
+2026-04-29,Leite Integral 1L (Marca B - 5),5.92,True
+2026-04-29,Macarrão Espaguete 500g (Marca B - 6),14.49,True
+2026-04-29,Molho de Tomate 340g (Econômica - 7),31.52,False
+2026-04-29,Sal Refinado 1kg (Premium - 8),34.37,True
+2026-04-29,Farinha de Trigo 1kg (Econômica - 9),38.26,False
+2026-04-29,Manteiga com Sal 200g (Econômica - 10),44.48,False
+2026-04-29,Ovos Brancos 12un (Marca B - 11),30.5,True
+2026-04-29,Pão de Forma 500g (Premium - 12),39.84,True
+2026-04-29,Frango Inteiro kg (Marca B - 13),27.28,False
+2026-04-29,Carne Moída Patinho kg (Marca B - 14),29.09,False
+2026-04-29,Detergente Líquido 500ml (Premium - 15),20.23,True
+2026-04-29,Sabão em Pó 1kg (Marca B - 16),39.91,True
+2026-04-29,Papel Higiênico 12un (Marca B - 17),24.23,False
+2026-04-29,Creme Dental 90g (Marca A - 18),16.95,False
+2026-04-29,Shampoo 400ml (Econômica - 19),5.21,True
+2026-04-29,Sabonete 90g (Marca A - 20),12.0,True
+2026-04-29,Banana Prata kg (Marca B - 21),37.44,True
+2026-04-29,Maçã Gala kg (Premium - 22),44.6,False
+2026-04-29,Cebola kg (Marca B - 23),13.25,False
+2026-04-29,Alho 200g (Marca A - 24),11.9,False
+2026-04-29,Batata Inglesa kg (Marca B - 25),26.9,True
+2026-04-29,Tomate Italiano kg (Marca A - 26),20.17,True
+2026-04-29,Biscoito Recheado 130g (Marca A - 27),36.12,True
+2026-04-29,Suco de Uva 1L (Econômica - 28),7.26,True
+2026-04-29,Cerveja Lata 350ml (Econômica - 29),26.43,True
+2026-04-29,Arroz Agulhinha 5kg (Marca A - 30),45.53,False
+2026-04-29,Feijão Carioca 1kg (Marca A - 31),21.95,False
+2026-04-29,Açúcar Refinado 1kg (Marca B - 32),29.28,False
+2026-04-29,Café Torrado 500g (Marca A - 33),42.39,False
+2026-04-29,Óleo de Soja 900ml (Econômica - 34),30.22,False
+2026-04-29,Leite Integral 1L (Marca A - 35),29.87,False
+2026-04-29,Macarrão Espaguete 500g (Marca B - 36),14.17,True
+2026-04-29,Molho de Tomate 340g (Econômica - 37),39.36,True
+2026-04-29,Sal Refinado 1kg (Econômica - 38),35.96,False
+2026-04-29,Farinha de Trigo 1kg (Econômica - 39),14.06,True
+2026-04-29,Manteiga com Sal 200g (Marca A - 40),33.76,True
+2026-04-29,Ovos Brancos 12un (Premium - 41),32.02,False
+2026-04-29,Pão de Forma 500g (Marca A - 42),20.41,False
+2026-04-29,Frango Inteiro kg (Marca B - 43),35.22,True
+2026-04-29,Carne Moída Patinho kg (Marca A - 44),38.25,False
+2026-04-29,Detergente Líquido 500ml (Econômica - 45),25.23,True
+2026-04-29,Sabão em Pó 1kg (Marca A - 46),35.11,True
+2026-04-29,Papel Higiênico 12un (Premium - 47),27.53,True
+2026-04-29,Creme Dental 90g (Marca B - 48),10.71,True
+2026-04-29,Shampoo 400ml (Econômica - 49),39.79,True
+2026-04-29,Sabonete 90g (Premium - 50),31.13,True
+2026-04-29,Banana Prata kg (Premium - 51),17.51,True
+2026-04-29,Maçã Gala kg (Econômica - 52),12.59,True
+2026-04-29,Cebola kg (Econômica - 53),21.96,True
+2026-04-29,Alho 200g (Marca A - 54),23.94,True
+2026-04-29,Batata Inglesa kg (Premium - 55),46.15,False
+2026-04-29,Tomate Italiano kg (Marca B - 56),16.22,False
+2026-04-29,Biscoito Recheado 130g (Marca A - 57),32.15,False
+2026-04-29,Suco de Uva 1L (Premium - 58),25.37,True
+2026-04-29,Cerveja Lata 350ml (Marca B - 59),34.54,True
+2026-04-29,Arroz Agulhinha 5kg (Premium - 60),34.45,False
+2026-04-29,Feijão Carioca 1kg (Marca A - 61),27.97,False
+2026-04-29,Açúcar Refinado 1kg (Premium - 62),42.85,False
+2026-04-29,Café Torrado 500g (Marca B - 63),20.72,False
+2026-04-29,Óleo de Soja 900ml (Marca B - 64),24.6,True
+2026-04-29,Leite Integral 1L (Econômica - 65),24.67,False
+2026-04-29,Macarrão Espaguete 500g (Premium - 66),32.28,False
+2026-04-29,Molho de Tomate 340g (Econômica - 67),20.89,True
+2026-04-29,Sal Refinado 1kg (Econômica - 68),31.7,True
+2026-04-29,Farinha de Trigo 1kg (Econômica - 69),35.62,True
+2026-04-29,Manteiga com Sal 200g (Premium - 70),9.63,False
+2026-04-29,Ovos Brancos 12un (Marca A - 71),17.45,False
+2026-04-29,Pão de Forma 500g (Marca A - 72),42.57,False
+2026-04-29,Frango Inteiro kg (Marca B - 73),36.12,False
+2026-04-29,Carne Moída Patinho kg (Marca B - 74),10.27,True
+2026-04-29,Detergente Líquido 500ml (Premium - 75),11.35,True
+2026-04-29,Sabão em Pó 1kg (Marca B - 76),24.9,True
+2026-04-29,Papel Higiênico 12un (Econômica - 77),15.44,False
+2026-04-29,Creme Dental 90g (Marca A - 78),44.43,False
+2026-04-29,Shampoo 400ml (Marca B - 79),9.53,True
+2026-04-29,Sabonete 90g (Marca A - 80),22.32,False
+2026-04-29,Banana Prata kg (Marca A - 81),23.47,True
+2026-04-29,Maçã Gala kg (Marca B - 82),36.96,False
+2026-04-29,Cebola kg (Premium - 83),22.09,False
+2026-04-29,Alho 200g (Marca B - 84),31.3,True
+2026-04-29,Batata Inglesa kg (Econômica - 85),13.05,False
+2026-04-29,Tomate Italiano kg (Marca A - 86),22.73,False
+2026-04-29,Biscoito Recheado 130g (Marca A - 87),34.0,True
+2026-04-29,Suco de Uva 1L (Premium - 88),19.4,True
+2026-04-29,Cerveja Lata 350ml (Econômica - 89),46.42,False
+2026-04-29,Arroz Agulhinha 5kg (Marca B - 90),11.63,False
+2026-04-29,Feijão Carioca 1kg (Marca A - 91),20.87,False
+2026-04-29,Açúcar Refinado 1kg (Econômica - 92),33.64,True
+2026-04-29,Café Torrado 500g (Marca A - 93),20.97,True
+2026-04-29,Óleo de Soja 900ml (Premium - 94),17.45,False
+2026-04-29,Leite Integral 1L (Marca B - 95),36.4,True
+2026-04-29,Macarrão Espaguete 500g (Marca B - 96),10.98,True
+2026-04-29,Molho de Tomate 340g (Premium - 97),31.95,True
+2026-04-29,Sal Refinado 1kg (Marca A - 98),27.6,False
+2026-04-29,Farinha de Trigo 1kg (Premium - 99),12.0,True
+2026-04-29,Bisteca Suína 1kg,13.8,True

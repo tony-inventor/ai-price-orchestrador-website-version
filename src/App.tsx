@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { 
   FileBox, 
   Plus, 
@@ -59,9 +59,9 @@ const parseCSV = (text: string): Product[] => {
 
 export default function App() {
   const [stores, setStores] = useState<Store[]>([
-    { id: 1, name: 'Supermercado 1', filename: '', products: null, status: 'idle' },
-    { id: 2, name: 'Supermercado 2', filename: '', products: null, status: 'idle' },
-    { id: 3, name: 'Supermercado 3', filename: '', products: null, status: 'idle' },
+    { id: 1, name: 'EPA Supermercados', filename: 'dados_epa.csv', products: null, status: 'idle', enabled: true },
+    { id: 2, name: 'Farid Supermercados', filename: 'dados_farid.csv', products: null, status: 'idle', enabled: true },
+    { id: 3, name: 'Supermercados BH', filename: 'dados_bh.csv', products: null, status: 'idle', enabled: true },
   ]);
   const [shoppingList, setShoppingList] = useState<ListItem[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -77,6 +77,15 @@ export default function App() {
   } | null>(null);
 
   const [isCalculated, setIsCalculated] = useState(false);
+
+  // Auto-load on mount
+  useEffect(() => {
+    stores.forEach(store => {
+      if (store.filename && store.status === 'idle') {
+        loadStoreCSV(store.id, store.filename, store.name);
+      }
+    });
+  }, []);
 
   // Load CSV from URL
   const loadStoreCSV = async (storeId: number, file: string, label: string) => {
@@ -111,7 +120,7 @@ export default function App() {
   // Autocomplete logic
   const allProducts = useMemo(() => {
     const productsMap = new Map<string, { nome: string; preco: number; storeId: number; isPromo: boolean }>();
-    stores.forEach(store => {
+    stores.filter(s => s.enabled).forEach(store => {
       if (store.products) {
         store.products.forEach(p => {
           const key = p.produto.toLowerCase();
@@ -149,7 +158,7 @@ export default function App() {
 
   // Optimization Logic
   const optimize = useCallback(() => {
-    const activeStores = stores.filter(s => s.status === 'loaded');
+    const activeStores = stores.filter(s => s.status === 'loaded' && s.enabled);
     if (activeStores.length === 0 || shoppingList.length === 0) return;
 
     const found: OptimizationResult[] = [];
@@ -295,69 +304,96 @@ export default function App() {
           {/* Left Column: Stores and List */}
           <div className="lg:col-span-12 xl:col-span-4 space-y-10">
             {/* Stores Panel */}
-            <section className="bg-[#0F0F0F] border border-white/10 p-8 shadow-2xl relative overflow-hidden">
-               <div className="absolute -top-4 -right-4 text-[#C5A059]/5 rotate-12">
+            <section id="store-panel" className="bg-[#0F0F0F] border border-white/10 p-8 shadow-2xl relative overflow-hidden group/panel">
+               <div className="absolute -top-4 -right-4 text-[#C5A059]/5 rotate-12 group-hover/panel:scale-110 transition-transform duration-700">
                  <StoreIcon className="w-24 h-24" />
                </div>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold">
-                  Data Repositories
-                </h2>
+              <div className="flex items-center justify-between mb-10 relative z-10">
+                <div>
+                  <h2 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-1">
+                    Market Network
+                  </h2>
+                  <div className="h-0.5 w-8 bg-[#C5A059]/30" />
+                </div>
                 <button 
                   onClick={loadDemo}
-                  className="text-[10px] font-bold text-[#C5A059] hover:text-white transition-colors uppercase tracking-[0.1em] border-b border-[#C5A059]/30"
+                  className="text-[10px] font-bold text-[#C5A059] hover:text-white transition-all uppercase tracking-[0.2em] border-b border-[#C5A059]/30 hover:border-white px-1"
                 >
-                  Load Demo
+                  Reset Demo
                 </button>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-6 relative z-10">
                 {stores.map(store => (
                   <div 
                     key={store.id}
                     className={cn(
-                      "flex items-center justify-between p-5 border transition-all duration-300",
-                      store.status === 'loaded' 
-                        ? "bg-[#C5A059]/5 border-[#C5A059]/30" 
-                        : "bg-black/20 border-white/5 hover:border-white/10 cursor-pointer"
+                      "flex flex-col p-6 border transition-all duration-500 relative group overflow-hidden",
+                      store.status === 'loaded' && store.enabled
+                        ? "bg-[#C5A059]/[0.03] border-[#C5A059]/20" 
+                        : "bg-black/40 border-white/5 opacity-40 grayscale"
                     )}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={cn(
-                        "w-1 h-3",
-                        store.status === 'loaded' ? "bg-[#C5A059]" : "bg-white/10"
-                      )} />
-                      <div>
-                        <p className={cn("text-sm font-semibold tracking-tight", store.status === 'loaded' ? "text-white" : "text-white/40")}>
+                    {/* Background indicator */}
+                    <div className={cn(
+                      "absolute inset-y-0 left-0 w-1 transition-all duration-500",
+                      store.status === 'loaded' && store.enabled ? "bg-[#C5A059]" : "bg-white/5"
+                    )} />
+
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex flex-col">
+                        <p className={cn(
+                          "text-base font-serif italic tracking-tight transition-colors duration-500",
+                          store.status === 'loaded' && store.enabled ? "text-white" : "text-white/40"
+                        )}>
                           {store.name}
                         </p>
-                        <p className="text-[9px] font-mono opacity-20 mt-1 uppercase tracking-tighter">
-                          {store.status === 'loaded' ? `${store.products?.length} items recognized` : 'Awaiting data sync'}
+                      </div>
+                      
+                      {/* Toggle Switch */}
+                      <button 
+                        onClick={() => setStores(prev => prev.map(s => s.id === store.id ? { ...s, enabled: !s.enabled } : s))}
+                        className={cn(
+                          "relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 focus:outline-none ring-1 ring-white/10",
+                          store.enabled ? "bg-[#C5A059]" : "bg-white/5"
+                        )}
+                      >
+                        <span
+                          className={cn(
+                            "inline-block h-4 w-4 transform rounded-full bg-black transition-transform duration-300 shadow-xl",
+                            store.enabled ? "translate-x-6" : "translate-x-1"
+                          )}
+                        />
+                      </button>
+                    </div>
+
+                    <div className="flex items-center justify-between mt-auto">
+                      <div className="flex items-center gap-2">
+                        <div className={cn(
+                          "w-1 h-1 rounded-full animate-pulse",
+                          store.status === 'loaded' ? "bg-emerald-500" : "bg-white/20"
+                        )} />
+                        <p className="text-[9px] font-mono opacity-30 uppercase tracking-[0.15em]">
+                          {store.status === 'loaded' ? `${store.products?.length} items synced` : 'Sync Pending'}
                         </p>
                       </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                       {store.status === 'loaded' ? (
-                        <button 
-                          onClick={(e) => { e.stopPropagation(); removeStore(store.id); }}
-                          className="text-white/20 hover:text-red-500 transition-colors"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      ) : (
-                        <div className="flex gap-1 overflow-hidden">
-                          {KNOWN_CSVS.filter(csv => !stores.some(s => s.filename === csv.file)).slice(0, 1).map(csv => (
-                            <button
-                              key={csv.file}
-                              onClick={() => loadStoreCSV(store.id, csv.file, csv.label)}
-                              className="text-[9px] px-2 py-1 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-white/50"
-                            >
-                              Sync {csv.label.split(' ')[0]}
-                            </button>
-                          ))}
-                        </div>
-                      )}
+                      
+                      <div className="flex items-center gap-2">
+                        {store.status === 'idle' && (
+                          <button
+                            onClick={() => loadStoreCSV(store.id, store.filename, store.name)}
+                            className="text-[9px] px-3 py-1 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-white/50"
+                          >
+                            Execute Sync
+                          </button>
+                        )}
+                        {store.status === 'loading' && (
+                          <span className="text-[9px] font-bold text-[#C5A059] animate-pulse uppercase tracking-[0.2em]">Processing...</span>
+                        )}
+                        {store.status === 'loaded' && (
+                           <span className="text-[9px] font-bold text-emerald-500/60 uppercase tracking-[0.2em] font-mono">Live</span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -392,7 +428,7 @@ export default function App() {
                         }
                       }}
                       placeholder="Add item reference..."
-                      className="w-full bg-black/40 border border-white/10 py-4 pl-12 pr-4 focus:outline-none focus:border-[#C5A059]/40 text-sm font-mono transition-all placeholder:text-white/10"
+                      className="w-full bg-black/40 border border-white/10 py-4 pl-12 pr-4 focus:outline-none focus:border-[#C5A059]/40 text-base sm:text-sm font-mono transition-all placeholder:text-white/10"
                     />
                   </div>
                   <button 
@@ -417,17 +453,17 @@ export default function App() {
                           key={`${p.nome}-${i}`}
                           onClick={() => addItem(p.nome)}
                           className={cn(
-                            "group flex items-center justify-between p-4 cursor-pointer border-b border-white/5 last:border-0 transition-colors",
+                            "group flex items-center justify-between p-5 sm:p-4 cursor-pointer border-b border-white/5 last:border-0 transition-colors",
                             acIndex === i ? "bg-[#C5A059]/10" : "hover:bg-white/5"
                           )}
                         >
                           <div className="flex flex-col">
-                            <span className="text-sm font-medium text-white/80">{p.nome}</span>
-                            <span className="text-[9px] text-white/20 uppercase tracking-widest">{stores.find(s => s.id === p.storeId)?.name}</span>
+                            <span className="text-base sm:text-sm font-medium text-white/80">{p.nome}</span>
+                            <span className="text-[10px] sm:text-[9px] text-white/20 uppercase tracking-widest">{stores.find(s => s.id === p.storeId)?.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                             <span className="text-xs font-mono font-bold text-[#C5A059]">R$ {p.preco.toFixed(2)}</span>
-                             {p.isPromo && <span className="text-[9px] border border-[#C5A059]/30 text-[#C5A059] px-2 py-0.5 font-bold uppercase tracking-tighter">Promo</span>}
+                             <span className="text-sm sm:text-xs font-mono font-bold text-[#C5A059]">R$ {p.preco.toFixed(2)}</span>
+                             {p.isPromo && <span className="text-[10px] sm:text-[9px] border border-[#C5A059]/30 text-[#C5A059] px-2 py-1 sm:py-0.5 font-bold uppercase tracking-tighter">Promo</span>}
                           </div>
                         </div>
                       ))}
@@ -443,14 +479,14 @@ export default function App() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     key={item.id}
-                    className="group flex items-center justify-between p-4 border-b border-white/5 hover:bg-white/[0.02] transition-all"
+                    className="group flex items-center justify-between p-5 sm:p-4 border-b border-white/5 hover:bg-white/[0.02] transition-all"
                   >
-                    <span className="text-sm text-white/60 group-hover:text-white/90 transition-colors">{item.name}</span>
+                    <span className="text-base sm:text-sm text-white/60 group-hover:text-white/90 transition-colors">{item.name}</span>
                     <button 
                       onClick={() => removeItem(item.id)}
-                      className="p-1.5 text-white/10 hover:text-red-400 transition-all"
+                      className="p-3 sm:p-1.5 text-white/20 hover:text-red-400 transition-all active:scale-90"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-5 h-5 sm:w-4 sm:h-4" />
                     </button>
                   </motion.div>
                 ))}
@@ -469,7 +505,7 @@ export default function App() {
             </section>
             
             <button 
-              disabled={stores.filter(s => s.status === 'loaded').length < 2 || shoppingList.length === 0}
+              disabled={stores.filter(s => s.status === 'loaded' && s.enabled).length < 2 || shoppingList.length === 0}
               onClick={optimize}
               className="w-full py-6 bg-[#C5A059] text-black hover:bg-[#D5B069] disabled:bg-white/5 disabled:text-white/10 font-bold uppercase tracking-[0.4em] text-xs transition-all flex items-center justify-center gap-3 active:scale-[0.98] shadow-2xl"
             >

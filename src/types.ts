@@ -11,6 +11,7 @@ export interface Store {
   filename: string;
   products: Product[] | null;
   status: 'idle' | 'loading' | 'loaded' | 'error';
+  enabled: boolean;
 }
 
 export interface ListItem {

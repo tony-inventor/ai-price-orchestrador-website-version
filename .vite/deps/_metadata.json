@@ -1,0 +1,82 @@
+{
+  "hash": "7dfee8d1",
+  "configHash": "4a464b28",
+  "lockfileHash": "6f81d5f3",
+  "browserHash": "36286913",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "8b3c0951",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "e64f670c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "16780e0d",
+      "needsInterop": true
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "c535f0a9",
+      "needsInterop": false
+    },
+    "motion/react": {
+      "src": "../../node_modules/motion/dist/es/react.mjs",
+      "file": "motion_react.js",
+      "fileHash": "72be9a06",
+      "needsInterop": false
+    },
+    "jspdf": {
+      "src": "../../node_modules/jspdf/dist/jspdf.es.min.js",
+      "file": "jspdf.js",
+      "fileHash": "321971b1",
+      "needsInterop": false
+    },
+    "jspdf-autotable": {
+      "src": "../../node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.mjs",
+      "file": "jspdf-autotable.js",
+      "fileHash": "3fb87947",
+      "needsInterop": false
+    },
+    "clsx": {
+      "src": "../../node_modules/clsx/dist/clsx.mjs",
+      "file": "clsx.js",
+      "fileHash": "e25984b5",
+      "needsInterop": false
+    },
+    "tailwind-merge": {
+      "src": "../../node_modules/tailwind-merge/dist/bundle-mjs.mjs",
+      "file": "tailwind-merge.js",
+      "fileHash": "0c84cfc9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "html2canvas.esm-BJYJRQTM": {
+      "file": "html2canvas__esm-BJYJRQTM.js"
+    },
+    "purify.es-O6JRHCWT": {
+      "file": "purify__es-O6JRHCWT.js"
+    },
+    "index.es-B4HBUYEZ": {
+      "file": "index__es-B4HBUYEZ.js"
+    },
+    "chunk-SITVF2AJ": {
+      "file": "chunk-SITVF2AJ.js"
+    },
+    "chunk-PDNHVAOE": {
+      "file": "chunk-PDNHVAOE.js"
+    },
+    "chunk-2TUXWMP5": {
+      "file": "chunk-2TUXWMP5.js"
+    }
+  }
+}
