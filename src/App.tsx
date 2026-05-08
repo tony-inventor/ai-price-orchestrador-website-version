@@ -280,420 +280,271 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#E0E0E0] font-sans selection:bg-[#C5A059]/30">
-      {/* Refined background accent */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/10 to-transparent" />
-      </div>
-
-      <main className="relative max-w-6xl mx-auto px-6 py-16">
-        {/* Header */}
-        <header className="mb-16 border-l-2 border-[#C5A059] pl-6">
+    <div className="min-h-screen bg-[#020617] text-slate-100 font-sans selection:bg-cyan-500/30">
+      <main className="max-w-5xl mx-auto px-4 py-8 md:py-12 space-y-6">
+        {/* Header Block */}
+        <header className="bg-slate-900/40 border border-slate-800/50 rounded-3xl p-8 md:p-12 text-center shadow-2xl backdrop-blur-sm">
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-5xl font-serif italic tracking-tight text-[#C5A059] mb-2 uppercase">
-              AI Price Orchestrator
+            <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-white">
+              Planejador de compras otimizado
             </h1>
-            <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold">Optimized Shopping Intelligence</p>
+            <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto font-medium">
+              Monte sua lista, carregue os CSVs e veja o roteiro de compras mais barato distribuído por supermercado.
+            </p>
           </motion.div>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Stores and List */}
-          <div className="lg:col-span-12 xl:col-span-4 space-y-10">
-            {/* Stores Panel */}
-            <section id="store-panel" className="bg-[#0F0F0F] border border-white/10 p-8 shadow-2xl relative overflow-hidden group/panel">
-               <div className="absolute -top-4 -right-4 text-[#C5A059]/5 rotate-12 group-hover/panel:scale-110 transition-transform duration-700">
-                 <StoreIcon className="w-24 h-24" />
-               </div>
-              <div className="flex items-center justify-between mb-10 relative z-10">
-                <div>
-                  <h2 className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-1">
-                    Market Network
-                  </h2>
-                  <div className="h-0.5 w-8 bg-[#C5A059]/30" />
-                </div>
-                <button 
-                  onClick={loadDemo}
-                  className="text-[10px] font-bold text-[#C5A059] hover:text-white transition-all uppercase tracking-[0.2em] border-b border-[#C5A059]/30 hover:border-white px-1"
-                >
-                  Reset Demo
-                </button>
-              </div>
-              
-              <div className="space-y-6 relative z-10">
-                {stores.map(store => (
-                  <div 
-                    key={store.id}
-                    className={cn(
-                      "flex flex-col p-6 border transition-all duration-500 relative group overflow-hidden",
-                      store.status === 'loaded' && store.enabled
-                        ? "bg-[#C5A059]/[0.03] border-[#C5A059]/20" 
-                        : "bg-red-500/[0.02] border-red-500/10"
-                    )}
-                  >
-                    {/* Background indicator */}
-                    <div className={cn(
-                      "absolute inset-y-0 left-0 w-1 transition-all duration-500",
-                      store.status === 'loaded' && store.enabled ? "bg-[#C5A059]" : "bg-red-500/30"
-                    )} />
-
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex flex-col">
-                        <p className={cn(
-                          "text-base font-serif italic tracking-tight transition-colors duration-500",
-                          store.status === 'loaded' && store.enabled ? "text-white" : "text-white/70"
-                        )}>
-                          {store.name}
-                        </p>
-                      </div>
-                      
-                      {/* Toggle Switch */}
-                      <button 
-                        onClick={() => setStores(prev => prev.map(s => s.id === store.id ? { ...s, enabled: !s.enabled } : s))}
-                        className={cn(
-                          "relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 focus:outline-none ring-1",
-                          store.enabled ? "bg-[#C5A059] ring-white/10" : "bg-red-500/20 ring-red-500/30"
-                        )}
-                      >
-                        <span
-                          className={cn(
-                            "inline-block h-4 w-4 transform rounded-full bg-black transition-transform duration-300 shadow-xl",
-                            store.enabled ? "translate-x-6" : "translate-x-1"
-                          )}
-                        />
-                      </button>
-                    </div>
-
-                    <div className="flex items-center justify-between mt-auto">
-                      <div className="flex items-center gap-2">
-                        <div className={cn(
-                          "w-1 h-1 rounded-full animate-pulse",
-                          store.status === 'loaded' ? "bg-emerald-500" : "bg-white/20"
-                        )} />
-                        <p className="text-[9px] font-mono opacity-60 uppercase tracking-[0.15em]">
-                          {store.status === 'loaded' ? `${store.products?.length} items synced` : 'Sync Pending'}
-                        </p>
-                      </div>
-                      
-                      <div className="flex items-center gap-2">
-                        {store.status === 'idle' && (
-                          <button
-                            onClick={() => loadStoreCSV(store.id, store.filename, store.name)}
-                            className="text-[9px] px-3 py-1 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-white/50"
-                          >
-                            Execute Sync
-                          </button>
-                        )}
-                        {store.status === 'loading' && (
-                          <span className="text-[9px] font-bold text-[#C5A059] animate-pulse uppercase tracking-[0.2em]">Processing...</span>
-                        )}
-                        {store.status === 'loaded' && (
-                           <span className="text-[9px] font-bold text-emerald-500/60 uppercase tracking-[0.2em] font-mono">Live</span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Shopping List Panel */}
-            <section className="bg-[#0F0F0F] border border-white/10 p-8 shadow-2xl">
-              <h2 className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-8">
-                Shopping Registry
-              </h2>
-              
-              <div className="relative mb-8">
-                <div className="flex gap-3">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
-                    <input 
-                      type="text"
-                      value={inputValue}
-                      onChange={(e) => setInputValue(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          if (acIndex >= 0 && suggestions[acIndex]) {
-                            addItem(suggestions[acIndex].nome);
-                          } else {
-                            addItem(inputValue);
-                          }
-                        } else if (e.key === 'ArrowDown') {
-                          setAcIndex(prev => Math.min(prev + 1, suggestions.length - 1));
-                        } else if (e.key === 'ArrowUp') {
-                          setAcIndex(prev => Math.max(prev - 1, -1));
-                        }
-                      }}
-                      placeholder="Add item reference..."
-                      className="w-full bg-black/40 border border-white/10 py-4 pl-12 pr-4 focus:outline-none focus:border-[#C5A059]/40 text-base sm:text-sm font-mono transition-all placeholder:text-white/10"
-                    />
-                  </div>
-                  <button 
-                    onClick={() => addItem(inputValue)}
-                    className="p-4 bg-[#C5A059] hover:bg-[#D5B069] transition-all active:scale-95"
-                  >
-                    <Plus className="w-5 h-5 text-black" />
-                  </button>
-                </div>
-
-                {/* Autocomplete */}
-                <AnimatePresence>
-                  {suggestions.length > 0 && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-[#141414] border border-white/20 shadow-2xl z-50 overflow-hidden"
-                    >
-                      {suggestions.map((p, i) => (
-                        <div 
-                          key={`${p.nome}-${i}`}
-                          onClick={() => addItem(p.nome)}
-                          className={cn(
-                            "group flex items-center justify-between p-5 sm:p-4 cursor-pointer border-b border-white/5 last:border-0 transition-colors",
-                            acIndex === i ? "bg-[#C5A059]/10" : "hover:bg-white/5"
-                          )}
-                        >
-                          <div className="flex flex-col">
-                            <span className="text-base sm:text-sm font-medium text-white/80">{p.nome}</span>
-                            <span className="text-[10px] sm:text-[9px] text-white/20 uppercase tracking-widest">{stores.find(s => s.id === p.storeId)?.name}</span>
-                          </div>
-                          <div className="flex items-center gap-3">
-                             <span className="text-sm sm:text-xs font-mono font-bold text-[#C5A059]">R$ {p.preco.toFixed(2)}</span>
-                             {p.isPromo && <span className="text-[10px] sm:text-[9px] border border-[#C5A059]/30 text-[#C5A059] px-2 py-1 sm:py-0.5 font-bold uppercase tracking-tighter">Promo</span>}
-                          </div>
-                        </div>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              <div className="space-y-1 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
-                {shoppingList.map((item) => (
-                  <motion.div 
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    key={item.id}
-                    className="group flex items-center justify-between p-5 sm:p-4 border-b border-white/5 hover:bg-white/[0.02] transition-all"
-                  >
-                    <span className="text-base sm:text-sm text-white/60 group-hover:text-white/90 transition-colors">{item.name}</span>
-                    <button 
-                      onClick={() => removeItem(item.id)}
-                      className="p-3 sm:p-1.5 text-white/20 hover:text-red-400 transition-all active:scale-90"
-                    >
-                      <Trash2 className="w-5 h-5 sm:w-4 sm:h-4" />
-                    </button>
-                  </motion.div>
-                ))}
-                {shoppingList.length === 0 && (
-                  <div className="py-20 text-center">
-                    <ShoppingBag className="w-10 h-10 text-white/5 mx-auto mb-4" />
-                    <p className="text-white/20 text-xs uppercase tracking-widest font-bold">List Empty</p>
-                  </div>
-                )}
-              </div>
-              
-              <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between text-[10px] text-white/20 uppercase tracking-[0.2em] font-bold">
-                <span>Registry Counter</span>
-                <span className="text-[#C5A059] font-mono">{shoppingList.length}</span>
-              </div>
-            </section>
-            
+        {/* Stores Panel */}
+        <section className="bg-slate-900/40 border border-slate-800/50 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xs font-black text-cyan-400 uppercase tracking-[0.2em]">
+              Supermercados
+            </h2>
             <button 
-              disabled={stores.filter(s => s.status === 'loaded' && s.enabled).length < 2 || shoppingList.length === 0}
-              onClick={optimize}
-              className="w-full py-6 bg-[#C5A059] text-black hover:bg-[#D5B069] disabled:bg-white/5 disabled:text-white/10 font-bold uppercase tracking-[0.4em] text-xs transition-all flex items-center justify-center gap-3 active:scale-[0.98] shadow-2xl"
+              onClick={loadDemo}
+              className="text-[10px] font-black text-slate-400 hover:text-white transition-all uppercase tracking-[0.2em] border-b border-white/10 hover:border-white px-1"
             >
-              <Calculator className="w-4 h-4" />
-              <span>Execute Orchestration</span>
+              Usar Demo
             </button>
           </div>
-
-          {/* Right Column: Results */}
-          <div className="lg:col-span-12 xl:col-span-8">
-            <AnimatePresence mode="wait">
-              {isCalculated && results ? (
-                <motion.div 
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  key="results"
-                  className="space-y-12"
-                >
-                  {/* Summary Metrics */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-[#0F0F0F] border border-white/10 p-8 shadow-xl">
-                       <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em] mb-4">Total Optimized</p>
-                       <p className="text-4xl font-serif italic">R$ {results.totalOtimizado.toFixed(2)}</p>
-                    </div>
-                    <div className="bg-[#0F0F0F] border border-white/10 p-8 shadow-xl relative overflow-hidden">
-                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#C5A059]/5 blur-3xl rounded-full" />
-                       <p className="text-[10px] text-[#C5A059] font-bold uppercase tracking-[0.2em] mb-4">Surplus Savored</p>
-                       <div className="flex items-baseline gap-3">
-                         <p className="text-4xl font-serif italic text-[#C5A059]">R$ {results.economiaTotal.toFixed(2)}</p>
-                         <span className="text-xs font-mono text-white/20">({results.economiaPct.toFixed(1)}%)</span>
-                       </div>
-                    </div>
-                    <div className="bg-[#0F0F0F] border border-white/10 p-8 shadow-xl">
-                       <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em] mb-4">Active Nodes</p>
-                       <p className="text-4xl font-serif italic">{results.summaries.length}</p>
-                    </div>
-                  </div>
-
-                  {/* Store Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {results.summaries.map((summary, idx) => {
-                      const store = stores.find(s => s.id === summary.storeId);
-                      return (
-                        <motion.div 
-                          key={summary.storeId}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="bg-[#0F0F0F] border border-white/10 shadow-2xl"
-                        >
-                          <div className="p-8 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
-                            <div>
-                              <h3 className="font-serif text-xl italic text-white/90">{store?.name}</h3>
-                              <p className="text-[9px] text-white/20 uppercase tracking-[0.3em] mt-1 font-bold">{summary.items.length} units audited</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-2xl font-mono font-bold text-[#C5A059]">R$ {summary.total.toFixed(2)}</p>
-                            </div>
-                          </div>
-                          <div className="p-6 space-y-4 max-h-[350px] overflow-y-auto custom-scrollbar">
-                            {summary.items.map((item, i) => (
-                              <div key={i} className="flex justify-between items-center text-xs group">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-0.5 h-3 bg-[#C5A059]/40" />
-                                  <span className="text-white/50 group-hover:text-white/80 transition-colors">{item.product}</span>
-                                  {item.isPromo && <span className="text-[8px] border border-[#C5A059]/10 text-[#C5A059]/40 px-1 py-0.5 font-bold">PROMO</span>}
-                                </div>
-                                <span className="font-mono text-white/30 group-hover:text-white/60">R$ {item.bestPrice.toFixed(2)}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Table Summary */}
-                  <div className="bg-[#0F0F0F] border border-white/10 overflow-hidden hidden md:block shadow-2xl">
-                    <div className="p-8 border-b border-white/5">
-                      <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold">
-                        Detailed Expenditure Analysis
-                      </h2>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left border-collapse font-mono">
-                        <thead>
-                          <tr className="bg-white/[0.03] text-[9px] text-white/20 uppercase tracking-[0.2em] font-black">
-                            <th className="p-6">Registry Entity</th>
-                            <th className="p-6">Target Node</th>
-                            <th className="p-6">Unit Value</th>
-                            <th className="p-4 text-right">Delta Advantage</th>
-                          </tr>
-                        </thead>
-                        <tbody className="text-[11px] divide-y divide-white/5">
-                          {results.found.map((f, i) => (
-                            <tr key={i} className="hover:bg-white/[0.01] transition-colors">
-                              <td className="p-6 text-white/70">{f.product}</td>
-                              <td className="p-6">
-                                <span className="text-[#C5A059] italic border-b border-[#C5A059]/10">
-                                  {stores.find(s => s.id === f.bestStoreId)?.name}
-                                </span>
-                              </td>
-                              <td className="p-6 font-bold text-white/80">R$ {f.bestPrice.toFixed(2)}</td>
-                              <td className="p-4 text-right">
-                                {f.economy > 0 ? (
-                                  <span className="text-[#C5A059]/50 font-bold">R$ {f.economy.toFixed(2)}</span>
-                                ) : (
-                                  <span className="text-white/5">—</span>
-                                )}
-                              </td>
-                            </tr>
-                          ))}
-                          {results.notFound.map((item, i) => (
-                            <tr key={`nf-${i}`} className="bg-red-500/[0.02] opacity-40">
-                              <td className="p-6 text-red-400 italic">{item}</td>
-                              <td className="p-6 text-[9px] text-red-500 uppercase tracking-widest font-bold" colSpan={3}>Entity Missing from Nodes</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex gap-6 pb-24">
-                    <button 
-                      onClick={generatePDF}
-                      className="flex-1 py-5 border border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-black font-bold uppercase tracking-[0.3em] text-[10px] transition-all flex items-center justify-center gap-3 shadow-xl"
-                    >
-                      <FileDown className="w-4 h-4" />
-                      <span>Export Statement</span>
-                    </button>
-                    <button 
-                      onClick={() => { setIsCalculated(false); setResults(null); }}
-                      className="px-12 py-5 bg-white/5 text-white/20 hover:text-white/60 font-bold uppercase tracking-[0.3em] text-[10px] transition-all border border-transparent hover:border-white/10"
-                    >
-                      Revise Audit
-                    </button>
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="h-full flex flex-col items-center justify-center py-40 px-10 text-center bg-[#0F0F0F] border border-white/5 shadow-2xl relative">
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/20 to-transparent" />
-                  <motion.div 
-                    animate={{ opacity: [0.2, 0.4, 0.2] }}
-                    transition={{ repeat: Infinity, duration: 4 }}
-                    className="mb-12 text-[#C5A059]/30"
-                  >
-                    <FileBox className="w-20 h-20" />
-                  </motion.div>
-                  <h3 className="text-4xl font-serif italic mb-6 tracking-tight">Node Sync Awaiting</h3>
-                  <p className="text-white/20 text-sm max-w-sm mb-16 leading-relaxed uppercase tracking-widest font-bold text-[10px]">
-                    Load repository data and define registry requirements to initialize price orchestration engine.
-                  </p>
-                  
-                  <div className="flex gap-20 text-left border-t border-white/5 pt-12">
-                    <div className="flex flex-col gap-2">
-                      <span className="text-[#C5A059] font-mono text-xs font-bold">01</span>
-                      <span className="text-[9px] uppercase tracking-[0.2em] text-white/20 font-black">Sync Nodes</span>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                       <span className="text-[#C5A059] font-mono text-xs font-bold">02</span>
-                       <span className="text-[9px] uppercase tracking-[0.2em] text-white/20 font-black">Register Items</span>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                       <span className="text-[#C5A059] font-mono text-xs font-bold">03</span>
-                       <span className="text-[9px] uppercase tracking-[0.2em] text-white/20 font-black">Analyze</span>
-                    </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {stores.map(store => (
+              <div 
+                key={store.id}
+                className={cn(
+                  "flex items-center justify-between p-4 rounded-xl border transition-all duration-300 relative overflow-hidden",
+                  !store.enabled 
+                    ? "bg-red-950/20 border-red-500/30" 
+                    : store.status === 'loaded'
+                      ? "bg-[#064e3b]/10 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.05)]" 
+                      : "bg-slate-800/40 border-slate-700/50"
+                )}
+              >
+                <div className="flex items-center gap-3 z-10">
+                  <div className={cn(
+                    "w-2 h-2 rounded-full transition-all duration-300",
+                    !store.enabled 
+                      ? "bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" 
+                      : store.status === 'loaded' 
+                        ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" 
+                        : "bg-slate-600"
+                  )} />
+                  <div className="flex flex-col">
+                    <p className={cn(
+                      "text-xs md:text-sm font-bold tracking-tight transition-colors duration-500",
+                      !store.enabled ? "text-red-200/60" : store.status === 'loaded' ? "text-white" : "text-slate-400"
+                    )}>
+                      {store.name}
+                    </p>
+                    <p className="text-[10px] opacity-40 font-medium">
+                      {store.status === 'loaded' ? `${store.products?.length} produtos` : 'escolher CSV'}
+                    </p>
                   </div>
                 </div>
+                
+                <button 
+                  onClick={() => setStores(prev => prev.map(s => s.id === store.id ? { ...s, enabled: !s.enabled } : s))}
+                  className={cn(
+                    "relative inline-flex h-4 w-8 items-center rounded-full transition-all duration-300 focus:outline-none z-10",
+                    store.enabled ? (store.status === 'loaded' ? "bg-emerald-500" : "bg-cyan-500") : "bg-red-500/50"
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "inline-block h-2.5 w-2.5 transform rounded-full bg-white transition-transform duration-300",
+                      store.enabled ? "translate-x-4.5" : "translate-x-1"
+                    )}
+                  />
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Shopping List Panel */}
+        <section className="bg-slate-900/40 border border-slate-800/50 rounded-3xl p-6 md:p-8 shadow-xl backdrop-blur-sm">
+          <h2 className="text-xs font-black text-cyan-400 uppercase tracking-[0.2em] mb-6">
+            Minha lista de compras
+          </h2>
+          
+          <div className="relative mb-6">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="relative flex-1 group">
+                <input 
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      if (acIndex >= 0 && suggestions[acIndex]) {
+                        addItem(suggestions[acIndex].nome);
+                      } else {
+                        addItem(inputValue);
+                      }
+                    } else if (e.key === 'ArrowDown') {
+                      setAcIndex(prev => Math.min(prev + 1, suggestions.length - 1));
+                    } else if (e.key === 'ArrowUp') {
+                      setAcIndex(prev => Math.max(prev - 1, -1));
+                    }
+                  }}
+                  placeholder="Nome do produto..."
+                  className={cn(
+                    "w-full rounded-xl py-4 px-6 focus:outline-none text-base font-bold transition-all placeholder:text-slate-500",
+                    inputValue.trim() 
+                      ? "bg-red-900/40 border border-red-500/30 text-red-100" 
+                      : "bg-slate-950/80 border border-slate-700/50 text-white"
+                  )}
+                />
+              </div>
+              <button 
+                onClick={() => addItem(inputValue)}
+                className="py-4 px-8 bg-[#0d9488] hover:bg-[#0f766e] text-white font-black uppercase text-xs tracking-widest rounded-xl transition-all active:scale-95 shadow-lg shadow-teal-900/20"
+              >
+                Adicionar
+              </button>
+            </div>
+
+            {/* Autocomplete */}
+            <AnimatePresence>
+              {suggestions.length > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden"
+                >
+                  {suggestions.map((p, i) => (
+                    <div 
+                      key={`${p.nome}-${i}`}
+                      onClick={() => addItem(p.nome)}
+                      className={cn(
+                        "group flex items-center justify-between p-4 cursor-pointer border-b border-slate-800 last:border-0 transition-colors text-sm",
+                        acIndex === i ? "bg-cyan-500/10" : "hover:bg-slate-800/50"
+                      )}
+                    >
+                      <div className="flex flex-col">
+                        <span className="font-bold text-slate-100">{p.nome}</span>
+                        <span className="text-[10px] text-slate-500 uppercase tracking-widest">{stores.find(s => s.id === p.storeId)?.name}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                         <span className="font-mono font-bold text-cyan-400">R$ {p.preco.toFixed(2)}</span>
+                         {p.isPromo && <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 font-black uppercase rounded-sm">Promo</span>}
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
-        </div>
+
+          <div className="space-y-2 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
+            {shoppingList.map((item) => (
+              <motion.div 
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                key={item.id}
+                className="group flex items-center justify-between py-3 px-1 border-b border-slate-800/50 hover:border-slate-600 transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/30" />
+                  <span className="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">{item.name}</span>
+                </div>
+                <button 
+                  onClick={() => removeItem(item.id)}
+                  className="p-2 text-slate-600 hover:text-red-400 transition-all opacity-0 group-hover:opacity-100"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </motion.div>
+            ))}
+            {shoppingList.length === 0 && (
+              <div className="py-12 text-center opacity-30">
+                <ShoppingBag className="w-8 h-8 mx-auto mb-3" />
+                <p className="text-[10px] uppercase font-bold tracking-widest">0 itens na lista</p>
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-6 pt-4 text-[10px] text-slate-500 uppercase tracking-widest font-black">
+            {shoppingList.length} itens na lista
+          </div>
+        </section>
+        
+        {/* Results / Empty View Transition */}
+        <AnimatePresence mode="wait">
+          {isCalculated && results ? (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              key="results"
+              className="space-y-8"
+            >
+              {/* Results Content (keep current logic but update styles) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-slate-900/40 border border-slate-800/50 p-8 rounded-3xl shadow-xl">
+                   <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-2">Total Otimizado</p>
+                   <p className="text-3xl font-black">R$ {results.totalOtimizado.toFixed(2)}</p>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/20 p-8 rounded-3xl shadow-xl">
+                   <p className="text-[10px] text-emerald-400 font-black uppercase tracking-widest mb-2">Economia Total</p>
+                   <div className="flex items-baseline gap-3">
+                     <p className="text-3xl font-black text-emerald-400">R$ {results.economiaTotal.toFixed(2)}</p>
+                     <span className="text-xs font-bold text-emerald-500/50">({results.economiaPct.toFixed(1)}%)</span>
+                   </div>
+                </div>
+                <div className="bg-slate-900/40 border border-slate-800/50 p-8 rounded-3xl shadow-xl">
+                   <p className="text-[10px] text-slate-500 font-black uppercase tracking-widest mb-2">Lojas Utilizadas</p>
+                   <p className="text-3xl font-black">{results.summaries.length}</p>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pb-12">
+                <button 
+                  onClick={generatePDF}
+                  className="flex-1 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-3"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span>Exportar PDF</span>
+                </button>
+                <button 
+                  onClick={() => { setIsCalculated(false); setResults(null); }}
+                  className="px-12 py-4 bg-slate-900/50 text-slate-400 hover:text-white font-black uppercase tracking-widest text-xs rounded-xl border border-slate-800 transition-all"
+                >
+                  Revisar Lista
+                </button>
+              </div>
+            </motion.div>
+          ) : (
+            <button 
+              disabled={stores.filter(s => s.status === 'loaded' && s.enabled).length < 2 || shoppingList.length === 0}
+              onClick={optimize}
+              className="w-full py-5 bg-[#0f172a] hover:bg-[#1e293b] border border-slate-700/50 text-slate-400 hover:text-white disabled:opacity-20 font-black uppercase tracking-[0.3em] text-xs transition-all flex items-center justify-center gap-3 rounded-xl shadow-2xl active:scale-[0.98]"
+            >
+              <span>Calcular plano de compras otimizado</span>
+            </button>
+          )}
+        </AnimatePresence>
       </main>
 
       <style dangerouslySetInnerHTML={{ __html: `
         .custom-scrollbar::-webkit-scrollbar {
-          width: 2px;
+          width: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(197, 160, 89, 0.05);
+          background: rgba(148, 163, 184, 0.1);
+          border-radius: 99px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(197, 160, 89, 0.2);
+          background: rgba(148, 163, 184, 0.2);
         }
       `}} />
     </div>
