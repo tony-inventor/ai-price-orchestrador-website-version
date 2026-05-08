@@ -331,20 +331,20 @@ export default function App() {
                       "flex flex-col p-6 border transition-all duration-500 relative group overflow-hidden",
                       store.status === 'loaded' && store.enabled
                         ? "bg-[#C5A059]/[0.03] border-[#C5A059]/20" 
-                        : "bg-black/40 border-white/5 opacity-40 grayscale"
+                        : "bg-red-500/[0.02] border-red-500/10"
                     )}
                   >
                     {/* Background indicator */}
                     <div className={cn(
                       "absolute inset-y-0 left-0 w-1 transition-all duration-500",
-                      store.status === 'loaded' && store.enabled ? "bg-[#C5A059]" : "bg-white/5"
+                      store.status === 'loaded' && store.enabled ? "bg-[#C5A059]" : "bg-red-500/30"
                     )} />
 
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex flex-col">
                         <p className={cn(
                           "text-base font-serif italic tracking-tight transition-colors duration-500",
-                          store.status === 'loaded' && store.enabled ? "text-white" : "text-white/40"
+                          store.status === 'loaded' && store.enabled ? "text-white" : "text-white/70"
                         )}>
                           {store.name}
                         </p>
@@ -354,8 +354,8 @@ export default function App() {
                       <button 
                         onClick={() => setStores(prev => prev.map(s => s.id === store.id ? { ...s, enabled: !s.enabled } : s))}
                         className={cn(
-                          "relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 focus:outline-none ring-1 ring-white/10",
-                          store.enabled ? "bg-[#C5A059]" : "bg-white/5"
+                          "relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 focus:outline-none ring-1",
+                          store.enabled ? "bg-[#C5A059] ring-white/10" : "bg-red-500/20 ring-red-500/30"
                         )}
                       >
                         <span
@@ -373,7 +373,7 @@ export default function App() {
                           "w-1 h-1 rounded-full animate-pulse",
                           store.status === 'loaded' ? "bg-emerald-500" : "bg-white/20"
                         )} />
-                        <p className="text-[9px] font-mono opacity-30 uppercase tracking-[0.15em]">
+                        <p className="text-[9px] font-mono opacity-60 uppercase tracking-[0.15em]">
                           {store.status === 'loaded' ? `${store.products?.length} items synced` : 'Sync Pending'}
                         </p>
                       </div>
