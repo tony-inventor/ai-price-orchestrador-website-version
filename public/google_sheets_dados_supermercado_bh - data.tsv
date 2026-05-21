@@ -1,2 +1,78 @@
 id	data	horario	barcode	produto	preço	is_promocao
-3e18cde4	14/05/2026 00:00:00	16:55:01		Pernil suíno	15,98	TRUE
+7gjtan73	2026-05-21	12:29:58		Bebida Láctea BH 800g	5,58	TRUE
+7gjtan74	2026-05-21	12:29:58		Leite Fermentado BH 800g	6,48	TRUE
+7gjtan75	2026-05-21	12:29:58		Iogurte Líquido BH 90g	1,98	TRUE
+7gjtan76	2026-05-21	12:29:58		Iogurte Grego/Natural/Pedaços BH 400g	6,98	TRUE
+7gjtan77	2026-05-21	12:29:58		Bebida Láctea BH 200ml	0,98	TRUE
+7gjtan78	2026-05-21	12:29:58		Requeijão Cremoso BH 200g	7,98	TRUE
+7gjtan79	2026-05-21	12:29:58		Manteiga BH c/ Sal 200g	9,48	TRUE
+7gjtan7a	2026-05-21	12:29:58		Presunto BH Fatiado 180g	7,98	TRUE
+7gjtan7b	2026-05-21	12:29:58		Massa c/ Ovos BH 500g	3,68	TRUE
+7gjtan7c	2026-05-21	12:29:58		Detergente em Pó BH 2,2kg	15,98	TRUE
+7gjtan7d	2026-05-21	12:29:58		Suco de Uva BH 900ml	9,98	TRUE
+7gjtan7e	2026-05-21	12:29:58		Cerveja Bohemia 473ml	4,18	TRUE
+7gjtan7f	2026-05-21	12:29:58		Cerveja Michelob Ultra 330ml	4,98	TRUE
+7gjtan7g	2026-05-21	12:29:58		Cerveja Corona Cero 350ml	4,98	TRUE
+7gjtan7h	2026-05-21	12:29:58		Refrigerante H20H! 350ml	3,48	TRUE
+7gjtan7i	2026-05-21	12:29:58		Refrigerante Pepsi 3L	9,98	TRUE
+7gjtan7j	2026-05-21	12:29:58		Kit Sabonete Dove c/6	22,98	TRUE
+7gjtan7k	2026-05-21	12:29:58		Kit Seda Shampoo + Condicionador	15,80	TRUE
+7gjtan7l	2026-05-21	12:29:58		Detergente em Pó Omo 4kg	46,90	TRUE
+7gjtan7m	2026-05-21	12:29:58		Lava Roupas Líquido Omo 3L	31,98	TRUE
+7gjtan7n	2026-05-21	12:29:58		Amaciante Comfort 1L	15,98	TRUE
+7gjtan7o	2026-05-21	12:29:58		Linguiça Mista Perdigão kg	15,80	TRUE
+7gjtan7p	2026-05-21	12:29:58		Bacon Seara kg	29,98	TRUE
+7gjtan7q	2026-05-21	12:29:58		Mortadela Bolognella Perdigão kg	16,98	TRUE
+7gjtan7r	2026-05-21	12:29:58		Salsicha Hot Dog Perdigão kg	9,98	TRUE
+7gjtan7s	2026-05-21	12:29:58		Linguiça Calabresa Perdigão 400g	11,98	TRUE
+7gjtan7t	2026-05-21	12:29:58		Presunto Sadia kg	29,98	TRUE
+7gjtan7u	2026-05-21	12:29:58		Filé de Peito de Frango Avivar 400g	12,98	TRUE
+7gjtan7v	2026-05-21	12:29:58		Pizza Pif Paf 460g	13,98	TRUE
+7gjtan7w	2026-05-21	12:29:58		Arroz Agulhinha BH 5kg	16,90	TRUE
+7gjtan7x	2026-05-21	12:29:58		Filé de Peito de Frango Nat 1kg	17,80	TRUE
+7gjtan7y	2026-05-21	12:29:58		Coxinha da Asa de Frango kg	11,98	TRUE
+7gjtan7z	2026-05-21	12:29:58		Lasanha Mamma D’alva 600g	7,98	TRUE
+7gjtan80	2026-05-21	12:29:58		Empanado Tekitos Seara 1kg	14,98	TRUE
+7gjtan81	2026-05-21	12:29:58		Batata McCain 1,5kg	19,98	TRUE
+7gjtan82	2026-05-21	12:29:58		Manteiga Itambé 500g	23,98	TRUE
+7gjtan83	2026-05-21	12:29:58		Margarina Claybom 1kg	11,48	TRUE
+7gjtan84	2026-05-21	12:29:58		Requeijão Camponesa 400g	13,98	TRUE
+7gjtan85	2026-05-21	12:29:58		Queijo Minas Frescal Porto Alegre kg	35,98	TRUE
+7gjtan86	2026-05-21	12:29:58		Petit Suisse Trevo Kids 320g	5,98	TRUE
+7gjtan87	2026-05-21	12:29:58		Iogurte Líquido Nestlé 1,15kg	14,98	TRUE
+7gjtan88	2026-05-21	12:29:58		Iogurte Polpa Nestlé 510g	5,98	TRUE
+7gjtan89	2026-05-21	12:29:58		Azeite Andorinha 250ml	18,90	TRUE
+7gjtan8a	2026-05-21	12:29:58		Tomate Pelado Preferita 400g	5,98	TRUE
+7gjtan8b	2026-05-21	12:29:58		Milho Verde Minas Mais 170g	2,68	TRUE
+7gjtan8c	2026-05-21	12:29:58		Farofa Yoki 400g	5,98	TRUE
+7gjtan8d	2026-05-21	12:29:58		Milho p/ Pipoca Yoki 400g	3,48	TRUE
+7gjtan8e	2026-05-21	12:29:58		Pipoca Microondas Yoki	2,78	TRUE
+7gjtan8f	2026-05-21	12:29:58		Rosquinhas Dannutry 500g	4,98	TRUE
+7gjtan8g	2026-05-21	12:29:58		Biscoito Aymoré	2,48	TRUE
+7gjtan8h	2026-05-21	12:29:58		Achocolatado Nescau 900g	19,98	TRUE
+7gjtan8i	2026-05-21	12:29:58		Mistura p/ Bolo Vilma 400g	3,98	TRUE
+7gjtan8j	2026-05-21	12:29:58		Creme de Leite Damare 200g	2,48	TRUE
+7gjtan8k	2026-05-21	12:29:58		Leite Condensado Itambé 395g	5,89	TRUE
+7gjtan8l	2026-05-21	12:29:58		Bombom Nestlé 220g	13,98	TRUE
+7gjtan8m	2026-05-21	12:29:58		Paçoquita Santa Helena 350g	15,98	TRUE
+7gjtan8n	2026-05-21	12:29:58		Marshmallow Fofs 220g	6,98	TRUE
+7gjtan8o	2026-05-21	12:29:58		Bala de Gelatina Haribo	5,98	TRUE
+7gjtan8p	2026-05-21	12:29:58		Salgadinho Tortilla Gulão 300g	10,98	TRUE
+7gjtan8q	2026-05-21	12:29:58		Batata Chips Ruffles 115g	10,98	TRUE
+7gjtan8r	2026-05-21	12:29:58		Bebida Láctea Whey Itambé 250ml	5,78	TRUE
+7gjtan8s	2026-05-21	12:29:58		Concentrado de Caju Dafruta 1L	4,48	TRUE
+7gjtan8t	2026-05-21	12:29:58		Kit Coca-Cola + Fanta Guaraná 2L	15,48	TRUE
+7gjtan8u	2026-05-21	12:29:58		Néctar Maguary 200ml	1,28	TRUE
+7gjtan8v	2026-05-21	12:29:58		Bebida Ice Crystal 275ml	4,98	TRUE
+7gjtan8w	2026-05-21	12:29:58		Creme Dental Colgate 120g	6,98	TRUE
+7gjtan8x	2026-05-21	12:29:58		Sabonete Francis 80g	1,98	TRUE
+7gjtan8y	2026-05-21	12:29:58		Desodorante Nivea 200ml	14,98	TRUE
+7gjtan8z	2026-05-21	12:29:58		Absorvente Always c/32	13,98	TRUE
+7gjtan90	2026-05-21	12:29:58		Fralda Personal Giga	69,90	TRUE
+7gjtan91	2026-05-21	12:29:58		Papel Higiênico Personal Vip	17,98	TRUE
+7gjtan92	2026-05-21	12:29:58		Toalha de Papel Scala	5,98	TRUE
+7gjtan93	2026-05-21	12:29:58		Percarbonato de Sódio Tuff 1kg	27,98	TRUE
+7gjtan94	2026-05-21	12:29:58		Tira Manchas Vanish 400g	18,98	TRUE
+7gjtan95	2026-05-21	12:29:58		Limpador Ypê 2L	9,98	TRUE
+7gjtan96	2026-05-21	12:29:58		Jarra de Vidro Simplifica 1,8L	29,90	TRUE
+7gjtan97	2026-05-21	12:29:58		Tigela de Vidro Nadir 1L	16,90	TRUE

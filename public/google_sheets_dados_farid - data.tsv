@@ -1,2 +1,1133 @@
 id	data	horario	barcode	produto	preço	is_promocao
-b2c65635	2026-05-14	17:41:50		Pernil suíno	16,90	TRUE
+9b73c4ac	2026-05-21	08:33:26		Feijão Carioca Tipuá Tp1 1kg	8,98	FALSE
+e17f71ef	2026-05-21	08:33:26		Feijão Carioca Anchieta 1kg	9,58	FALSE
+71a7a3be	2026-05-21	08:33:26		Feijão Preto Tipuá Tp1 1kg	4,98	FALSE
+b01aae09	2026-05-21	08:33:26		Feijão Carioca Belo Grão Tp1 1kg	5,98	FALSE
+ce7c8814	2026-05-21	08:33:26		Feijão Carioca Galante Tp1 1kg	12,98	FALSE
+4e5cf8f8	2026-05-21	08:33:26		Feijao Carioca Vasconcelos Nobre Tp1 1k	10,98	FALSE
+5457cd31	2026-05-21	08:33:26		Feijão Vermelho Tipuá Tp1 1kg	7,98	FALSE
+76b9c8a8	2026-05-21	08:33:26		Feijao Vermelho Anchieta Tp1 1k	7,98	FALSE
+c7700667	2026-05-21	08:33:26		Feijao Preto Anchieta Tp1 1k	6,98	FALSE
+48d4979b	2026-05-21	08:33:26		Feijão Preto Galante Tp1 1kg	8,98	FALSE
+29e03b92	2026-05-21	08:33:26		Feijão Vermelho Galante Tp1 1kg	12,98	FALSE
+ff5a4afa	2026-05-21	08:33:26		Feijão Carioca Patureba T1 1k	9,98	FALSE
+5d15efc2	2026-05-21	08:33:26		Feijão Preto Vasconcelos Tp1 1k	7,98	FALSE
+49d62560	2026-05-21	08:33:26		Feijão Jalo Tipuá Tp1 1kg	11,98	FALSE
+6dc5a511	2026-05-21	08:33:26		Feijao Jalo Galante Tp1 1k	13,98	FALSE
+f826f537	2026-05-21	08:33:26		Feijão Carioca Farid 1kg	8,58	FALSE
+2a3fbd83	2026-05-21	08:33:26		Feijão Jalo Vasconcelos Tp1 1k	11,98	FALSE
+a6f8a0b6	2026-05-21	08:33:26		Feijão Carioca Grão Mestre 1kg	6,98	FALSE
+0dbdda5b	2026-05-21	08:33:26		Feijao Preto Grao Mestre 1k	7,98	FALSE
+db891975	2026-05-21	08:33:26		Feijão Branco Tipo 1 Vasconcelos 1kg	11,98	FALSE
+8616200f	2026-05-21	08:33:26		Feijão Preto Carrijo Tipo 1 1k	8,98	FALSE
+dde924ba	2026-05-21	08:33:26		Feijão Vermelho Grão Mestre 1kg	7,98	FALSE
+728a2578	2026-05-21	08:33:26		Feijão Fradinho Vasconcelos Tp1 1kg	6,49	FALSE
+52cea8b7	2026-05-21	08:33:26		Feijão Carioca Carrijo Tipo 1 1kg	7,49	FALSE
+0e395150	2026-05-21	08:33:37		Arroz Prato Fino 5kg	25,90	FALSE
+86be0ea6	2026-05-21	08:33:37		Arroz Tipo 1 Vasconcelos 5kg	24,90	FALSE
+8988dc77	2026-05-21	08:33:37		Arroz Tipo 1 Patosul Vasconcelos 5kg	17,90	FALSE
+1a7a8a34	2026-05-21	08:33:37		Arroz Sempre Bom Tp1 5kg	19,90	FALSE
+0bc46c08	2026-05-21	08:33:37		Arroz Ciagro Tp1 5kg	22,90	FALSE
+65e2cd36	2026-05-21	08:33:37		Arroz Tipo 1 Beira Rio 5kg	21,90	FALSE
+777f0aa4	2026-05-21	08:33:37		Arroz Tipo1 Albaruska 5k	27,90	FALSE
+f39fa2eb	2026-05-21	08:33:37		Arroz Prato Fino Parboilizado 5kg	26,80	FALSE
+f040a03e	2026-05-21	08:33:37		Arroz Rei Arthur Tp1 5kg	23,98	FALSE
+45592dd6	2026-05-21	08:33:37		Arroz Oryza Tp1 5k	21,90	FALSE
+c805f3c5	2026-05-21	08:33:37		Arroz Streck Tp1 5k	21,90	FALSE
+79612804	2026-05-21	08:33:37		Arroz Campineiro Tp1 5k	14,80	FALSE
+b57c249a	2026-05-21	08:33:37		Arroz Prato Fino Parboilizado Integral 5kg	27,90	FALSE
+08aedca6	2026-05-21	08:33:37		Arroz Ciagro Parboilizado Tp1 5kg	22,90	FALSE
+2552f733	2026-05-21	08:33:37		Arroz Vasconcelos Parboilizado 5k	24,90	FALSE
+521527ea	2026-05-21	08:33:37		Arroz Filé 5k	16,90	FALSE
+f70becf3	2026-05-21	08:33:37		Arroz Elo Tipo 1 Nobre 5k	23,50	FALSE
+8ca0cb45	2026-05-21	08:33:37		Arroz Gladiador Tp1 5kg	28,90	FALSE
+83668bf4	2026-05-21	08:33:47		Óleo de Soja Liza 900ml	7,09	FALSE
+848a52b4	2026-05-21	08:33:47		Óleo de Girassol Sinhá 900ml	11,98	FALSE
+274c697b	2026-05-21	08:33:47		Óleo de Milho Sinhá 900ml	13,98	FALSE
+d90d58ab	2026-05-21	08:33:47		Óleo de Canola Sinhá 900ml	14,98	FALSE
+83e437c4	2026-05-21	08:33:47		Óleo de Girassol Liza 900ml	14,98	FALSE
+80910713	2026-05-21	08:33:47		Óleo de Milho Liza 900ml	17,98	FALSE
+76a287ac	2026-05-21	08:33:47		Óleo de Canola Liza 900ml	18,98	FALSE
+cf3da39f	2026-05-21	08:33:47		Óleo Girassol Soya 900ml	11,98	FALSE
+573d873d	2026-05-21	08:33:47		Óleo de Milho Soya 900ml	16,98	FALSE
+5697af06	2026-05-21	08:33:47		Oleo Soja Vitaliv Pet 900ml	7,28	FALSE
+179ee160	2026-05-21	08:33:47		Oleo de Soja Abc Pet 900ml	8,28	FALSE
+39523cf9	2026-05-21	08:34:11		Suco Tial Uva 1l	6,48	FALSE
+c7dc5f1e	2026-05-21	08:34:11		Suco Tial Kids Uva 200ml	1,98	FALSE
+2d8488c2	2026-05-21	08:34:11		Suco Alianca Integral Uva Tinto 1,5l	19,98	FALSE
+dd69864e	2026-05-21	08:34:11		Suco Aliança Integral Tipo Uva 1l	11,99	FALSE
+f236f10c	2026-05-21	08:34:11		Suco Del Valle Kapo Uva 200ml	2,99	FALSE
+d02c280c	2026-05-21	08:34:11		Suco Tial Manga 1l	6,48	FALSE
+2885caf6	2026-05-21	08:34:11		Suco Tial Goiaba 1l	6,48	FALSE
+35e281d1	2026-05-21	08:34:11		Suco Del Valle Kapo Morango 200ml	2,99	FALSE
+80fea316	2026-05-21	08:34:11		Suco Dafruta Nectar Uva 200ml	1,58	FALSE
+2cf34d7c	2026-05-21	08:34:11		Suco Tial Kids Pêssego 200ml	1,98	FALSE
+45d71bc6	2026-05-21	08:34:11		Suco Tial Kids Manga 200ml	1,98	FALSE
+299fd40e	2026-05-21	08:34:11		Suco Tial 100% Uva 1l	11,98	FALSE
+4b387c18	2026-05-21	08:34:11		Suco Tial Abacaxi 1l	6,48	FALSE
+fbe2d304	2026-05-21	08:34:11		Suco Dafruta Nectar 200ml Maracujá	1,58	FALSE
+e8ad8f6f	2026-05-21	08:34:11		Suco Tial Laranja e Maça 1l	6,48	FALSE
+4ec682d1	2026-05-21	08:34:11		Suco Campo Largo Uva 1,350l	16,90	FALSE
+10209e22	2026-05-21	08:34:11		Suco Tial Kids Cajú 200ml	1,98	FALSE
+b572745b	2026-05-21	08:34:11		Suco Tial Cajú 1l	6,48	FALSE
+7a072e6e	2026-05-21	08:34:11		Suco Tial Kids Laranja 200ml	1,98	FALSE
+972ea10f	2026-05-21	08:34:11		Suco Del Valle Maracujá 1l	9,98	FALSE
+ffdb4f9d	2026-05-21	08:34:11		Suco Del Valle Pêssego 1l	9,98	FALSE
+df82ccf9	2026-05-21	08:34:11		Suco Dafruta Nectar Goiaba 200ml	1,58	FALSE
+0da01ad7	2026-05-21	08:34:11		Suco Bela Ischia Concentrado Cajú 1l	9,98	FALSE
+7e22b9b8	2026-05-21	08:34:11		Suco Tial Kids Goiaba 200ml	1,98	FALSE
+93ccc763	2026-05-21	08:34:11		Suco Oq Integral 1,5l Uva	19,90	FALSE
+84ac02c1	2026-05-21	08:34:11		Suco Tial Kids 100% Uva/Pera 200ml	3,18	FALSE
+ef997783	2026-05-21	08:34:11		Suco Spres Laranja 900ml	9,98	FALSE
+06723fdf	2026-05-21	08:34:11		Suco Del Valle Uva S/ Adição de Açúcar 1l	9,98	FALSE
+0cba252c	2026-05-21	08:34:11		Suco Del Valle Kapo Maracujá 200ml	2,99	FALSE
+c55650a1	2026-05-21	08:34:11		Suco Maguary Nectar Morango 1l	5,48	FALSE
+f8acb691	2026-05-21	08:34:11		Suco Tial 100% Goiaba 1l	11,98	FALSE
+01b8a7e3	2026-05-21	08:34:11		Suco Tial 100% Pêssego/Maçã 1l	11,98	FALSE
+079a5731	2026-05-21	08:34:11		Suco Del Valle Kapo Abacaxi 200ml	2,99	FALSE
+51b783fc	2026-05-21	08:34:11		Suco Tial 100% Manga 1l	11,98	FALSE
+ce8741fc	2026-05-21	08:34:11		Suco Del Valle Kapo Laranja 200ml	2,99	FALSE
+3b03e58d	2026-05-21	08:34:11		Suco Tial 100% Maçã 1l	11,98	FALSE
+4abbbaa4	2026-05-21	08:34:11		Suco Tial Kids 100% Maçã 200ml	3,18	FALSE
+6de490fb	2026-05-21	08:34:11		Suco Del Valle Uva 1l	9,98	FALSE
+1b2583a9	2026-05-21	08:34:11		Suco Maguary Nectar Maracujá 1l	5,48	FALSE
+40eb96a0	2026-05-21	08:34:11		Suco Tial 100% Laranja 1l	11,98	FALSE
+87117284	2026-05-21	08:34:11		Suco Dafruta Nectar Laranja 200ml	1,58	FALSE
+cc1e4d4a	2026-05-21	08:34:11		Suco Del Valle Kapo Maça 200ml	2,99	FALSE
+4caf1c5c	2026-05-21	08:34:11		Suco Oq Integral Laranja 1l	18,90	FALSE
+acf558c1	2026-05-21	08:34:11		Suco Maguary Nectar Cajú 1l	5,48	FALSE
+02a3f2c8	2026-05-21	08:34:11		Suco Dafruta Concentrado Cajú 1l	4,48	FALSE
+74a8f666	2026-05-21	08:34:11		Suco Bela Ischia Concentrado Goiaba 1l	13,98	FALSE
+2114eb40	2026-05-21	08:34:11		Suco Bela Ischia Concentrado Uva 1l	15,98	FALSE
+e54e6e63	2026-05-21	08:34:11		Suco Spres Laranja e Morango 900ml	17,90	FALSE
+eb8fdf29	2026-05-21	08:34:11		Suco Del Valle Manga 1l	9,98	FALSE
+0a028341	2026-05-21	08:34:11		Suco Bela Ischia Concentrado Maracujá 1l	19,98	FALSE
+85fa9744	2026-05-21	08:34:11		Suco Maguary Nectar Tangerina 1l	5,48	FALSE
+93a17102	2026-05-21	08:34:11		Suco Del Valle Frut Fresh Limão 1,5l	7,98	FALSE
+4b1e1041	2026-05-21	08:34:11		Suco Maguary Nectar Laranja 1l	5,48	FALSE
+037129a7	2026-05-21	08:34:11		Suco Del Valle Abacaxi 1l	9,98	FALSE
+7f901c40	2026-05-21	08:34:11		Suco Fruit Shoot 150ml Uva	0,99	FALSE
+85e2c889	2026-05-21	08:34:11		Suco Spres Laranja 300ml	6,98	FALSE
+c8603a54	2026-05-21	08:34:11		Suco Nat.One 900ml Lar	15,99	FALSE
+63937358	2026-05-21	08:34:11		Suco Yakult Maca 200ml	4,59	FALSE
+ea528890	2026-05-21	08:34:11		Suco Campo Largo Uva Integral 200ml	4,59	FALSE
+d29a7351	2026-05-21	08:34:11		Suco Campo Largo Laranja 1,350l	16,90	FALSE
+96d95ecd	2026-05-21	08:34:11		Suco Tial Baixa Caloria Uva e Morango 1l	6,98	FALSE
+2339e1ea	2026-05-21	08:34:11		Suco Del Valle Cajú S/ Adição de Açúcar 1l	9,98	FALSE
+b478f0f9	2026-05-21	08:34:11		Suco Del Valle Laranja 1l	9,98	FALSE
+5f07bfe3	2026-05-21	08:34:11		Suco Garibalda 1,5l Uva Tinto	21,98	FALSE
+0e5573f0	2026-05-21	08:34:11		Suco Aurora Uva Integral Vidro 1,5l	24,99	FALSE
+a739386d	2026-05-21	08:34:11		Suco Dafruta Concentrado Cajú 500ml	4,99	FALSE
+b72472a1	2026-05-21	08:34:11		Suco Concentrado Maracujá Maguary Garrafa 1l	21,90	FALSE
+e328f04d	2026-05-21	08:34:11		Suco Natural One Ambiente Uva/Maça 180ml	3,99	FALSE
+8562bc62	2026-05-21	08:34:11		Suco Bela Ischia Concentrado Manga 1l	13,98	FALSE
+409dfc4a	2026-05-21	08:34:11		Suco Maguary Cajú 500ml	6,78	FALSE
+5eda008c	2026-05-21	08:34:11		Suco Fruit Shoot 150ml Maracujá	0,99	FALSE
+4c2550d1	2026-05-21	08:34:11		Suco Fruit Shoot 150ml Laranja	0,99	FALSE
+0986c2c5	2026-05-21	08:34:11		Suco Maguary Maracujá 500ml	12,90	FALSE
+0297dc54	2026-05-21	08:34:11		Suco Tial 100% Morango 1l	11,98	FALSE
+d825be5a	2026-05-21	08:34:11		Suco D.Valle Frut 450ml Uva	3,48	FALSE
+b7be52dd	2026-05-21	08:34:11		Suco Nat.One Int.300ml Lar	6,99	FALSE
+8db30d33	2026-05-21	08:34:11		Suco Maguary Concentrado Cajú 1l	11,98	FALSE
+24e16a7a	2026-05-21	08:34:11		Suco Campo Largo Integral Maçã 1,350l	16,90	FALSE
+439222fc	2026-05-21	08:34:11		Suco Nat.One 900ml Uva/Maca	15,99	FALSE
+b78520ab	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Laranja 180ml	3,99	FALSE
+edc0f623	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Maça 180ml	3,99	FALSE
+b442b04d	2026-05-21	08:34:11		Suco Del Valle Néctar 100% Maçâ 200ml	3,48	FALSE
+d9258d5d	2026-05-21	08:34:11		Suco Fruit Shoot 150ml Morango	0,99	FALSE
+4c20fcd7	2026-05-21	08:34:11		Suco Natural One Ambiente Uva/Maca 900ml	11,98	FALSE
+02a61a98	2026-05-21	08:34:11		Suco Dafruta Concentrado Maracujá 1l	17,98	FALSE
+c64eba5f	2026-05-21	08:34:11		Suco Campo Largo Maçã 200ml	4,59	FALSE
+3f0a1b56	2026-05-21	08:34:11		Suco Dafruta Concentrado Maracujá 500ml	9,98	FALSE
+75737e91	2026-05-21	08:34:11		Suco Dafruta Concentrado Goiaba 1l	11,98	FALSE
+177da48f	2026-05-21	08:34:11		Suco Campo Largo Laranja 200ml	4,59	FALSE
+5d262b7f	2026-05-21	08:34:11		Suco Nat.One 900ml Pink Limonade	19,99	FALSE
+bff3be6f	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Laranja 900ml	12,98	FALSE
+1ec6d108	2026-05-21	08:34:11		Suco Nat.One 900ml Limonada	16,99	FALSE
+1fde4f94	2026-05-21	08:34:11		Suco Dafruta Concentrado Goiaba 500ml	6,99	FALSE
+0d60b437	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Maça 900ml	11,98	FALSE
+6311b5bc	2026-05-21	08:34:11		Suco Tial Kids 100% Morango 200ml	3,18	FALSE
+4ebba60a	2026-05-21	08:34:11		Suco Aurora Uva Integral Branco Vidro 1,5l	24,99	FALSE
+0072d087	2026-05-21	08:34:11		Suco Dafruta Concentrado Uva 1l	11,98	FALSE
+b67c9211	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Pêssego 900ml	13,97	FALSE
+411d850e	2026-05-21	08:34:11		Suco Casa Madeira Tinto Uva 1l	29,90	FALSE
+658b5735	2026-05-21	08:34:11		Suco Maguary Manga 500ml	8,98	FALSE
+44aa76de	2026-05-21	08:34:11		Suco Maguary Goiaba 500ml	8,98	FALSE
+8b6ef26e	2026-05-21	08:34:11		Suco Maguary Uva 500ml	8,98	FALSE
+57746fe5	2026-05-21	08:34:11		Suco Dafruta Concentrado Manga 500ml	6,98	FALSE
+7ee41a47	2026-05-21	08:34:11		Suco Campo Largo Uva 1,5l	27,98	FALSE
+10c95177	2026-05-21	08:34:11		Suco Casa Bento Uva Integral 1l	16,98	FALSE
+65d1ea78	2026-05-21	08:34:11		Suco Aurora Uva Integral Organico 1l	24,98	FALSE
+0ac462b8	2026-05-21	08:34:11		Suco Dafruta Concentrado Uva 500ml	7,98	FALSE
+67980cf0	2026-05-21	08:34:11		Suco Bonbon Lt.238ml Uva Verde	25,98	FALSE
+afa71246	2026-05-21	08:34:11		Suco Casa Madeira Branco Moscato 750ml	42,90	FALSE
+9a8994b5	2026-05-21	08:34:11		Suco D.Valle Nutri Nec.200ml Pessego	2,69	FALSE
+897e9d3f	2026-05-21	08:34:11		Suco Tial Pêssego e Pêra 1l	6,48	FALSE
+7a2b50f7	2026-05-21	08:34:11		Suco Tial Maracujá 1l	6,48	FALSE
+13eff6d8	2026-05-21	08:34:11		Suco Tampico Frutas Cítricas 1l	9,98	FALSE
+f17f3255	2026-05-21	08:34:11		Suco Tampico Frutas Cítricas 2l	13,98	FALSE
+dd350f6f	2026-05-21	08:34:11		Suco Tial Kids Maracujá 200ml	1,98	FALSE
+0bfa84d5	2026-05-21	08:34:11		Suco Uva Sem Açucar 280ml Leverger	9,98	FALSE
+24a7ced6	2026-05-21	08:34:11		Suco Campo Largo Integral Pêssego 1,350l	16,90	FALSE
+0f7443fb	2026-05-21	08:34:11		Suco Natural One Ambiente Integral Caju 900ml	11,98	FALSE
+9a6670ec	2026-05-21	08:34:11		Suco Oq Integral 1l Maca	18,90	FALSE
+0733e423	2026-05-21	08:34:11		Suco Spres Cajú 900ml	10,90	FALSE
+5cc506a6	2026-05-21	08:34:11		Suco Aliança Gaseificado Lata 269ml Uva Tinto	9,98	FALSE
+fd37bcf5	2026-05-21	08:34:11		Suco Natural One Ambiente Maracuja/Maca 900ml	16,98	FALSE
+1bf829be	2026-05-21	08:34:11		Suco Oq Integral 300ml Uva	7,98	FALSE
+e47d68d9	2026-05-21	08:34:11		Suco Oq 300ml 100 P/Cento Maca	4,97	FALSE
+9a274d55	2026-05-21	08:34:11		Suco Oq Mais Pet 1,35l 100 P/Cento Laranja/Maca	18,90	FALSE
+9ba4873b	2026-05-21	08:34:11		Suco Garibalde 1l Uva Tinto Integral	14,98	FALSE
+26ecfc82	2026-05-21	08:34:11		Suco Tial 100% Pêra 1l	11,98	FALSE
+813f61ed	2026-05-21	08:34:11		Suco Tial 100% Abacaxi e Pêra 1l	11,98	FALSE
+c679ab8b	2026-05-21	08:34:11		Suco Tial 100% Pêra e Caju 1l	11,98	FALSE
+8d4dfb25	2026-05-21	08:34:11		Suco Tial 100% Pêra e Maracujá 1l	11,98	FALSE
+13f8e40a	2026-05-21	08:34:11		Suco Tial Misto de Morango 1l	6,48	FALSE
+9665c050	2026-05-21	08:34:11		Suco Natural One Ambiente Laranja/Maça 300ml	6,98	FALSE
+a50c2a50	2026-05-21	08:34:11		Suco Natural One Ambiente Uva/Maça 300ml	6,98	FALSE
+1490d2c0	2026-05-21	08:34:11		Suco Tial Nectar 250ml Laranja/Pera	2,99	FALSE
+418cee81	2026-05-21	08:34:11		Suco Tial 100% 250ml Laranja/Maca	4,98	FALSE
+1b16f5d0	2026-05-21	08:34:11		Suco Garibalda Integral 1,5l Uva Branco	21,98	FALSE
+69f352bd	2026-05-21	08:34:11		Colher Suco Catuai Inox R.3410	8,99	FALSE
+9fdd540c	2026-05-21	08:34:11		Refresco Tang Laranja 18g	1,39	FALSE
+459ce18f	2026-05-21	08:34:11		Refresco Tang Limão 18g	1,39	FALSE
+c1a6fadb	2026-05-21	08:34:11		Refresco Tang Abacaxi 18g	1,39	FALSE
+98d9d2fb	2026-05-21	08:34:11		Refresco Tang Uva 18g	1,39	FALSE
+8fa93830	2026-05-21	08:34:11		Refresco Tang Morango18g	1,39	FALSE
+4e04c5ee	2026-05-21	08:34:11		Refresco Tang Maracujá 18g	1,39	FALSE
+adc52dcb	2026-05-21	08:34:11		Refresco Tang Laranja/Mamao 18g	1,39	FALSE
+ad6a3bf4	2026-05-21	08:34:11		Refresco Tang Manga 18g	1,39	FALSE
+ef185d02	2026-05-21	08:34:11		Refresco Tang Tangerina 18g	1,39	FALSE
+19d67ed3	2026-05-21	08:34:11		Refresco Fresh Uva 15g	1,38	FALSE
+60898425	2026-05-21	08:34:11		Refresco Fresh Maracuja 15g	1,38	FALSE
+ac82026f	2026-05-21	08:34:11		Refresco Fresh Morango 15g	1,38	FALSE
+71fd2663	2026-05-21	08:34:11		Refresco Fresh Laranja 15g	1,38	FALSE
+fba22df5	2026-05-21	08:34:11		Refresco Fresh Guarana 15g	1,38	FALSE
+5bc776ca	2026-05-21	08:34:11		Refresco Fresh Abacaxi 15g	1,38	FALSE
+fbbfdeb1	2026-05-21	08:34:11		Refresco Fresh Manga 15g	1,38	FALSE
+1cc1d435	2026-05-21	08:34:11		Refresco Fresh Limao 15g	1,38	FALSE
+0dce9b93	2026-05-21	08:34:11		Refresco Tang Goiaba 18g	1,39	FALSE
+f472aad7	2026-05-21	08:34:11		Refresco Tang Uva Intensa 18g	1,39	FALSE
+04898e31	2026-05-21	08:34:11		Refresco Tornado Uva 15g	0,89	FALSE
+04635715	2026-05-21	08:34:11		Refresco Tornado Limão 15g	0,89	FALSE
+a23cbe79	2026-05-21	08:34:11		Refresco Tornado Morango 15g	0,89	FALSE
+224311d3	2026-05-21	08:34:11		Refresco Vilma Uva 240g	2,98	FALSE
+1ca6b34c	2026-05-21	08:34:11		Refresco Tang Guarana 18g	1,39	FALSE
+06ebac5c	2026-05-21	08:34:11		Refresco Tornado Abacaxi 15g	0,89	FALSE
+bb228c23	2026-05-21	08:34:11		Refresco Vilma Goiaba 240g	2,98	FALSE
+1e31e9e6	2026-05-21	08:34:11		Refresco Vilma Limão 240g	2,98	FALSE
+e1d337c3	2026-05-21	08:34:11		Refresco Vilma Manga 240g	2,98	FALSE
+67b1ee4f	2026-05-21	08:34:11		Refresco Vilma Pêssego 240g	2,98	FALSE
+1deb6ff7	2026-05-21	08:34:11		Refresco Vilma Abacaxi 240g	2,98	FALSE
+f1ced449	2026-05-21	08:34:11		Refresco Vilma Morango Silvestre 240g	2,98	FALSE
+a29db72c	2026-05-21	08:34:11		Refresco Tornado Laranja 15g	0,89	FALSE
+72bfa464	2026-05-21	08:34:11		Refresco Vilma Tangerina 240g	2,98	FALSE
+a6ace23b	2026-05-21	08:34:11		Refresco Vilma Cajú 240g	2,98	FALSE
+1550f128	2026-05-21	08:34:11		Refresco Vilma Maracujá 240g	2,98	FALSE
+81685c3a	2026-05-21	08:34:11		Refresco Vilma Goiaba 10g	0,99	FALSE
+516c2bd6	2026-05-21	08:34:11		Refresco Vilma Laranja e Mamão 240g	2,98	FALSE
+3632813b	2026-05-21	08:34:23		Refrigerante Coca Cola 2l	11,98	FALSE
+f9c070a7	2026-05-21	08:34:23		Refrigerante Coca Cola + Fanta Laranja Pet 2l	16,97	FALSE
+56aa8fa8	2026-05-21	08:34:23		Refrigerante Coca Cola Pet 2l Zero Acucar	10,98	FALSE
+d33e7ebb	2026-05-21	08:34:23		Refrigerante Coca Cola 3l	14,98	FALSE
+f8e27529	2026-05-21	08:34:23		Refrigerante Coca Cola Sem Açucar 200ml	1,99	FALSE
+c0fceaf6	2026-05-21	08:34:23		Refrigerante Coca Cola 350ml	3,98	FALSE
+df9753b9	2026-05-21	08:34:23		Refrigerante Coca Cola 2,5l	12,98	FALSE
+28e6e1a5	2026-05-21	08:34:23		Refrigerante Coca Cola 600ml	5,68	FALSE
+e442b196	2026-05-21	08:34:23		Refrigerante Coca Cola 1l	6,98	FALSE
+1613f44f	2026-05-21	08:34:23		Refrigerante Coca Cola Zero 600ml	5,25	FALSE
+d6d570f5	2026-05-21	08:34:23		Refrigerante Coca Cola 1,5l	9,28	FALSE
+988a0508	2026-05-21	08:34:23		Refrigerante Coca Cola + Fanta Guaraná Pet 2l	15,48	FALSE
+f795ba6e	2026-05-21	08:34:23		Refrigerante Coca Cola Zero 350ml	3,98	FALSE
+3ef3fc45	2026-05-21	08:34:23		Refrigerante Coca Cola 220ml	2,95	FALSE
+05451449	2026-05-21	08:34:23		Refrigerante Coca Cola Zero 220ml	2,95	FALSE
+ee78eb6c	2026-05-21	08:34:23		Refrigerante Coca Cola Café 220ml	2,95	FALSE
+c4e359d2	2026-05-21	08:34:23		Refrigerante Coca Cola Zera Açúcar Pet 1,5l	8,98	FALSE
+31e3befd	2026-05-21	08:34:23		Refrigerante Coca Cola Zero Acucar 1l	6,98	FALSE
+27a07b0d	2026-05-21	08:34:23		Refrigerante Coca Cola Retornável 2l	12,98	FALSE
+9df71b99	2026-05-21	08:34:23		Refrigerante Coca Cola Retornavel C/C 1l	5,98	FALSE
+adeaea28	2026-05-21	08:34:23		Refrigerante Coca Cola + Sem Acucar Pet 2l	18,98	FALSE
+f1788672	2026-05-21	08:34:23		Refrigerante Coca Cola Retornável 2l Sem Açucar	12,98	FALSE
+5d6e8d9c	2026-05-21	08:34:42		Refrigerante Coca Cola 2l	11,98	FALSE
+b0639d17	2026-05-21	08:34:42		Refrigerante Antarctica Guaraná 200ml	1,58	FALSE
+bd304a67	2026-05-21	08:34:42		Refrigerante Pepsi 200ml	1,58	FALSE
+95fc9b12	2026-05-21	08:34:42		Refrigerante Antarctica 3l	11,98	FALSE
+f143bf19	2026-05-21	08:34:42		Refrigerante Antarctica Pet 1l Guaraná Peck C/2	7,99	FALSE
+b94f4fb6	2026-05-21	08:34:42		Refrigerante Sukita Laranja 2l	5,99	FALSE
+4ef1ee98	2026-05-21	08:34:42		Refrigerante Guaraná Antarctica 2l	8,38	FALSE
+e0bddbe6	2026-05-21	08:34:42		Refrigerante Pepsi 3l	9,98	FALSE
+e3ce963a	2026-05-21	08:34:42		Refrigerante Coca Cola + Fanta Laranja Pet 2l	16,97	FALSE
+dff6433c	2026-05-21	08:34:42		Refrigerante Pepsi Pet 2l	9,19	FALSE
+1a0b44da	2026-05-21	08:34:42		Refrigerante Sukita 200ml Uva	1,58	FALSE
+1658b0d5	2026-05-21	08:34:42		Refrigerante Coca Cola Pet 2l Zero Acucar	10,98	FALSE
+36933046	2026-05-21	08:34:42		Refrigerante Sukita Laranja 200ml	1,58	FALSE
+6f69faaa	2026-05-21	08:34:42		Refrigerante Sukita Pet 2l Uva	5,99	FALSE
+d5166d78	2026-05-21	08:34:42		Refrigerante Antarctica 350ml	3,38	FALSE
+e12be5fd	2026-05-21	08:34:42		Refrigerante Pepsi Lata 350ml	3,38	FALSE
+5bca30cf	2026-05-21	08:34:42		Refrigerante Coca Cola 3l	14,98	FALSE
+3f2601a7	2026-05-21	08:34:42		Refrigerante Antarctica Guarana Zero 200ml	1,58	FALSE
+7e7ce5a5	2026-05-21	08:34:42		Refrigerante Antartica Soda Limonada 200ml	1,58	FALSE
+36ea756b	2026-05-21	08:34:42		Refrigerante Guarapan 2l	6,98	FALSE
+6b921358	2026-05-21	08:34:42		Refrigerante Pepsi Twist 200ml	1,58	FALSE
+57b5d266	2026-05-21	08:34:42		Refrigerante Pepsi Black Zero Açúcar 200ml	1,58	FALSE
+72fa6e1f	2026-05-21	08:34:42		Refrigerante Coca Cola 200ml	1,95	FALSE
+2eccd4c7	2026-05-21	08:34:42		Refrigerante Coca Cola Sem Açucar 200ml	1,99	FALSE
+bbfc8f1c	2026-05-21	08:34:42		Refrigerante Pepsi Pet 2,5l	8,98	FALSE
+7db3282f	2026-05-21	08:34:42		Refrigerante Antarctica 2l Guaraná Diet	8,38	FALSE
+acc197d1	2026-05-21	08:34:42		Refrigerante H2oh 500ml Lim Zero Acúcar	4,19	FALSE
+7d6b8ea0	2026-05-21	08:34:42		Refrigerante Antarctica 600ml Guaraná	4,68	FALSE
+a7960893	2026-05-21	08:34:42		Refrigerante Antarctica Pet 2,5l Guaraná	8,98	FALSE
+39b0cfb9	2026-05-21	08:34:42		Refrigerante Coca Cola 350ml	3,98	FALSE
+67151cc7	2026-05-21	08:34:42		Refrigerante H2oh Limoneto 500ml	4,19	FALSE
+660854a5	2026-05-21	08:34:42		Refrigerante Coca Cola 2,5l	12,98	FALSE
+e79b7b5c	2026-05-21	08:34:42		Refrigerante Sukita Lata 350ml Uva	3,38	FALSE
+150b13dc	2026-05-21	08:34:42		Refrigerante Sukita Lata 350ml	3,38	FALSE
+6dbae5b0	2026-05-21	08:34:42		Refrigerante Sukita Limao Pet 2l	5,99	FALSE
+2ce653bb	2026-05-21	08:34:42		Refrigerante Coca Cola 600ml	5,68	FALSE
+c41ec283	2026-05-21	08:34:42		Refrigerante Pepsi Black Zero Açucar 350 Ml	3,38	FALSE
+9073bc7c	2026-05-21	08:34:42		Refrigerante Fanta Laranja 2l	8,98	FALSE
+b48a9e99	2026-05-21	08:34:42		Refrigerante Antarctica 2l Soda Limão	7,98	FALSE
+cead70ec	2026-05-21	08:34:42		Refrigerante Sukita Pet Tubaina 2l	5,99	FALSE
+8ca1b813	2026-05-21	08:34:42		Refrigerante Coca Cola 1l	6,98	FALSE
+4d82ea58	2026-05-21	08:34:42		Refrigerante Fanta 200ml	1,68	FALSE
+1d1a3891	2026-05-21	08:34:42		Refrigerante Pepsi Black Zero Açucar Pet 2l	9,19	FALSE
+9fc2d378	2026-05-21	08:34:42		Refrigerante Coca Cola Zero 600ml	5,25	FALSE
+6d26f7ef	2026-05-21	08:34:42		Refrigerante Antarctica 350ml Zero	3,09	FALSE
+3ef82a89	2026-05-21	08:34:42		Refrigerante Pepsi Twist Pet 2l	9,19	FALSE
+6d9fa67d	2026-05-21	08:34:42		Refrigerante Coca Cola 1,5l	9,28	FALSE
+05dccf9c	2026-05-21	08:34:42		Refrigerante H2oh 1,5l Zero Acúcar	7,68	FALSE
+76180c0f	2026-05-21	08:34:42		Refrigerante Coca Cola + Fanta Guaraná Pet 2l	15,48	FALSE
+3f729138	2026-05-21	08:34:42		Refrigerante Mate Couro 2l	7,98	FALSE
+bf45d935	2026-05-21	08:34:42		Refrigerante Coca Cola Zero 350ml	3,98	FALSE
+5d5f5166	2026-05-21	08:34:42		Refrigerante Sprit 2l	8,98	FALSE
+eacb1b84	2026-05-21	08:34:42		Refrigerante Pepsi Pet 1,5l	6,98	FALSE
+ec545afd	2026-05-21	08:34:42		Refrigerante Antarctica Pet 1,5l Guar.	7,39	FALSE
+15858e99	2026-05-21	08:34:42		Refrigerante Antarctica 350ml Soda Limão	3,38	FALSE
+f3ff84bb	2026-05-21	08:34:42		Refrigerante Pepsi Twist Lata 350ml	3,38	FALSE
+46f502de	2026-05-21	08:34:42		Refrigerante Fanta Laranja Zero 2l	8,98	FALSE
+77ddc5f9	2026-05-21	08:34:42		Refrigerante Fanta Uva 2l	7,97	FALSE
+c3d73ece	2026-05-21	08:34:42		Refrigerante Mate Couro Diet 2l	7,98	FALSE
+c284fbc3	2026-05-21	08:34:42		Refrigerante Antarctica 350ml Soda Lim.Diet	3,38	FALSE
+cb7beba7	2026-05-21	08:34:42		Refrigerante Coca Cola 220ml	2,95	FALSE
+f344df70	2026-05-21	08:34:42		Refrigerante Coca Cola Zero 220ml	2,95	FALSE
+19c9df7f	2026-05-21	08:34:42		Refrigerante Mate Couro 600ml	4,48	FALSE
+aa736adb	2026-05-21	08:34:42		Refrigerante Coca Cola Café 220ml	2,95	FALSE
+63335358	2026-05-21	08:34:42		Refrigerante Sprit S/Açúcar Pet 2l	8,47	FALSE
+3935d31f	2026-05-21	08:34:42		Refrigerante Pepsi Pet 1l	4,98	FALSE
+b601c899	2026-05-21	08:34:42		Refrigerante Mate Couro 1l	4,98	FALSE
+27ba917d	2026-05-21	08:34:42		Refrigerante Schweppes Citrus 1,5l	8,48	FALSE
+994a1e27	2026-05-21	08:34:42		Refrigerante Guarapan Lata 220ml	2,58	FALSE
+70dd460e	2026-05-21	08:34:42		Refrigerante Tropical Citrus 2l	4,48	FALSE
+e51f5f18	2026-05-21	08:34:42		Refrigerante Fanta Guaraná Pet 2l	8,98	FALSE
+4a48c1b4	2026-05-21	08:34:42		Refrigerante Fanta Laranja 1,5l	7,29	FALSE
+af8bd5f7	2026-05-21	08:34:42		Refrigerante Sprite Lemon Fresh 510ml	3,78	FALSE
+7543629a	2026-05-21	08:34:42		Refrigerante Fanta Laranja 350ml	3,65	FALSE
+3adcfb77	2026-05-21	08:34:42		Refrigerante Antarctica 1l Guaraná C/C	5,99	FALSE
+6d792a73	2026-05-21	08:34:42		Refrigerante Schweppes Citrus 350ml	4,38	FALSE
+f8623aaf	2026-05-21	08:34:42		Refrigerante Tropical Laranja 2l	4,48	FALSE
+291408ad	2026-05-21	08:34:42		Refrigerante Tropical Guarana 2l	4,48	FALSE
+f01463f9	2026-05-21	08:34:42		Refrigerante Mate Couro Diet 1l	4,98	FALSE
+979be374	2026-05-21	08:34:42		Refrigerante Tropical Uva 2l	4,48	FALSE
+d5061d3c	2026-05-21	08:34:42		Refrigerante Mate Couro Diet 600ml	4,48	FALSE
+21d31d15	2026-05-21	08:34:42		Refrigerante Mate Couro Zero Pet 350ml	3,48	FALSE
+6c1c0272	2026-05-21	08:34:42		Refrigerante Sprit Fresh Limão Pet 1,5lt	6,98	FALSE
+6ecf4fe6	2026-05-21	08:34:42		Refrigerante Fanta Laranja 600ml	5,15	FALSE
+be28f50b	2026-05-21	08:34:42		Refrigerante Mate Couro Tradicional Pet 350 Ml	3,48	FALSE
+f168140c	2026-05-21	08:34:42		Refrigerante Tropical Cola 2l	4,48	FALSE
+6f062573	2026-05-21	08:34:42		Refrigerante Sprit 350ml	3,68	FALSE
+f50b892f	2026-05-21	08:34:42		Refrigerante Tropical Limão 2l	4,48	FALSE
+643a50bd	2026-05-21	08:34:42		Refrigerante Coca Cola Zera Açúcar Pet 1,5l	8,98	FALSE
+a29ee47f	2026-05-21	08:34:42		Refrigerante Guaraná Pet + Pepsi 2l	14,99	FALSE
+b9c42990	2026-05-21	08:34:42		Refrigerante Coca Cola Zero Acucar 1l	6,98	FALSE
+4e495307	2026-05-21	08:34:42		Água Tônica Antarctica 350ml Diet	3,48	FALSE
+e9a1f830	2026-05-21	08:34:42		Água Tônica Antarctica 350ml	3,48	FALSE
+b4634566	2026-05-21	08:34:42		Água Tônica Antarctica 1l	7,98	FALSE
+fdbdc12e	2026-05-21	08:34:42		Refrrigerante Mate Couro 250ml	2,29	FALSE
+3eb0c4eb	2026-05-21	08:34:42		Refrrigerante Mate Couro 250ml Zero	2,29	FALSE
+fce6e4e3	2026-05-21	08:34:42		Água Tônica Schweppes 350ml	3,48	FALSE
+0f55c24f	2026-05-21	08:34:42		Água Tônica Schweppes 220ml Ginger Ale	2,98	FALSE
+8c214272	2026-05-21	08:34:42		Bebida Composta Gaseificada Baly Kids Morango 220ml	4,48	FALSE
+102bf7f8	2026-05-21	08:34:42		Refrigerante H2oh Limoneto Zero Acúcar Lata 350ml	3,48	FALSE
+14bc22af	2026-05-21	08:34:42		Bebida Composta Gaiseficada Baly Uva 220ml	4,48	FALSE
+1ec3979f	2026-05-21	08:34:42		Bebida Gaseificada Ventura Super Açai/ Cupuaçu/ Guaraná 500ml	5,98	FALSE
+2d4b724d	2026-05-21	08:34:42		Refrigerante Coca Cola Retornável 2l	12,98	FALSE
+d2270eaa	2026-05-21	08:34:42		Refrigerante Antarctica Pet 1l Guaraná	4,99	FALSE
+3c3e64dc	2026-05-21	08:34:42		Refrigerante Fanta Guaraná Pet 200ml	1,24	FALSE
+50960837	2026-05-21	08:34:42		Refrigerante Pepsi Pet 600ml	3,78	FALSE
+4caa9ef9	2026-05-21	08:34:42		Refrigerante Coca Cola Retornavel C/C 1l	5,98	FALSE
+c1dda8c7	2026-05-21	08:34:42		Refrigerante Fanta Laranja Retornavel C/C 2l	10,98	FALSE
+1d5fb54d	2026-05-21	08:34:42		Refrigerante Guaraná Antarctica 237ml	1,10	FALSE
+f4879e61	2026-05-21	08:34:42		Refrigerante Coca Cola + Sem Acucar Pet 2l	18,98	FALSE
+f7a9cd3c	2026-05-21	08:34:42		Refrigerante Coca Cola Retornável 2l Sem Açucar	12,98	FALSE
+7393679a	2026-05-21	08:34:42		Agua Tonica The London Essence 200ml Ginger Beer	11,98	FALSE
+391da87a	2026-05-21	08:34:53		Farinha de Trigo Boa Sorte Especial 1kg	4,59	FALSE
+9406444b	2026-05-21	08:34:53		Farinha de Trigo Vilma Especial 1kg	4,98	FALSE
+3e59e2f2	2026-05-21	08:34:53		Farinha de Trigo Vilma Fermento 1kg	5,98	FALSE
+1b9f2e11	2026-05-21	08:34:53		Farinha de Trigo Anchieta com Fermento 1kg	4,58	FALSE
+03e3459f	2026-05-21	08:34:53		Lasanha Perdigao 1kg Bolon	25,90	FALSE
+e620ea2f	2026-05-21	08:34:53		Farinha Trigo Renata Especial 1k	6,98	FALSE
+d3aae508	2026-05-21	08:34:53		Farinha Trigo Famiglia Venturelli Integral 1kg	6,99	FALSE
+f0158d34	2026-05-21	08:34:53		Farinha de Trigo Farina Especial 1kg	2,95	FALSE
+d9c325f7	2026-05-21	08:34:53		Farinha de Trigo Anchieta Especial 1kg	3,38	FALSE
+04d9cffc	2026-05-21	08:34:53		Far.Trigo Sul Mineiro Semolina 1k	6,98	FALSE
+d04a3011	2026-05-21	08:34:53		Farinha de Trigo Farid Tradicional 1kg	3,48	FALSE
+e714264a	2026-05-21	08:34:53		Farinha de Trigo Útil Especial Tp1 1kg	3,18	FALSE
+58b12f1a	2026-05-21	08:35:04		Manteiga Farid 500g com Sal	20,99	FALSE
+5112acd0	2026-05-21	08:35:04		Manteiga P.Alegre 500gr C/Sal	21,98	FALSE
+3c2bb467	2026-05-21	08:35:04		Manteiga Itambe 500g	23,98	FALSE
+168628a5	2026-05-21	08:35:04		Margarina Claybom Cremosa 500g Manteiga	7,99	FALSE
+ae7495d0	2026-05-21	08:35:04		Manteiga Cotoches 500g	25,90	FALSE
+facd7b5b	2026-05-21	08:35:04		Manteiga Cristaulat 500g C/Sal	19,79	FALSE
+ba528c77	2026-05-21	08:35:04		Manteiga Caetes 500g	15,99	FALSE
+029941d0	2026-05-21	08:35:04		Manteiga Ladelli 500g C/Sal	19,90	FALSE
+37ccacd7	2026-05-21	08:35:04		Macarrão Nissin Lámen Pao Na Chapa com Manteiga 85g	2,98	FALSE
+a9bc53ae	2026-05-21	08:35:04		Manteiga Real da Fazenda 500g	14,49	FALSE
+bdd2b822	2026-05-21	08:35:17		Manteiga Ita 200g	12,48	FALSE
+ef806c6b	2026-05-21	08:35:17		Manteiga Itambe 200g C/Sal	11,98	FALSE
+ced9a9b8	2026-05-21	08:35:17		Manteiga P.Alegre 200g	10,98	FALSE
+e6a7f3ad	2026-05-21	08:35:17		Manteiga Itambe Extra 200g C/Sal	11,79	FALSE
+b4a79368	2026-05-21	08:35:17		Manteiga Itambe Extra 200g S/Sal	11,79	FALSE
+1fe691e7	2026-05-21	08:35:17		Manteiga President Tabl.200g C/Sal	12,99	FALSE
+17dc01b1	2026-05-21	08:35:17		Manteiga Bonq Extra 200g com Sal Zero Lactose	14,99	FALSE
+caa9b774	2026-05-21	08:35:17		Manteiga Cotoches 200g	11,99	FALSE
+d9d669c5	2026-05-21	08:35:17		Manteiga Gran Mestri Pt.200g Z.Lactose	16,99	FALSE
+1e78e174	2026-05-21	08:35:17		Creme President Ricota Light 200g	9,99	FALSE
+eb402fb2	2026-05-21	08:35:17		Manteiga Bom Destino de Búfala 200g	17,90	FALSE
+1e91afcf	2026-05-21	08:35:17		Manteiga de Coco Coco Show 200g	15,90	FALSE
+a1d7f9c5	2026-05-21	08:35:17		Creme President Ricota Tradicional 200g	9,99	FALSE
+8a12dca0	2026-05-21	08:35:17		Manteiga Gran Mestri Lt.200g Z.Lactose	24,90	FALSE
+ba019968	2026-05-21	08:35:17		Manteiga President 200g C/Sal	12,99	FALSE
+8901b6dc	2026-05-21	08:35:17		Manteiga Farid C/Sal 200g	8,98	FALSE
+ab6a4877	2026-05-21	08:35:17		Manteiga Cristaulat 200g C/Sal	9,49	FALSE
+3a938523	2026-05-21	08:35:17		Manteiga Minas Mais 200g	9,99	FALSE
+e7899fdd	2026-05-21	08:35:17		Requeijão President Queijo Blue 200g	14,98	FALSE
+af5c8ba3	2026-05-21	08:35:17		Requeijão President Queijo Brie 200g	14,98	FALSE
+bcd4a866	2026-05-21	08:35:17		Manteiga Porto Alegre 200g Zero Lactose	13,99	FALSE
+103ec0e4	2026-05-21	08:35:17		Manteiga Itambe No Lac 200g	11,99	FALSE
+a451b9b6	2026-05-21	08:35:17		Manteiga Bonq Extra 200g com Sal	12,90	FALSE
+dfbd0713	2026-05-21	08:35:17		Manteiga President Tabl.200g S/Sal	12,99	FALSE
+1e91b8a1	2026-05-21	08:35:17		Manteiga Corporal Terrapeutics 200g Castanha do Brasil	64,90	FALSE
+9d92d2d8	2026-05-21	08:35:17		Manteiga Qualy 200g Sem Sal	11,90	FALSE
+1f6bc4a2	2026-05-21	08:35:17		Manteiga Verde Campo Lacfree 200g	13,99	FALSE
+7256370e	2026-05-21	08:35:17		Manteiga Itambe S/Sal 200g	11,98	FALSE
+1c0ae8cb	2026-05-21	08:35:17		Manteiga Minas Colonial 200g	10,59	FALSE
+83bd5953	2026-05-21	08:35:17		Manteiga Corporal Bio Extratus 200g Otica Lavanda	45,90	FALSE
+d0cf6cd6	2026-05-21	08:35:17		Manteiga Corporal Terrapeutics 200g Chá Branco	59,90	FALSE
+ab407277	2026-05-21	08:35:17		Manteiga President Zero Lactose C/Sal Tablete 200g	15,99	FALSE
+6bebb22e	2026-05-21	08:35:31		Margarina Qualy 500g C/Sal	9,99	FALSE
+287f34b7	2026-05-21	08:35:31		Margarina Claybom Cremosa com Sal 500g	6,99	FALSE
+0dc06740	2026-05-21	08:35:31		Pao Wick Bold D.Forno 500g 100 P.Cen.Int	15,99	FALSE
+464494e2	2026-05-21	08:35:31		Pão Vale do Sol Naturista Naturista Maça/Canela/Passas 400g	16,99	FALSE
+0ed89df7	2026-05-21	08:35:31		Pão Vale do Sol Integral com Castanha e Nozes 450g	16,99	FALSE
+4bab900a	2026-05-21	08:35:31		Pao Vale do Sol Naturista Castanhá Pará/Cacau 400g	16,99	FALSE
+7ff79c0c	2026-05-21	08:35:31		Pão Vale do Sol Sovado 500 Gramas	14,99	FALSE
+60ec97eb	2026-05-21	08:35:31		Marg.Delicia Crem.500g	8,99	FALSE
+e5bfd171	2026-05-21	08:35:31		Margarina Claybom Cremosa 500g Manteiga	7,99	FALSE
+63fc6599	2026-05-21	08:35:31		Margarina Doriana Cremosa 500g	7,98	FALSE
+77229100	2026-05-21	08:35:31		Pao Vale do Sol Integral 500g Grao/Castanha	13,98	FALSE
+8b6e9916	2026-05-21	08:35:31		Pao Vale do Sol Integral Castanha/Quinoa 500g	13,98	FALSE
+bfe63803	2026-05-21	08:35:31		Marg.Qualy 500g S/Sal	10,90	FALSE
+dd808c20	2026-05-21	08:35:31		Pao Wick Bold D.Forno 500g Orig	14,99	FALSE
+905dbfd0	2026-05-21	08:35:31		Marg.Claybom Crem.500g S/Sal	7,98	FALSE
+cee4dadc	2026-05-21	08:35:31		Macarrão Italiano Almerinda Gnocchi 500g	11,98	FALSE
+ad7b5f94	2026-05-21	08:35:31		Pao Wick Bold Gr.Sabor 500g Frutas	19,90	FALSE
+52b2cf14	2026-05-21	08:35:31		Pao Seven Boys 500g Milho	13,99	FALSE
+5f4a0fa6	2026-05-21	08:35:31		Pao Delicias do Trigo Hot Dog 500g	12,99	FALSE
+9bbee517	2026-05-21	08:35:31		Marg.Qualy Light 500g C/Sal	10,59	FALSE
+9a2b2f52	2026-05-21	08:35:31		Pao Wick Bold Gr.Sabor 500g C.Para/Qui	19,90	FALSE
+386574ef	2026-05-21	08:35:31		Marg.Becel 500g C/Sal	13,98	FALSE
+6d1f2b69	2026-05-21	08:35:31		Macarrao Italiano Rummo Fettucce 500g	19,98	FALSE
+f719ae37	2026-05-21	08:35:31		Pao Nutrella Frutas 500g	25,99	FALSE
+404f2d3d	2026-05-21	08:35:31		Macarrão Italiano Di Martino Tofette 500g	16,90	FALSE
+7ac84b62	2026-05-21	08:35:31		Macarrão Italiano Di Martino Gnocchi Sardi 500g	16,90	FALSE
+9b87101d	2026-05-21	08:35:31		Macarrão Italiano Di Martino 500g Rigatoni	16,90	FALSE
+ae72aae0	2026-05-21	08:35:31		Macarrão Italiano Di Martino 500g Rigate	16,90	FALSE
+5f2f0954	2026-05-21	08:35:31		Macarrao Alemão Seitz S/Gluten 500g Fusilli	23,90	FALSE
+5a0da5d1	2026-05-21	08:35:31		Pão Wick Bold 500g do Forno Na Chapa	15,99	FALSE
+979f1a1c	2026-05-21	08:35:31		Macarrão Italiano Divella Conchiglioni N.87 500g	28,90	FALSE
+763b69a2	2026-05-21	08:35:31		Macarrão Italiano Canpez Gnocchi 500g	10,98	FALSE
+69e30881	2026-05-21	08:35:31		Pao Wick Bold do Forno Autraliano 500g	15,99	FALSE
+646796fc	2026-05-21	08:35:31		Macarrão Italiano Di Martino 500g Orzo	16,90	FALSE
+c39dd278	2026-05-21	08:35:31		Macarrão Italiano Divella Tagliatelle Nidi N.91 500g	21,90	FALSE
+c793fec0	2026-05-21	08:35:31		Macarrao Alemão Seitz S/Gluten 500g Penne	23,90	FALSE
+79c12348	2026-05-21	08:35:31		Macarrão Italiano Divella Fettuccine Nidi N.90 500g	21,90	FALSE
+aa099d44	2026-05-21	08:35:31		Pasta Italiana Antônio Amato Penne Rigate 500g	12,98	FALSE
+863b3378	2026-05-21	08:35:31		Marg.Delicia Supreme 500g	9,79	FALSE
+4318e9eb	2026-05-21	08:35:31		Macarrão Italiano Di Martino Tagliateli 500g	29,90	FALSE
+a82ded27	2026-05-21	08:35:31		Pao Milani Hot Dog 500g	8,99	FALSE
+668c2615	2026-05-21	08:35:31		Pao Milani Int.500g	6,99	FALSE
+0a2c3b39	2026-05-21	08:35:31		Pao Milani Puro Grao Integral 500g 12 Graos	9,99	FALSE
+a8dfc626	2026-05-21	08:35:31		Pao Milani Fat.500g Milho	8,59	FALSE
+3d179a0f	2026-05-21	08:35:31		Macarrão Italiano Di Martino Paccheri 500g	29,90	FALSE
+322d5108	2026-05-21	08:35:31		Macarrão Italiano Di Martino Conchiglioni 500g	29,90	FALSE
+b350db82	2026-05-21	08:35:31		Macarrão Italiano La Ruvida 500g Spaghetti	9,99	FALSE
+a0f66a50	2026-05-21	08:35:31		Macarrão Italiano La Ruvida 500g Fusilli	9,99	FALSE
+767910ca	2026-05-21	08:35:31		Macarrão Italiano La Ruvida 500g Farfalle Rigate	9,99	FALSE
+634429f5	2026-05-21	08:35:31		Macarrão Italiano La Ruvida Rigate 500g	9,99	FALSE
+498dc920	2026-05-21	08:35:31		Massa Italiana La Campofilone Penne Rigate 500g	32,90	FALSE
+eed21c65	2026-05-21	08:35:42		Pao Vale do Sol Bisnaguinha 250 Gramas Premium Sem Açucar	7,69	FALSE
+b71cead6	2026-05-21	08:35:42		Mortadela Perdigao Bolognella Peca/Pedaco Kg	19,90 kg	FALSE
+28193009	2026-05-21	08:35:42		Marg.Qualy 250g C/Sal	5,95	FALSE
+953f6d5c	2026-05-21	08:35:42		Pao Vale do Sol 250g Batata	8,39	FALSE
+92334c57	2026-05-21	08:35:42		Marg.Qualy 250g S/Sal	5,99	FALSE
+ad5812ba	2026-05-21	08:35:42		Margarina Claybom Cremosa 250g C/Sal	4,59	FALSE
+cfb4b488	2026-05-21	08:35:42		Marg.Qualy 250g C/Sal Aerada	5,89	FALSE
+91a15e03	2026-05-21	08:35:42		Margarina Claybom Cremosa 250g Manteiga	4,39	FALSE
+8e4b6eec	2026-05-21	08:35:42		Bolo Seven Boys Laranja 250g	10,99	FALSE
+0c3446c0	2026-05-21	08:35:42		Margarina Qualy 250g C/Sal Vegetal Colecionável	5,98	FALSE
+afa2a480	2026-05-21	08:35:42		Pao Delicias do Trigo Paezinhos Batata 250g	9,99	FALSE
+f969f9df	2026-05-21	08:35:42		Marg.Qualy Light 250g C/Sal	5,99	FALSE
+e587b1d5	2026-05-21	08:35:42		Bolo Seven Boys Coco 250g	5,99	FALSE
+49848ba4	2026-05-21	08:35:42		Bolo Seven Boys 250g Choc	10,99	FALSE
+1075dcd4	2026-05-21	08:35:42		Bolo Seven Boys Mármore 250g	10,99	FALSE
+92ed1875	2026-05-21	08:35:42		Bolo Seven Boys Formigueiro 250g	10,99	FALSE
+654dba05	2026-05-21	08:35:42		Pao Delicias do Trigo Paezinhos 250g Cebola	9,99	FALSE
+f379311b	2026-05-21	08:35:42		Marg.Vigor 250g C/Sal	4,79	FALSE
+ece9dead	2026-05-21	08:35:42		Macarrão La Pastina Rech.250g Tortel.Car/Pres	19,97	FALSE
+4d56c7f9	2026-05-21	08:35:42		Macarrao Seitz S/Gluten 250g Lasanha	31,90	FALSE
+e4c0d3c9	2026-05-21	08:35:42		Pao Sanny Bisnag.250g	5,49	FALSE
+41810392	2026-05-21	08:35:52		Azeite Dende Kidende 200ml	5,99	FALSE
+0613184c	2026-05-21	08:36:06		Leite Longa Vida Ita Integral 1l	5,18	FALSE
+f4605c20	2026-05-21	08:36:06		Leite Longa Vida Itambé Integral 1l	5,98	FALSE
+6c86b0ce	2026-05-21	08:36:06		Leite Longa Vida Porto Alegre Integral 1l	5,18	FALSE
+cadb4c84	2026-05-21	08:36:06		Leite Longa Vida Camponesa Integral 1l	5,48	FALSE
+d5a3bd05	2026-05-21	08:36:06		Leite Longa Vida Farid Integral 1l	4,85	FALSE
+e1bfb614	2026-05-21	08:36:06		Leite Longa Vida Itambé Nolac Integral 1l	5,98	FALSE
+41ccfa27	2026-05-21	08:36:06		Leite Longa Vida Itambé Nolac Desnatado 1l	6,98	FALSE
+e862d7be	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba Desnatado 1l	4,98	FALSE
+3642b9c1	2026-05-21	08:36:06		Leite Longa Vida Itambé Semi Desnatado 1l	5,98	FALSE
+f15960bc	2026-05-21	08:36:06		Leite Longa Vida Itambé Desnatado 1l	5,98	FALSE
+54f62eb3	2026-05-21	08:36:06		Leite Longa Vida Itambé Nolac Semidesnatado 1l	6,98	FALSE
+04e55df2	2026-05-21	08:36:06		Leite Longa Vida Camponesa Zero Lactose Integral 1l	5,98	FALSE
+023a7860	2026-05-21	08:36:06		Leite Longa Vida Itambé Natural Milk 1l	6,98	FALSE
+8d42ecfb	2026-05-21	08:36:06		Leite Longa Vida Ita Desnatado 1l	5,18	FALSE
+91fd6045	2026-05-21	08:36:06		Leite Longa Vida Porto Alegre Desnatado 1l	4,98	FALSE
+767709c2	2026-05-21	08:36:06		Leite Longa Vida Ninho Vitamina C Semi Desnatado 1l	6,98	FALSE
+7a2a799d	2026-05-21	08:36:06		Leite Longa Vida Camponesa Desnatado 1l	5,48	FALSE
+4cc505aa	2026-05-21	08:36:06		Leite Longa Vida Itambé 10 Vitaminas 1l	6,98	FALSE
+58fe2a76	2026-05-21	08:36:06		Leite Longa Vida Camponesa Origem Integral 1l	6,48	FALSE
+bde4c772	2026-05-21	08:36:06		Leite Longa Vida Camponesa Zero Lactose Desnatado 1l	5,98	FALSE
+ff0e8f30	2026-05-21	08:36:06		Leite Longa Vida Porto Alegre Zero Lactose Integral 1l	4,47	FALSE
+30520588	2026-05-21	08:36:06		Leite Longa Vida Molico Vitamina Desnatado 1 Lt	6,48	FALSE
+48cfcc07	2026-05-21	08:36:06		Leite Longa Vida Camponesa Zero Lactose Semidesnatado 1l	6,48	FALSE
+c397cf91	2026-05-21	08:36:06		Leite Longa Vida Camponesa Semi Desnatado 1l	5,48	FALSE
+f7924aa8	2026-05-21	08:36:06		Leite Longa Vida Quata Desnatado 1l	4,95	FALSE
+be570f03	2026-05-21	08:36:06		Leite Longa Vida Itambé Pro Desnatado 1l	8,98	FALSE
+8f268a62	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba Zero Lactose A2 Semi Desnatado 1l	6,98	FALSE
+6624828c	2026-05-21	08:36:06		Leite Longa Vida Camponesa Proteina Zero Lactose 1l	8,98	FALSE
+3b06bf79	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba +10g Proteina Zero Lactose Semi Desnatado 1l	7,99	FALSE
+9c55aa63	2026-05-21	08:36:06		Leite Longa Vida Itambé Natural Milk Desnatado 1l	6,98	FALSE
+62dc2f78	2026-05-21	08:36:06		Leite Longa Vida Ita Tampa de Rosca Integral 1l	5,28	FALSE
+5a9c1370	2026-05-21	08:36:06		Leite Longa Vida Cemil Integral 1l	4,25	FALSE
+fa14c3a7	2026-05-21	08:36:06		Leite Longa Vida Ninho Zero Lactose Integral 1l	5,98	FALSE
+1c04dda9	2026-05-21	08:36:06		Leite Longa Vida Ita Tampa de Rosca Desnatado 1l	5,28	FALSE
+512b6eb5	2026-05-21	08:36:06		Leite Longa Vida Leitissimo Integral 1l	6,99	FALSE
+38122aea	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba Zero Lactose Semi Desnatado 1l	5,98	FALSE
+bd91a23a	2026-05-21	08:36:06		Leite Longa Vida Camponesa Vitamina C e D Desnatado 1 Lt	5,98	FALSE
+99118aa6	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba Zero Lactose Desnatado 1l	6,98	FALSE
+b1639ace	2026-05-21	08:36:06		Leite Longa Vida Leitissimo Desnatado 1l	6,99	FALSE
+1c292e9b	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba Pirakids Zero Lactose Integral 1l	5,38	FALSE
+3c44072b	2026-05-21	08:36:06		Leite Longa Vida Quata Semi Desnatado 1l	4,58	FALSE
+56f8dcff	2026-05-21	08:36:06		Leite Longa Vida Italac Desnatado 1l	4,39	FALSE
+aee39366	2026-05-21	08:36:06		Leite Longa Vida Italac Semi Desnatado 1l	4,39	FALSE
+d5a68242	2026-05-21	08:36:06		Leite Longa Vida Piracanjuba 1l A2 Semi Desnatado	6,98	FALSE
+d37cea5b	2026-05-21	08:36:30		Café Três Corações Tradicional 500g	29,90	FALSE
+f6d382f2	2026-05-21	08:36:30		Café Três Corações Extra Forte 500g	29,90	FALSE
+40fccddb	2026-05-21	08:36:30		Café Fort Três Corações 500g	29,90	FALSE
+ddbe40ab	2026-05-21	08:36:30		Café Barão Extra Forte 500g	27,90	FALSE
+12643430	2026-05-21	08:36:30		Café Barão 500g	27,90	FALSE
+e3546abe	2026-05-21	08:36:30		Café Farid Extra Forte 500g	22,90	FALSE
+4e9e1e4e	2026-05-21	08:36:30		Café Melitta Tradicional 500g	29,90	FALSE
+22932f3b	2026-05-21	08:36:30		Café Três Corações Tradicional 250g	16,95	FALSE
+81100787	2026-05-21	08:36:30		Café Farid Tradicional 500g	22,90	FALSE
+a85f4312	2026-05-21	08:36:30		Café Melitta Extra Forte 500g	29,90	FALSE
+bbe74f4f	2026-05-21	08:36:30		Café Três Corações Extra Forte 250g	16,95	FALSE
+c2733670	2026-05-21	08:36:30		Café Pilão 500g	31,90	FALSE
+48d501ee	2026-05-21	08:36:30		Café Pilao 500g Extra Forte	31,90	FALSE
+919fd19d	2026-05-21	08:36:30		Café Torrado e Moído Tradicional Utam Momentos Pacote 500g	29,90	FALSE
+99928b87	2026-05-21	08:36:30		Café Fino Grão Forte 500g	27,90	FALSE
+86c21239	2026-05-21	08:36:30		Cafe Utam Momentos Extra Forte 500g	29,90	FALSE
+4a11375d	2026-05-21	08:36:30		Café Barao 250g Extra Forte	14,90	FALSE
+3380bab5	2026-05-21	08:36:30		Café Três Corações Gourmet Mogiana Paulista 250g	23,98	FALSE
+c06732de	2026-05-21	08:36:30		Refrigerante Coca Cola Café 220ml	2,95	FALSE
+ac3c28c9	2026-05-21	08:36:30		Cafe Pilao Vácuo Extra Forte 500g	32,90	FALSE
+8bb2e61a	2026-05-21	08:36:30		Café Três Corações Gourmet Cerrado Mineiro 250g	23,98	FALSE
+b794dce4	2026-05-21	08:36:30		Café Uniao 500g Tradicional	19,80	FALSE
+b299dfc0	2026-05-21	08:36:30		Café Três Corações Gourmet Sul de Minas 250g	23,98	FALSE
+78e0530b	2026-05-21	08:36:30		Cafe Uniao Extra Forte 500g	19,80	FALSE
+c263c44f	2026-05-21	08:36:30		Café Biagini 500g	28,90	FALSE
+d46e1298	2026-05-21	08:36:30		Café Fino Grão Tradicional 500g	31,90	FALSE
+98b28415	2026-05-21	08:36:30		Café Barao 250g	14,90	FALSE
+8020cc11	2026-05-21	08:36:30		Café Fino Grão Extra Forte 500g	31,90	FALSE
+2c42848d	2026-05-21	08:36:30		Café Pilao Vacuo 500g	32,90	FALSE
+d99e3644	2026-05-21	08:36:30		Café Três Corações Premium 500g	36,90	FALSE
+2b76e0e4	2026-05-21	08:36:30		Café Três Corações Fort 250g	16,90	FALSE
+be4ba250	2026-05-21	08:36:30		Café Fino Grao M.Forte 250g	13,95	FALSE
+69379838	2026-05-21	08:36:30		Cafe Utam Momentos Tradicional 250g	15,90	FALSE
+877e7eca	2026-05-21	08:36:30		Café Três Corações Solúvel Vd 50g Trad	16,90	FALSE
+a39f7953	2026-05-21	08:36:30		Cafe Utam Momentos Extraforte 250g	15,90	FALSE
+5b7802da	2026-05-21	08:36:30		Café Três Corações Vacuo 250g Descaf	35,90	FALSE
+4a194de7	2026-05-21	08:36:30		Cerveja Ouropretana Cafe Lager 500ml	17,98	FALSE
+825bc597	2026-05-21	08:36:30		Café Três Corações Solúvel 100g Trad	25,99	FALSE
+e8712163	2026-05-21	08:36:30		Café Tres Capsula 11g Cappuccino Avela	21,98	FALSE
+3d26ab55	2026-05-21	08:36:30		Café Fino Grao 250g Extra Forte	16,90	FALSE
+8795807f	2026-05-21	08:36:30		Bebida Láctea Três Coracões Power Whey Cappuccino 260ml	5,78	FALSE
+10e911eb	2026-05-21	08:36:30		Filtro Coa Facil Perman.P/Cafe 103	5,99	FALSE
+7ce3d412	2026-05-21	08:36:30		Filtro Coa-Facil P/Cafe 103 Pano	5,99	FALSE
+93caff11	2026-05-21	08:36:30		Chocolate Lacta Intense Café 60% 85g	19,90	FALSE
+0d1cf787	2026-05-21	08:36:30		Café Mellita 250g Extra Forte	15,90	FALSE
+55c3f008	2026-05-21	08:36:30		Filtro Papel Melitta P/Cafet. 2 - C/30	5,59	FALSE
+bfb1f408	2026-05-21	08:36:30		Porta Filtro Melitta 103	14,99	FALSE
+d9dd9704	2026-05-21	08:36:30		Café Três Corações Premium Vácuo 500g	36,90	FALSE
+b397826d	2026-05-21	08:36:30		Coador de Flanela Princesa	5,99	FALSE
+00d234a7	2026-05-21	08:36:30		Chocolate Neugebauer 1891 90g Café	15,98	FALSE
+7a929823	2026-05-21	08:36:30		Café Tres Corações 100g Cappuccino Classic Refil	11,99	FALSE
+02684fc8	2026-05-21	08:36:30		Café Tres Capsula Coado com 10 Class	21,98	FALSE
+77f81bbf	2026-05-21	08:36:30		Café Cappuccino Três Capsula Havanna Doce de Leite C/10	21,98	FALSE
+c0f99c57	2026-05-21	08:36:30		Bebida Láctea Nescafe 270ml	6,99	FALSE
+17e7b0cf	2026-05-21	08:36:30		Café Três Corações Vacuo 500g Trad	35,90	FALSE
+766c71f8	2026-05-21	08:36:30		Café com Leite Tres Capsula com 10	21,98	FALSE
+6d05e384	2026-05-21	08:36:30		Filtro Papel Melitta P/Cafet.4 - C/30	6,59	FALSE
+b143d9c6	2026-05-21	08:36:30		Café Três Corações Liof.Solúvel 100g 100pc Arab	38,90	FALSE
+041d0f21	2026-05-21	08:36:30		Café Melitta Solúvel Instantâneo Sachê 40g	10,98	FALSE
+ec201e99	2026-05-21	08:36:30		Café Fino Grao 250g Trad	16,90	FALSE
+afa43280	2026-05-21	08:36:30		Nescafé Tradicao Vd 100g	32,90	FALSE
+5eddad02	2026-05-21	08:36:30		Café Três Corações Portinari Menino Soltando Pipas 250g	49,90	FALSE
+2e4dc766	2026-05-21	08:36:30		Café Melitta Reg.Brasileir.250g S.Minas	28,90	FALSE
+785e62f8	2026-05-21	08:36:30		Doce de Leite Viçosa 400g com Café	29,90	FALSE
+34476268	2026-05-21	08:36:30		Café Três Corações Vacuo 500g Extra Forte	35,90	FALSE
+015361ef	2026-05-21	08:36:30		Café Tres Capsula com 8 Latte Macchiato	21,98	FALSE
+d7d150b6	2026-05-21	08:36:30		Café Melitta Reg.Brasileir.250g.Mogiana	28,90	FALSE
+b74a720a	2026-05-21	08:36:30		Café Três Corações Solúvel 200g Trad.Granul	39,99	FALSE
+c0e8e2b4	2026-05-21	08:36:30		Café Melitta Solúvel Instantâneo Extra Forte Sachê 40g	10,98	FALSE
+26844455	2026-05-21	08:36:30		Café Melitta Reg.Brasileir.250g Cerrado	28,90	FALSE
+0b74b7b0	2026-05-21	08:36:30		Porta Filtro Melitta 102	12,99	FALSE
+42889201	2026-05-21	08:36:30		Nescafé Dolce Gusto Cappuccino C/10 Capsulas	25,90	FALSE
+49a3668d	2026-05-21	08:36:30		Café Três Corações C/Leite Lata 300g	24,90	FALSE
+5a2df9b6	2026-05-21	08:36:30		Café Três Corações Refil 100g Leite/Calcio	9,99	FALSE
+ae631871	2026-05-21	08:36:30		Café Três Corações Vacuo 250g Ext.Fort	19,90	FALSE
+4e12be29	2026-05-21	08:36:30		Bebida Láctea Três Coracoes Cappuccino 260ml Pingado	6,99	FALSE
+d30f1e69	2026-05-21	08:36:30		Café Três Corações Vacuo 250g Trad	19,90	FALSE
+768d85a0	2026-05-21	08:36:30		Cappuccino T.Coracoes 200g Descaf	19,98	FALSE
+3060e84d	2026-05-21	08:36:30		Café Três Corações Portinari Peneirando 250g	49,90	FALSE
+58a9e463	2026-05-21	08:36:30		Café Três Corações Vacuo 250g Gourmet	32,90	FALSE
+1e038ffa	2026-05-21	08:36:30		Coador P/Cafe Triutil Industrial	12,99	FALSE
+c2e3b4e1	2026-05-21	08:36:30		Café Tres Capsula Esp.Com 10 Ameno	21,98	FALSE
+7db7fa5f	2026-05-21	08:36:30		Café Melitta Vacuo 250g Descaf	34,90	FALSE
+ef734b8a	2026-05-21	08:36:30		Nescafé Dolce Gusto Cafe Matinal C/10 Capsulas	25,90	FALSE
+c449a044	2026-05-21	08:36:30		Café Tres Capsula Esp.Com 10 Supremo	21,98	FALSE
+4613c092	2026-05-21	08:36:30		Nescafé Dolce Gusto Espresso Capsula C/10	25,90	FALSE
+e57cd541	2026-05-21	08:36:30		Coador de Flanela Medeiros N.102	9,98	FALSE
+03f24c13	2026-05-21	08:36:30		Café Iguaçu Liofilizado Solúvel Vidro Gourmet 100g	35,90	FALSE
+b85423c1	2026-05-21	08:36:30		Café Tres Capsula Esp.Com 10 Pleno	21,98	FALSE
+83feb047	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio C/10 Mogiana Paulista	19,90	FALSE
+7975c372	2026-05-21	08:36:30		Café Tres Capsula Esp.Com 10 Vibr.	21,98	FALSE
+97969f69	2026-05-21	08:36:30		Starbucks Cápsula Pike Place Lungo 53g	29,90	FALSE
+bab4a0fa	2026-05-21	08:36:30		Nescafé Dolce Gusto Espresso Intenso Capsula C/10	25,90	FALSE
+65036c07	2026-05-21	08:36:30		Café Tres Capsula Esp.S.Esp.Com 8 Ch.Diam	21,98	FALSE
+ead0a523	2026-05-21	08:36:30		Café Três Espresso Forza 10 Cápsulas	21,98	FALSE
+a7acc310	2026-05-21	08:36:30		Café Melitta Solúvel Instantâneo Descafeinado Sachê 40g	17,90	FALSE
+9cfbd240	2026-05-21	08:36:30		Starbucks Cápsula Verona 55g	29,90	FALSE
+a88766d0	2026-05-21	08:36:30		Nescafé Dolce Gusto Caseiro Capsulas C/10	25,90	FALSE
+e1284906	2026-05-21	08:36:30		Café Três Espresso Atento 10 Cápsulas	21,98	FALSE
+6c9a15f2	2026-05-21	08:36:30		Café Tres Capsula Esp.Rit.Com 8 Cerr.Min	21,98	FALSE
+8fdf4ccd	2026-05-21	08:36:30		Mexedor de Café Romana C/ 100 Unid.	7,99	FALSE
+dd2716bd	2026-05-21	08:36:30		Porta Filtro T.Coracoes 102	13,99	FALSE
+ad5980ce	2026-05-21	08:36:30		Café Nescafé Gold Sachê 250g Suave	29,90	FALSE
+c508492d	2026-05-21	08:36:30		Starbucks Cápsula Espresso Blond Roast 53g	29,90	FALSE
+d8f8996a	2026-05-21	08:36:30		Starbucks Cápsula Colombia 57g	29,90	FALSE
+cf61a094	2026-05-21	08:36:30		Café Tres Capsula Esp.Reg.Mun.Com 10 Colômbia	21,98	FALSE
+774d8bc0	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio Intenso 10 Unidades	19,90	FALSE
+02ebc7f2	2026-05-21	08:36:30		Nescafé Dolce Gusto Au Lait Capsula C/10	25,90	FALSE
+f88c3d6b	2026-05-21	08:36:30		Café Tres Capsula Esp.Rit.Com 8 Org	21,98	FALSE
+924b4526	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio C/10 Organico	19,90	FALSE
+bf25e182	2026-05-21	08:36:30		Café Tres Capsula Esp.Rit.Com 8 Mog.Paul	21,98	FALSE
+bcaaa23c	2026-05-21	08:36:30		Starbucks Cápsula Espresso Roast 57g	19,97	FALSE
+88242d5e	2026-05-21	08:36:30		Café Três Corações Espresso Gourmet em Grão 1k	129,90	FALSE
+4cc01f39	2026-05-21	08:36:30		Porta Filtro T.Coracoes 103	16,98	FALSE
+de44c8cb	2026-05-21	08:36:30		Toalha Piso Appel Pezinho Café R.13000	16,90	FALSE
+c3d96fe5	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio Cerrado Mineiro 10 Unidades	19,90	FALSE
+b7b0e8f3	2026-05-21	08:36:30		Cappuccino Nescafe 180g Tradicional	21,90	FALSE
+56b67972	2026-05-21	08:36:30		Café Uno Capsula com 10 Intenso	19,90	FALSE
+8a855ae7	2026-05-21	08:36:30		Café Nescafé Gold Sachê 250g Intenso	29,90	FALSE
+e67df991	2026-05-21	08:36:30		Xícara Café S/Pires Duralex Astral 102	8,99	FALSE
+e261ca01	2026-05-21	08:36:30		Café Três Corações Drip Coffee Portinari Sachê 11g	2,99	FALSE
+55e20b74	2026-05-21	08:36:30		Café Nescafé Gold Sachê 250g Equilib.	29,90	FALSE
+416c0ab2	2026-05-21	08:36:30		Nescafé Dolce Gusto Mochaccino Capsula com 10	25,90	FALSE
+b34855f4	2026-05-21	08:36:30		Café Uno Capsula com 10 Descaf.	19,90	FALSE
+cc3e13cb	2026-05-21	08:36:30		Café Três Corações Drip Coffee Florada Premiada Sachê 11g	2,99	FALSE
+b6654ba7	2026-05-21	08:36:30		Café Três Corações Gourmet Drip Coffee Dark Sachê 11g	2,99	FALSE
+e4ca8b77	2026-05-21	08:36:30		Café Starbucks Pike Place 250g	49,90	FALSE
+3894ee4d	2026-05-21	08:36:30		Café Starbucks Verona 250g	49,90	FALSE
+20e76d7b	2026-05-21	08:36:30		Café Três Corações Drip Coffee Tradicional Sachê 10g	2,99	FALSE
+2048cb91	2026-05-21	08:36:30		Maquina Tres G1 Lov Preto 127v	399,90	FALSE
+006df3c6	2026-05-21	08:36:30		Maquina Tres G1 Lov Vermelho 127v	399,90	FALSE
+70b071e8	2026-05-21	08:36:30		Bala Arcor Butter Toffees Barista Café Expresso 90g	6,98	FALSE
+f979a76a	2026-05-21	08:36:30		Café Três Corações Gourmet 100% Arabica Dark Roast 250g	23,98	FALSE
+15bc9b89	2026-05-21	08:36:30		Café Três Corações Forza Intensidade Máxima 250g	19,97	FALSE
+719194cb	2026-05-21	08:36:30		Café Tres Capsula Esp.Com 10 Star Wars Mestre Yoda	21,98	FALSE
+26d8f9e7	2026-05-21	08:36:30		Café Três Corações Espresso Gourmet Torrado em Grão 500g	71,90	FALSE
+19251949	2026-05-21	08:36:30		Cafe com Leite Tres Capsula Vegetal com 10	21,98	FALSE
+1f1bbe54	2026-05-21	08:36:30		Cafe Tres Capsula Descafeinado com 10	21,98	FALSE
+02aeca01	2026-05-21	08:36:30		Café Três Corações Solúvel Sachê 40g Trad	7,48	FALSE
+afa87421	2026-05-21	08:36:30		Café Três Corações Solúvel Sachê 40g Extra Forte	7,48	FALSE
+6d491d1f	2026-05-21	08:36:30		Bebida Láctea Nescafé Cappuccino C/ Canela 270ml	6,99	FALSE
+74c45b42	2026-05-21	08:36:30		Bebida Láctea Nescafé Latte 270ml	6,99	FALSE
+68852aea	2026-05-21	08:36:30		Bebida Láctea Starbucks Frappuccino Classic 200ml	9,98	FALSE
+9e828389	2026-05-21	08:36:30		Bebida Láctea Starbucks Frappuccino Caramelo 280ml	9,98	FALSE
+9115d109	2026-05-21	08:36:30		Bebida Láctea Starbucks Fappuccino Mocha 280ml	9,98	FALSE
+b5aa5930	2026-05-21	08:36:30		Café Cappuccino Três Capsula Napolitano 110g	21,98	FALSE
+43265f0c	2026-05-21	08:36:30		Café Três Corações Liofilizado Solúvel 100 P.Cento Arabica 50g	11,99	FALSE
+f8e4e62c	2026-05-21	08:36:30		Café Três Corações Solúvel Descafeinado Granulado 40g	15,90	FALSE
+7393cf66	2026-05-21	08:36:30		Café Três Corações Rituais 250g Exotico	39,99	FALSE
+98394c69	2026-05-21	08:36:30		Café Três Corações Rituais 250g Frutas Vermelhas	39,99	FALSE
+2611bf43	2026-05-21	08:36:30		Café Três Corações Rituais 250g Chocolate	39,99	FALSE
+03158cbe	2026-05-21	08:36:30		Café Três Corações Rituais 250g Frutas Secas	39,99	FALSE
+d473568c	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio C/10 Peru	19,90	FALSE
+a879e92b	2026-05-21	08:36:30		Café Tres Capsula Espresso Aluminio C/10 Colombia	19,90	FALSE
+988789e8	2026-05-21	08:36:30		Nescafé Brasil Compatível C/ Nespresso Cápsula C/10	29,90	FALSE
+6b7b9456	2026-05-21	08:36:30		Café Três Corações Premium Vácuo Estrada Real 250g	24,90	FALSE
+26ec2c8f	2026-05-21	08:36:30		Café Nescafé Gold Espresso Lata 100g	44,90	FALSE
+e4248565	2026-05-21	08:36:30		Café Melitta Regiões Brasileiras Terras Capixabas 250g	28,90	FALSE
+660ad85b	2026-05-21	08:36:30		Café Melitta Sabor da Fazenda Almofada 500g	31,80	FALSE
+608a750d	2026-05-21	08:36:30		Café da Feira 500g Extra Forte	24,50	FALSE
+3acce886	2026-05-21	08:36:30		Chocolate Hersheys Special 85g Dark Café e Crocante	12,99	FALSE
+19edff5b	2026-05-21	08:36:30		Moedor Cafe Lyor Manual Co/Pote de Vidro 2994	129,90	FALSE
+51b00ac4	2026-05-21	08:36:30		Xicara Cafe Art Elohim Bambú Azaleia R.5233	22,99	FALSE
+9f7aa4f3	2026-05-21	08:36:30		Sandália Havaiana Top Max Areia/Café 35/36	49,90	FALSE
+b74db659	2026-05-21	08:36:30		Cesta Dia Das Maes Cafe Manha	70,90	FALSE
+23b1234f	2026-05-21	08:36:30		Eclair Fp Café	79,90 kg	FALSE
+fa157833	2026-05-21	08:36:30		Mexedor P/Cafe (L)	0,05 fd	FALSE
+51217d8d	2026-05-21	08:36:30		Sandália Havaiana Top Basic Cafe 35/36	43,90	FALSE
+9889d9f0	2026-05-21	08:36:30		Brinquedo Fenix Mini Cozinha Cafeteira R.Lkc989	139,90	FALSE
+72779fca	2026-05-21	08:36:30		Suplemento Alimentar Health Labs Cafeina Black C/60 Capsulas	45,90	FALSE
+d90e0b50	2026-05-21	08:36:30		Bebida Lactea Proteina Betania Yobem 250ml Cafe Express	6,98	FALSE
+e8319ac0	2026-05-21	08:36:30		Café Evolutto Tradicional 500g	29,98	FALSE
+2dff59d4	2026-05-21	08:36:30		Café Evolutto Extra Forte 500g	29,98	FALSE
+a0477600	2026-05-21	08:36:30		Capsula Café Três Corações de Paçoca C/10	21,98	FALSE
+4495d197	2026-05-21	08:36:30		Café Sanglard Torrado em Graos 500g	55,90	FALSE
+6f6beb51	2026-05-21	08:36:30		Café Sanglard Torrado e M Graos 250g	29,90	FALSE
+7cb35174	2026-05-21	08:36:30		Café Serra do Brigadeiro Gourmet Torrado e Moido 500g	49,90	FALSE
+85ab828e	2026-05-21	08:36:30		Coador para Cafe Baianinha Ref.103	7,99	FALSE
+6342e454	2026-05-21	08:36:30		Coador para Cafe Baianinha Ref.104	8,69	FALSE
+7c7641b4	2026-05-21	08:36:30		Coador para Cafe Baianinha Ref.105	9,79	FALSE
+938c0d07	2026-05-21	08:36:42		Mini Pao Sal Fp	14,98 kg	FALSE
+b9020e25	2026-05-21	08:36:42		Pão de Sal	14,98 kg	FALSE
+4fb9e4b2	2026-05-21	08:36:42		Salgadinho Torcida Pão de Alho 100g	5,99	FALSE
+3038e42c	2026-05-21	08:36:42		Salgadinho Torcida Pao de Alho 35g	2,39	FALSE
+289656f7	2026-05-21	08:36:55		Pão Panneves Forma Tradicional 450g	7,98	FALSE
+41d834d0	2026-05-21	08:36:55		Pao Seven Boys Forma 450g	7,49	FALSE
+7491f9ce	2026-05-21	08:36:55		Pao Vale do Sol Forma 400g	8,39	FALSE
+dbbb6781	2026-05-21	08:36:55		Pão Baldini Forma 47,5% Integral 400g	10,99	FALSE
+389e3899	2026-05-21	08:36:55		Pao Baldini Forma Integral 400g	9,99	FALSE
+d6e6b7f8	2026-05-21	08:36:55		Pao Wick Bold D.Forno 500g 100 P.Cen.Int	15,99	FALSE
+0d47cbdb	2026-05-21	08:36:55		Pao Baldini Forma 400g 39,5 Por Cento Integral Uva Passa	11,59	FALSE
+e44f4a1c	2026-05-21	08:36:55		Pao Vale do Sol Zero 3 Cereais 400g	11,98	FALSE
+1b3a6d84	2026-05-21	08:36:55		Pao Wick Bold D.Forno 500g Orig	14,99	FALSE
+837a67a4	2026-05-21	08:36:55		Pao Wick Bold Forma 300g S/Glut.	23,99	FALSE
+a2065d2a	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral Uvas Passas	9,98	FALSE
+29183eb3	2026-05-21	08:36:55		Pao Wick Bold Forma Integral 450g	13,90	FALSE
+2204f21e	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral Zero	9,98	FALSE
+34733572	2026-05-21	08:36:55		Pao Delicias do Trigo 100 P/Cento Integral Castanhas/Quinoa	15,99	FALSE
+a282cab7	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral 12 Graos Zero	9,98	FALSE
+84b71959	2026-05-21	08:36:55		Pão de Forma Delicias do Trigo 100% Integral Grãos e Castanha450g	15,99	FALSE
+7d2db012	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral Banana/Aveia	9,98	FALSE
+7b32b551	2026-05-21	08:36:55		Pao Delicias do Trigo Forma 380g Integral Australiano	10,99	FALSE
+d8e9f393	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral Original	9,98	FALSE
+69dae67e	2026-05-21	08:36:55		Pão Bauducco 390g Tradicional	7,98	FALSE
+75574af0	2026-05-21	08:36:55		Pao Visconti Forma 400g Int	8,99	FALSE
+200b7aab	2026-05-21	08:36:55		Pão Wick Bold S/Casca 400g	18,90	FALSE
+0363afd1	2026-05-21	08:36:55		Pão Wick Bold 5 Zeros Quinoa/ Chia/ Linhaça 400g	10,99	FALSE
+42afa740	2026-05-21	08:36:55		Pão Wick Bold 5 Zeros Fonte de Fibras 400g	10,99	FALSE
+7f6e2948	2026-05-21	08:36:55		Pão Farid Forma Tradicional 400g	5,49	FALSE
+fb1845b1	2026-05-21	08:36:55		Pao Baldini Forma 400g Tradicional	7,49	FALSE
+83a3b648	2026-05-21	08:36:55		Pao Delicias do Trigo Forma Artesanal 450g Original	12,99	FALSE
+74103ef6	2026-05-21	08:36:55		Pao Delicias do Trigo Forma Artesanal 450g Integral	12,99	FALSE
+6ed35e7d	2026-05-21	08:36:55		Pao Delicias do Trigo Forma Artesanal 450g Castanha/Nozes	12,99	FALSE
+8525fb3c	2026-05-21	08:36:55		Pão Delicias do Trigo Forma S/Casca 400g	17,99	FALSE
+d7fd962c	2026-05-21	08:36:55		Pao da Casa Forma 400g	5,99	FALSE
+54c55157	2026-05-21	08:36:55		Pao Vale do Sol Int.400g Forma	7,99	FALSE
+4f6269b8	2026-05-21	08:36:55		Pao Wick Bold D.Forno 500g Graos	12,90	FALSE
+f2ab54bf	2026-05-21	08:36:55		Pao Delicias do Trigo 380g Integral 7 Graos	9,98	FALSE
+c4bfc153	2026-05-21	08:36:55		Pao Wick Bold E.Leve 300g Forma	10,90	FALSE
+34bb3543	2026-05-21	08:36:55		Pao Milani Int.500g	6,99	FALSE
+2cc21af4	2026-05-21	08:36:55		Pao Milani Puro Grao Integral 500g 12 Graos	9,99	FALSE
+47b10ebe	2026-05-21	08:36:55		Pao Milani 450g Multicereais	8,49	FALSE
+21b2e162	2026-05-21	08:36:55		Forma P/Pão Mba Retangular N.1 R.1014	17,90	FALSE
+19420e8a	2026-05-21	08:36:55		Pao Bauducco Multigraos 390g	11,99	FALSE
+c24d29b2	2026-05-21	08:36:55		Pao Baldini Forma 450g Leite	5,99	FALSE
+5a3032cb	2026-05-21	08:37:06		Açúcar Cristal Alvinho 5kg	15,98	FALSE
+9c8e1a95	2026-05-21	08:37:06		Açúcar Delta Cristal 5kg	13,58	FALSE
+b124cd99	2026-05-21	08:37:06		Açúcar Cristal de Minas 5kg	15,98	FALSE
+29ed170d	2026-05-21	08:37:06		Açúcar Cristal Coruripe 5kg	16,98	FALSE
+9cd0a196	2026-05-21	08:37:17		Açúcar Refinado União 1kg	4,49	FALSE
+1885e125	2026-05-21	08:37:17		Açúcar União Demerara 1kg	5,95	FALSE
+df864342	2026-05-21	08:37:17		Acucar Cristal 1k Delta	3,99	FALSE
+72dc5439	2026-05-21	08:37:17		Lasanha Perdigao 1kg Bolon	25,90	FALSE
+173d8bae	2026-05-21	08:37:17		Acucar Cristal 1k Uniao Org	8,98	FALSE
+a32ec47f	2026-05-21	08:37:17		Açúcar Refinado Guarani 1kg	4,98	FALSE
+c595015f	2026-05-21	08:37:17		Acucar Mascavo Jasmine Integral 1k	25,90	FALSE
+c68703ed	2026-05-21	08:37:17		Coco Ralado Incoco 1kg Desengordurado Sem Açúcar	29,90	FALSE
+2f0b9434	2026-05-21	08:37:27		Batata Inglesa	9,98 kg	FALSE
+56b2d692	2026-05-21	08:37:38		Batata Doce Roxa	5,98 kg	FALSE
+f665ba50	2026-05-21	08:37:38		Batata Doce Branca	7,98 kg	FALSE
+dbf6570d	2026-05-21	08:37:38		Bifinho Quatree Snacks Palitus Cordeiro e Batata Doce 60g	5,49	FALSE
+acb74a34	2026-05-21	08:37:38		Bebida Láctea Yopro 250ml 15 Protein Batata Doce	8,98	FALSE
+87846cfc	2026-05-21	08:37:38		Bifinho Quatree Snacks Palitus Carne e Batata Doce 60g	5,49	FALSE
+04001d28	2026-05-21	08:37:38		Bifinho Quatree Snacks Palitus Cordeiro e Batata Doce 500g	35,90	FALSE
+cf22dac4	2026-05-21	08:37:38		Bifinho Quatree Snacks Palitus Carne e Batata Doce 500g	35,90	FALSE
+4a28ea28	2026-05-21	08:37:38		Bebida Lactea Itambe Whey Coco 250g	6,98	FALSE
+c5518bdf	2026-05-21	08:37:38		Batata Doce Organica de Minas Bandeija 400g	9,98	FALSE
+240f239d	2026-05-21	08:37:38		Doce Batata Doce Doce de Vo 85g	4,49	FALSE
+f0d88de7	2026-05-21	08:37:38		Macarrão Knorr 300g Fusilli Batata Doce/Gergelim	15,90	FALSE
+1e56213e	2026-05-21	08:37:38		Salada Atum Gomes da Costa 150g B.Doce/Azeit	9,29	FALSE
+b28e089a	2026-05-21	08:37:38		Salgadinho Mãe Terra Orgânico Snack Chips 32g Batata Rústica	7,99	FALSE
+b5cc5b46	2026-05-21	08:37:38		Batata Doce Resid.Nat.Life 150g	15,90	FALSE
+edfc63ea	2026-05-21	08:37:38		Pao Batata Doce Artisan Foods 300g C/Frango	29,90	FALSE
+df2046b2	2026-05-21	08:37:38		Coxinha Lifefit Batata Doce/Fgo	14,99	FALSE
+ffc94b3e	2026-05-21	08:37:49		Cenoura	8,98 kg	FALSE
+41392800	2026-05-21	08:37:49		Mistura para Bolo Vilma Cenoura 400g	3,98	FALSE
+ecb5bc5e	2026-05-21	08:37:49		Mistura Bolo Anchieta 400g Cenoura	4,39	FALSE
+6bf5531b	2026-05-21	08:37:49		Mistura Bolo Fleischmann 390g Cenoura Up	9,98	FALSE
+e24bdeb2	2026-05-21	08:37:49		Oleo P/Cab.Ideal 100ml Cenoura	10,99	FALSE
+e957c050	2026-05-21	08:37:49		Óleo Bronzeador Sunless 120ml Cenoura	22,90	FALSE
+9eb948cf	2026-05-21	08:37:49		Pâo Nutrella Semente de Abóbora, Linhaça e Cenoura 350g	17,90	FALSE
+53db6b30	2026-05-21	08:37:49		Óleo Cabelo Farmax Cenoura 100ml	11,99	FALSE
+48d1eb88	2026-05-21	08:37:49		Mandioquinha Baroa Leve Alimentos Bandeja 500g	8,99	FALSE
+a7917e06	2026-05-21	08:37:49		Iogurte Nestle Natural 170g Mel/Lar/Ce	4,59	FALSE
+63a1de69	2026-05-21	08:37:49		Biscoito Nestle Nesfit 160g Lar/Cen	4,78	FALSE
+33c2ec58	2026-05-21	08:37:49		Cenoura com Vagem Fazenda Pinhal Bandeja 250g	6,99	FALSE
+c0f46851	2026-05-21	08:37:49		Bolo Fabricação Própria Cenoura com Cobertura Ganache	32,90 kg	FALSE
+d629b1a0	2026-05-21	08:37:49		Bolo Fp Cenoura C/Brigadeiro	32,90 kg	FALSE
+95b3bb16	2026-05-21	08:37:49		Bolo Fp Crem.Cenoura	32,90 kg	FALSE
+dc935deb	2026-05-21	08:37:49		Biscoito Papapa 20g Cenoura	6,99	FALSE
+e62e0afc	2026-05-21	08:37:49		Bolo Bauducco Cenoura com Chocolate 200g	9,99	FALSE
+7986299a	2026-05-21	08:37:49		Meu Menu Perdigão Lombo Ao Molho Oriental e Arroz com Cenoura 300g	9,98	FALSE
+e196946d	2026-05-21	08:37:49		Oleo P/Cabelo Lola 50ml Pinga Cenoura C/ Oliva	39,90	FALSE
+48ddb61c	2026-05-21	08:37:49		Pao Milani 450g Cen/Aveia/Mel	8,49	FALSE
+bda94211	2026-05-21	08:37:49		Iogurte Vigor Nat.170g Lar/Cen/Mel	2,69	FALSE
+c9264fd8	2026-05-21	08:37:49		Pao Wick Bold E.Leve 370g Iog/Cen	7,90	FALSE
+1d90fcb1	2026-05-21	08:37:49		Iogurte Vigor Natural Laranja/Cenoura/Mel 150g	3,79	FALSE
+8594bf50	2026-05-21	08:37:49		Cenoura Demarchi Cong 300g Baby	6,59	FALSE
+0bff0a99	2026-05-21	08:37:49		Brinquedo Fenix Cenoura Car R.Dcc952	29,90	FALSE
+e6e8c582	2026-05-21	08:37:49		Enfeite de Pascoa Florarte Coelho Macho Sentado com Cenoura Laranja 41x12cm R.54773001	123,90	FALSE
+96d53828	2026-05-21	08:37:49		Enfeite de Pascoa Florarte Cenoura Decorativa Laranja 60x9 R.54807001	109,90	FALSE
+279872c1	2026-05-21	08:38:00		Tomate Italiano Mundo Leve Bandeja 400g	7,98	FALSE
+990e826e	2026-05-21	08:38:00		Tomate Italiano Serras Mantiqueira Bandeja 500g	9,98	FALSE
+d2b3378e	2026-05-21	08:38:00		Tomate Italiano Bandeja 500g	3,98	FALSE
+7d96949a	2026-05-21	08:38:00		Tomate Italiano Fazenda Pinhal Pacote 1kg	9,99	FALSE
+64aa3cb5	2026-05-21	08:38:00		Tomate Italiano Organico de Minas Bandeija 500g	9,98	FALSE
+41d0661d	2026-05-21	08:38:00		Pure Tomate Italiano Pomi Passata Rústica 680g	25,99	FALSE
+0842f501	2026-05-21	08:38:00		Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Ricotta 360g	29,90	FALSE
+b0768aff	2026-05-21	08:38:00		Tomate Mini Italiano Bandeja	4,99	FALSE
+ea17c104	2026-05-21	08:38:00		Passata Italiano Agromonte Sabor Tomate Cereja 520g	33,90	FALSE
+1185efa4	2026-05-21	08:38:00		Molho Italiano Tartufi Jimmy 180g Trufas/Polpa Fina de Tomate	39,90	FALSE
+6bc3b1ba	2026-05-21	08:38:00		Pure Tomate Italiano Pomi Passata Rustica C/Manjericão 680g	26,99	FALSE
+59a5b2a5	2026-05-21	08:38:00		Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Ricotta 260g	29,90	FALSE
+aee32511	2026-05-21	08:38:00		Molho de Tomate Italiano Agromonte Sabor Tomate Cereja e Berinjela 260g	29,90	FALSE
+cf6666ca	2026-05-21	08:38:00		Molho de Tomate Italiano Agromonte Sabor Tomate Cereja Puttanesca 260g	29,90	FALSE
+b18ae663	2026-05-21	08:38:00		Molho Italiano Agromonte Sabor Tomate Cereja 330g	29,90	FALSE
+25da9a6d	2026-05-21	08:38:11		Tomate Longa Vida	10,98 kg	FALSE
+adab0f51	2026-05-21	08:38:21		Laranja Pera	2,98 kg	FALSE
+0b91413f	2026-05-21	08:38:32		Alface Crespa Hortifolhas Unid	4,98	FALSE
+7823564b	2026-05-21	08:38:32		Alface Crespa Hidropônico Vicosa	5,38	FALSE
+cf8921c1	2026-05-21	08:38:32		Alface Crespa Bom Jardim Hidroponico	4,98	FALSE
+65509dd3	2026-05-21	08:38:32		Alface Americana Hortifolhas Unid	5,98	FALSE
+4436f6d9	2026-05-21	08:38:32		Alface Roxa Hortifolhas Unidade	4,98	FALSE
+3dde1cd1	2026-05-21	08:38:32		Alface Americana Bandeja 180g	7,18	FALSE
+1f45a90a	2026-05-21	08:38:32		Alface Hidropônica Unidade	2,48	FALSE
+fe0084f3	2026-05-21	08:38:32		Semente de Alface Isla Itapua 401 0,8g	4,29	FALSE
+78bddedb	2026-05-21	08:38:32		Salada Romana Alface/ Rad/ Alface Rom 200g	7,48	FALSE
+8ee4e996	2026-05-21	08:38:32		Alface Lisa Hortifolhas	4,98	FALSE
+0279fff2	2026-05-21	08:38:32		Alface Crespa Band.300g	3,29	FALSE
+112d29d8	2026-05-21	08:38:32		Alface Americana Mundo Leve Band 180g	4,98	FALSE
+105b5621	2026-05-21	08:38:32		Alface Mix Recanto Hidroponica	5,48	FALSE
+6fcb9d56	2026-05-21	08:38:32		Alface Hidrovictus Hidropônico Un	6,38	FALSE
+159d1886	2026-05-21	08:38:32		Alface Crespa Hid Hidrovictus Un	5,98	FALSE
+03dc517b	2026-05-21	08:38:32		Alface Americana Agroverde Unidade	5,99	FALSE
+591261ce	2026-05-21	08:38:32		Alface Crespe Agroverde Unidade	4,99	FALSE
+3b672c21	2026-05-21	08:38:32		Alface Lisa Agroverde Unidade	4,99	FALSE
+82211306	2026-05-21	08:38:32		Alface Roxa Agroverde Unidade	4,99	FALSE
+5c1856c2	2026-05-21	08:38:32		Semente Isla Alface Delicia Americana 1,5g	4,29	FALSE
+c59da11b	2026-05-21	08:38:32		Salada America Alface Americano/ Alface Roxo/ Rícula 200g	6,98	FALSE
+756e2b39	2026-05-21	08:38:32		Sem.Isla Alface Mimosa Salad.Bowl 1,9g	2,99	FALSE
+9edc8c74	2026-05-21	08:38:51		Banana Prata	6,98 kg	FALSE
+516748cd	2026-05-21	08:38:51		Banana Caturra	5,98 kg	FALSE
+1cb0f690	2026-05-21	08:38:51		Banana da Terra Kg	9,98 kg	FALSE
+185851b7	2026-05-21	08:38:51		Banana Dacolonia Zero Açúcar 180g	17,90	FALSE
+927cf9e0	2026-05-21	08:38:51		Banana Maça Kg	14,98 kg	FALSE
+2878a5cc	2026-05-21	08:38:51		Banana Chips Aritana Tradicional 50g	4,99	FALSE
+403d029f	2026-05-21	08:38:51		Bebida Láctea Yopro 250ml 15 Protein Banana	6,97	FALSE
+3e959b06	2026-05-21	08:38:51		Oléo Banana Ideal 30ml	7,59	FALSE
+ad195cde	2026-05-21	08:38:51		Iogurte Verde Campo Banana Whey 14 Proteína 250g	9,99	FALSE
+d7cef680	2026-05-21	08:38:51		Iogurte Verde Campo Lac Free Banana Maçã Mamão 500g	10,98	FALSE
+f4f9f5e3	2026-05-21	08:38:51		Bala Arcor Butter Toffees Milk Banana / Maça 48g	3,99	FALSE
+42bd1ca7	2026-05-21	08:38:51		Cereal Montevergine Banana Castanha e Mel 75g	5,99	FALSE
+da0b7ab2	2026-05-21	08:38:51		Granola Natural Life Banana e Canela 1kg	38,99	FALSE
+4b593e95	2026-05-21	08:38:51		Licor Don Bergine Caramelo Toffe/ Banana 750ml	64,98	FALSE
+01cd36f1	2026-05-21	08:38:51		Bala Gelatina Dori Banana 60g	6,99	FALSE
+969aa2b4	2026-05-21	08:38:51		Bebida Mista Rainha da Cana Banana 700ml	29,98	FALSE
+8c580f14	2026-05-21	08:38:51		Sobremesa Verde Campo Banana e Canela 200g	10,98	FALSE
+68d5e517	2026-05-21	08:38:51		Iogurte Verde Campo Whey 11proteinas Banana e Canela 140g	8,99	FALSE
+895b92a3	2026-05-21	08:38:51		Farofa Yoki Caseirissima de Banana 200g	7,98	FALSE
+824f4b81	2026-05-21	08:38:51		Iogurte Nestle Ninho Pouch Maca e Banana 100g	3,79	FALSE
+3492d105	2026-05-21	08:38:51		Iogurte Nestle Ninho 540g	9,98	FALSE
+c38a353a	2026-05-21	08:38:51		Iogurte Itambe 510g Cereais	7,98	FALSE
+23841d63	2026-05-21	08:38:51		Biscoito Aymoré Cereal Mix 135g Banana/Canela	3,99	FALSE
+cd04ab60	2026-05-21	08:38:51		Iogurte Danoninho P/Levar Morango/Banana 70g	3,99	FALSE
+e5517132	2026-05-21	08:38:51		Iogurte Itambe 510g Kids	7,98	FALSE
+13ead522	2026-05-21	08:38:51		Bala de Gelatina Fini Bananas 80g	7,60	FALSE
+f64535b5	2026-05-21	08:38:51		Bebida Láctea Nestle Fast 280ml Neston	6,99	FALSE
+37354512	2026-05-21	08:38:51		Iogurte Batavo Líquido Cereal 1150g	11,98	FALSE
+3c615152	2026-05-21	08:38:51		Iogurte Nestle Neston 510g Morango/Maca/Banana	9,98	FALSE
+38c4d258	2026-05-21	08:38:51		Pao Delicias do Trigo 380g Integral Banana/Aveia	9,98	FALSE
+7089b7e1	2026-05-21	08:38:51		Iogurte Verde Campo Lac Free Banana/Mamão/Maça 170g	4,59	FALSE
+57a48375	2026-05-21	08:38:51		Neston 400g Vit.Mam/Ban/Maca	18,98	FALSE
+6759dff2	2026-05-21	08:38:51		Cereal Joy Nuts Zero Banana/Damasco C/2 50g	9,99	FALSE
+6702c5a9	2026-05-21	08:38:51		Snack Mucilon 35g Banana/Morango	6,99	FALSE
+31fea858	2026-05-21	08:38:51		Iogurte Vida Veg 170g Vitamina Frutas	6,59	FALSE
+9b8ef9ac	2026-05-21	08:38:51		Snack Mucilon 35g Banana/Laranja	6,99	FALSE
+635dc2e4	2026-05-21	08:38:51		Mariola Dacolonia 180g C/Goiaba	11,99	FALSE
+8ed8cf45	2026-05-21	08:38:51		Condicionador Palmolive Kids Minions 350ml	19,90	FALSE
+e7f6b24d	2026-05-21	08:38:51		Petit Suisse Itambé Banana/ Morango 320g	7,98	FALSE
+344e5f8f	2026-05-21	08:38:51		Biscoito Bauducco Amanteigado Banana/Canela 354g	9,59	FALSE
+1f7b9bd6	2026-05-21	08:38:51		Petit Suisse Elege Bob Esponja Morango/Banana 320g	7,59	FALSE
+078ad901	2026-05-21	08:38:51		Banana Maça Recanto Bandeja 400g	7,98	FALSE
+0082f739	2026-05-21	08:38:51		Banana Famoso Cremoso de 30g	3,49	FALSE
+cfc55315	2026-05-21	08:38:51		Banana Chips Aritana Cebola e Salsa 50g	4,99	FALSE
+83426bbd	2026-05-21	08:38:51		Banana Chips Paixão Tropical Lemon Pepper 60g	9,99	FALSE
+07777f22	2026-05-21	08:38:51		Banana Famoso Cremoso Zero Açúcar de 30g	3,59	FALSE
+613bac1e	2026-05-21	08:38:51		Petit Suisse Trevinho Morango e Banana 320g	7,98	FALSE
+9abc0a88	2026-05-21	08:38:51		Bolo Fp Banana C/Passas e Nozes	34,90 kg	FALSE
+6228ce0b	2026-05-21	08:38:51		Lixa P/Unha Luna Banana Acrigel	5,59	FALSE
+e22f7a8d	2026-05-21	08:38:51		Iogurte Digudinho 900g Açai/Guaraná e Banana	7,99	FALSE
+078d1372	2026-05-21	08:38:51		Biscoito Mabel Rosquinha Banana Canela 300g	5,59	FALSE
+edf90455	2026-05-21	08:38:51		Creme Cabelo Mahair 250g Máscara Banana	11,99	FALSE
+aeafce2a	2026-05-21	08:38:51		Bebida Lactea Proteina Betania Yobem 250ml Banana	6,98	FALSE
+797939d6	2026-05-21	08:38:51		Barra Nuts Kodilar S/Gluten Banana 25g	7,59	FALSE
+c1288df4	2026-05-21	08:38:51		Petit Suisse Chambinho Maca e Banana 320g	9,99	FALSE
+30a05e78	2026-05-21	08:38:51		Shampoo 325ml + Condicionador 200ml Skala Banana	13,90	FALSE
+c6edb50e	2026-05-21	08:38:51		Petisco Pedigree Biscrok Banana 500g	31,98	FALSE
+7c6eaeca	2026-05-21	08:38:51		Bananada Reserva de Minas 4000g Cremosa	9,98	FALSE
+9f75ca62	2026-05-21	08:38:51		Broa Fp Banana/Nozes/Passas	34,90 kg	FALSE
+f429ecec	2026-05-21	08:38:51		Bananada Aye Zero com Ameixa 250g	12,98	FALSE
+3ccb6124	2026-05-21	08:38:51		Mingau Nutribom Sache 180g Banana/Maca	6,98	FALSE
+9c6fb4f8	2026-05-21	08:38:51		Granola Kodilar 300g Banana/Canela	14,99	FALSE
+6ee7e36b	2026-05-21	08:38:51		Granola Kobber Banana e Mel 500g	19,90	FALSE
+9f711764	2026-05-21	08:38:51		Mariola Dacolonia Orgânica180g Banana	17,90	FALSE
+d8c5b5c6	2026-05-21	08:38:51		Cachaça Origem de Minas Banana 700ml	37,90	FALSE
+3810c47c	2026-05-21	08:38:51		Suco Amazoo Açaí C/ Banana 1l	19,98	FALSE
+f0502dfd	2026-05-21	08:38:51		Biscoito Nestle Nesfit 60g Cookie Banana	2,98	FALSE
+14ac0401	2026-05-21	08:38:51		Bolinho Bauducco Cereale Banana 35g	1,69	FALSE
+b8f60b87	2026-05-21	08:38:51		Barra Supino Banana Brasil Zero Banana e Chocolate Branco 24g	2,99	FALSE
+227bf2cd	2026-05-21	08:38:51		Barra Supino Banana Brasil Zero Banana e Ameixa 24g	2,99	FALSE
+20f0d76e	2026-05-21	08:38:51		Barra Supino Banana Brasil Zero Banana e Chocolate 24g	2,99	FALSE
+ad1786d4	2026-05-21	08:38:51		Barra Supino Banana Brasil Zero Banana, Maca e Canela 24g	2,99	FALSE
+2ebee1d0	2026-05-21	08:38:51		Barra Supino Banana Brasil Original Banana e Chocolate Branco 24g	2,79	FALSE
+c5468f4e	2026-05-21	08:38:51		Barra Supino Banana Brasil Original Banana e Chocolate 24g	2,79	FALSE
+6ec43c12	2026-05-21	08:38:51		Bebida Láctea Cemil Frutas 200ml	1,25	FALSE
+1fedc6e4	2026-05-21	08:38:51		Petit Suisse Danoninho Multicereais 320g	9,98	FALSE
+9efce9e9	2026-05-21	08:38:51		Neston 210g Vit.Mam/Ban/Maca	9,80	FALSE
+0854e2c1	2026-05-21	08:38:51		Mucilon Banana/ Maça/ Quinoa Zero Acúcar Sachê 180g	7,75	FALSE
+75919f49	2026-05-21	08:38:51		Picolé Kibon Minions 45g (L)	6,50	FALSE
+250c1fe6	2026-05-21	08:38:51		Bebida Láctea Piracanj.Quin/Lin 200ml Ban	2,98	FALSE
+e5963490	2026-05-21	08:38:51		Chocolate 1891 Tropical 90g	15,98	FALSE
+0f1c8832	2026-05-21	08:38:51		Granola Mãe Terra Banana/Cacau 250g	17,90	FALSE
+47b2d6cd	2026-05-21	08:38:51		Suco Tial Vitamix Banana/Maça 1l	7,58	FALSE
+79ac85e5	2026-05-21	08:38:51		Suco Tial Vitamix Morango/Banana/Maça 1l	7,58	FALSE
+7553ca4d	2026-05-21	08:38:51		Bananada Zelia 500g	19,90	FALSE
+48cba944	2026-05-21	08:38:51		Biscoito Mãe Terra Org.Int.120g Ban/Cacau	13,99	FALSE
+efa6f935	2026-05-21	08:38:51		Manteiga Lola 100g Bem Dita Ghee Hidratação	29,90	FALSE
+d769657e	2026-05-21	08:38:51		Petisco Dog Chow Filhote 75g Banana/Leite	5,97	FALSE
+497dc9c9	2026-05-21	08:38:51		Papinha Nestle 120g Ban/Ave	9,99	FALSE
+579f34be	2026-05-21	08:38:51		Petit Suisse Itambé Cereais 360g	4,99	FALSE
+8bf23575	2026-05-21	08:38:51		Bala Haribo Sweet Bananas 80g	6,99	FALSE
+4e0c3344	2026-05-21	08:38:51		Banana Chips Vovo Nana 60g	9,99	FALSE
+c8457d59	2026-05-21	08:38:51		Iogurte Ylafrut Power Fitnes Protein 22 250g Banana	8,99	FALSE
+d4c6b31a	2026-05-21	08:38:51		Far.Banana Verde Lugen 200g	13,99	FALSE
+d8a920af	2026-05-21	08:38:51		Suco Purejuice Açai/ Banana 300ml	6,59	FALSE
+562f44ec	2026-05-21	08:38:51		Peça Decorativa Lyor Folha Cerâmica Banana Leaf Verde 26,5x20 R.4125	96,90	FALSE
+fb7b446b	2026-05-21	08:38:51		Iogurte Danoninho Banana/ Maça 100g	2,99	FALSE
+317c5845	2026-05-21	08:38:51		Bananada Zelia 250g S/Acucar	13,98	FALSE
+6d207541	2026-05-21	08:38:51		Bananada Vovo S.L 270g Diet	19,90	FALSE
+2428a83a	2026-05-21	08:38:51		Bananada Tenere 500g	12,98	FALSE
+317c689a	2026-05-21	08:38:51		Bebida Notshake Notco Protein de Banana/ Canela 250ml	8,98	FALSE
+ddff19d5	2026-05-21	08:39:15		Ovo Branco Perfa com 30 Ovos	19,98	FALSE
+28cbff62	2026-05-21	08:39:15		Macarrão Vilma Ovos Parafuso 500g	4,79	FALSE
+be62777d	2026-05-21	08:39:15		Macarrão Vilma Ovos N.° 8 Espaguete 500g	4,79	FALSE
+10b05aa5	2026-05-21	08:39:15		Macarrão Santa Amália Ovos N.º 8 Espaguete 500g	4,98	FALSE
+aae9b672	2026-05-21	08:39:15		Macarrão Santa Amália Ovos N.º 9 Espaguete 500g	4,98	FALSE
+87a8be57	2026-05-21	08:39:15		Macarrão Vilma Ovos Pai Nosso 500g	4,79	FALSE
+5ed7f9ff	2026-05-21	08:39:15		Macarrão Vilma Espaguete N° 9 com Ovos 500g	4,79	FALSE
+b2c964c3	2026-05-21	08:39:15		Macarrão Vilma Ovos Penne 500g	4,79	FALSE
+a96c21ba	2026-05-21	08:39:15		Macarrão Vilma Ovos Linguine 500g	4,79	FALSE
+b12ce4e9	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Fidel	4,98	FALSE
+61384f08	2026-05-21	08:39:15		Macarrão Vilma Ovos Nº 10 Espaguete 500g	4,79	FALSE
+628d4d8a	2026-05-21	08:39:15		Macarrão Santa Amália Ovos Parafuso 500g	4,98	FALSE
+dd3227ee	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Linguini	4,98	FALSE
+3bd80f7d	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Ninho N.1	7,48	FALSE
+e98bf6e9	2026-05-21	08:39:15		Macarrão Yara Ovos Parafuso 500g	4,39	FALSE
+f76b4ffa	2026-05-21	08:39:15		Macarrão Vilma Ovos Ninho N.° 3 500g	7,59	FALSE
+90a6c4c1	2026-05-21	08:39:15		Macarrão Vilma Ovos Gravata 500g	4,79	FALSE
+06f27736	2026-05-21	08:39:15		Macarrão Santa Amália Ovos Pai Nosso 500g	4,98	FALSE
+0bf1421e	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Caracol	4,79	FALSE
+41264565	2026-05-21	08:39:15		Tempero Kitano Mais Sabor Feijão Ovos Arroz 60g	3,48	FALSE
+17e7df3a	2026-05-21	08:39:15		Macarrão Santa Amália Ovos Ninho N.°3 500g	7,48	FALSE
+40609af3	2026-05-21	08:39:15		Macarrão Santa Amalia Ovos 500g Conch	4,98	FALSE
+ed691014	2026-05-21	08:39:15		Macarrão Yara Ovos Pai Nosso 500g	4,39	FALSE
+937cccad	2026-05-21	08:39:15		Macarrão Yara Ovos Espaguete N°8 500g	4,39	FALSE
+da2287e0	2026-05-21	08:39:15		Macarrão Vilma Ovos Ninho N.° 1 500g	7,59	FALSE
+2fc27303	2026-05-21	08:39:15		Macarrão Santa Amália Ovos Penne 500g	4,98	FALSE
+d2f4a85c	2026-05-21	08:39:15		Macarrão Santa Amália Ovos Ave Maria 500g	4,98	FALSE
+e8939b85	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Papard	7,59	FALSE
+239fba58	2026-05-21	08:39:15		Macarrão Vilma Ovos Serpentini 500g	4,79	FALSE
+a1f6a385	2026-05-21	08:39:15		Macarrão Vilma Ovos Ave Maria 500g	4,79	FALSE
+93ec5c57	2026-05-21	08:39:15		Massa Vilma Ovos Lasanha 500g	9,98	FALSE
+20648ad8	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Grav	7,48	FALSE
+f90a4df5	2026-05-21	08:39:15		Bala Gelat Fini 80g Ovos Fritos	7,60	FALSE
+678ac6d0	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Lasanha	9,98	FALSE
+9704214b	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Alfab	4,98	FALSE
+55928499	2026-05-21	08:39:15		Mac.Vilma Ovos Tricol.500g Paraf	7,98	FALSE
+c31afaa2	2026-05-21	08:39:15		Macarrão Barilla Ovos Espaguete N.° 8 500g	6,59	FALSE
+2cc7bedc	2026-05-21	08:39:15		Macarrão Barilla Ovos Espaguete N.° 9 500g	6,59	FALSE
+6398846b	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Letrinha	4,79	FALSE
+f4e8a252	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Aletria	7,59	FALSE
+fad32aa9	2026-05-21	08:39:15		Macarrão Barilla Ovos 500g Parafuso	6,59	FALSE
+bcc2e5f9	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Rigat	7,48	FALSE
+fa863e05	2026-05-21	08:39:15		Macarrão Santa Amália Ovos 500g Aletria	7,48	FALSE
+99883add	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Rigat	4,79	FALSE
+4cc358c1	2026-05-21	08:39:15		Macarrão Barilla Ovos 500g Fettuccine	6,59	FALSE
+7f920bfe	2026-05-21	08:39:15		Macarrão Barilla Ovos 500g Ave Maria	6,59	FALSE
+0dd0740b	2026-05-21	08:39:15		Mac.Vilma Ovos 500g Tipo Caseira	12,98	FALSE
+d8460812	2026-05-21	08:39:15		Pão Panneves Forma Tradicional 450g	7,98	FALSE
+124b28df	2026-05-21	08:39:15		Pao Seven Boys Forma 450g	7,49	FALSE
+4b410ef1	2026-05-21	08:39:15		Bolo Caçarola	39,90 kg	FALSE
+50774f00	2026-05-21	08:39:15		Pão Panneves Sanduíche Leite 450g	7,59	FALSE
+2e056856	2026-05-21	08:39:15		Mortadela Perdigão Ouro Peça/Pedaço Kg	4,40	FALSE
+f9e1e51c	2026-05-21	08:39:15		Pao Vale do Sol Forma 400g	8,39	FALSE
+f4885683	2026-05-21	08:39:15		Pão Baldini Bisnaga Leite 300g	7,49	FALSE
+2d1c425b	2026-05-21	08:39:15		Bolinho Bauducco Duo 27g Choc	1,68	FALSE
+dfb297cb	2026-05-21	08:39:15		Pao Seven Boys Bisnag.300g Trad	6,59	FALSE
+5d1c44b6	2026-05-21	08:39:15		Pao Vale do Sol Bisnaguinha 250 Gramas Premium Sem Açucar	7,69	FALSE
+479e1ed3	2026-05-21	08:39:15		Biscoito Seven Boys Sequilhos 400g	8,99	FALSE
+62bf62ab	2026-05-21	08:39:15		Pao Panneves Hambúrguer 600g	11,99	FALSE
+5702a9a4	2026-05-21	08:39:15		Mortadela Perdigao Bolognella Peca/Pedaco Kg	19,90 kg	FALSE
+0f773bd9	2026-05-21	08:39:15		Bolo Pote	49,90 kg	FALSE
+b1ab7414	2026-05-21	08:39:15		Pão Baldini Forma 47,5% Integral 400g	10,99	FALSE
+b41a5254	2026-05-21	08:39:15		Ovo Branco Perfa C/12	10,98	FALSE
+60f3e400	2026-05-21	08:39:15		Bolo Formigueiro	28,90 kg	FALSE
+8404bd80	2026-05-21	08:39:15		Pao Baldini Forma Integral 400g	9,99	FALSE
+ab28ee80	2026-05-21	08:39:15		Pao Panneves Hot Dog 600g	11,99	FALSE
+cbca50a8	2026-05-21	08:39:15		Mistura para Bolo Vilma Chocolate 400g	6,59	FALSE
+7c769250	2026-05-21	08:39:15		Pao Wick Bold D.Forno 500g 100 P.Cen.Int	15,99	FALSE
+d4a8737a	2026-05-21	08:39:15		Bolo Fp Mesclado	29,90 kg	FALSE
+08941148	2026-05-21	08:39:15		Ovo Vermelho Perfa C/30	24,98	FALSE
+f59762e7	2026-05-21	08:39:15		Mistura para Bolo Vilma Coco 400g	3,98	FALSE
+ca1882b3	2026-05-21	08:39:15		Ovo Codorna Perfa C/30	7,98	FALSE
+2d0708d4	2026-05-21	08:39:15		Ovo Vermelho Perfa Livre de Gaiola C/12	14,99	FALSE
+ca1f2145	2026-05-21	08:39:15		Ovo Branco Mantiqueira Grande C/12 Polpa	7,98	FALSE
+0accb9bb	2026-05-21	08:39:15		Ovo Vermelho Perfa C/12	11,98	FALSE
+f1c7ef6f	2026-05-21	08:39:15		Pao Baldini Forma 400g 39,5 Por Cento Integral Uva Passa	11,59	FALSE
+c9475efd	2026-05-21	08:39:15		Pao Vale do Sol Zero 3 Cereais 400g	11,98	FALSE
+ae75c439	2026-05-21	08:39:15		Bolo Fuba	29,90 kg	FALSE
+ffadab84	2026-05-21	08:39:15		Pao Seven Boys 450g Leite	8,49	FALSE
+ecdab786	2026-05-21	08:39:15		Biscoito So Mineiro Torrad.150g Mineira	10,99	FALSE
+1def8d0e	2026-05-21	08:39:15		Ovo Branco Mantiqueira Grande com 6	4,98	FALSE
+113d0679	2026-05-21	08:39:15		Ovo Branco Mantiqueira Extra C/20 Pvc	11,98	FALSE
+b314aea5	2026-05-21	08:39:15		Ovo Branco Perfa C/20	17,98	FALSE
+8093c9ed	2026-05-21	08:39:15		Bolo de Coco	29,90 kg	FALSE
+1c40a3d4	2026-05-21	08:39:15		Pao Vale do Sol Integral 20 Grãos 400g	13,98	FALSE
+8213277c	2026-05-21	08:39:15		Lasanha Pif Paf 600g Bolon	9,98	FALSE
+8cf70e3e	2026-05-21	08:39:15		Pao Seven Boys L.Premium 400g Cast/Noz	14,99	FALSE
+bfc8d60f	2026-05-21	08:39:15		Bolo de Leite Condensado Fp	29,90 kg	FALSE
+94afab19	2026-05-21	08:39:15		Pão Vale do Sol Naturista Naturista Maça/Canela/Passas 400g	16,99	FALSE
+d4c5184e	2026-05-21	08:39:15		Pão Vale do Sol Integral com Castanha e Nozes 450g	16,99	FALSE
+4d5ac9c9	2026-05-21	08:39:15		Pao Baldini Hambur.600g	12,99	FALSE
+c5dea7d1	2026-05-21	08:39:15		Pão Baldini Hot Dog 400g	12,99	FALSE
+3826d94c	2026-05-21	08:39:15		Ovo Caipira Bela Vista C/10	10,98	FALSE
+9a223f85	2026-05-21	08:39:15		Bolo Indiano	49,90 kg	FALSE
+b08d8b7f	2026-05-21	08:39:15		Pao Vale do Sol Naturista Castanhá Pará/Cacau 400g	16,99	FALSE
+86ec878f	2026-05-21	08:39:15		Macarrão Santa Amália 500g Caracol	4,98	FALSE
+ea5a800e	2026-05-21	08:39:15		Mistura para Bolo Vilma Laranja 400g	3,98	FALSE
+1b61e60e	2026-05-21	08:39:15		Ovo Vermelho Mantiqueira Grande Caipira C/10	10,98	FALSE
+e348517f	2026-05-21	08:39:15		Pao Vale do Sol Int.370g Uva Passas	14,90	FALSE
+f2df75a5	2026-05-21	08:39:15		Mistura para Bolo Vilma Cenoura 400g	3,98	FALSE
+9dc56820	2026-05-21	08:39:15		Ovo Vermelho Mantiqueira Grande Caipira com 20	15,98	FALSE
+6b234018	2026-05-21	08:39:15		Mistura para Bolo Vilma Festa 400g	3,98	FALSE
+6c68a035	2026-05-21	08:39:15		Pao Wick Bold Tortilha Tá Pronto 270g Original	13,90	FALSE
+9203ec5e	2026-05-21	08:39:15		Biscoito So Mineiro Palito 100g Parmesao	9,99	FALSE
+a15ebeb1	2026-05-21	08:39:15		Pao Wick Bold Tortilha Tá Pronto 270g 100% Integral	13,90	FALSE
+58452f94	2026-05-21	08:39:15		Biscoito Sô Mineiro 300g Casadinho	11,99	FALSE
+58b07392	2026-05-21	08:39:15		Bolo de Milho	29,90 kg	FALSE
+dc57e147	2026-05-21	08:39:15		Pão Vale do Sol Sovado 500 Gramas	14,99	FALSE
+f33f2fe9	2026-05-21	08:39:15		Pao Vale do Sol 250g Batata	8,39	FALSE
+1a460a38	2026-05-21	08:39:15		Ovo Branco Unidade	0,69	FALSE
+8a5844fc	2026-05-21	08:39:15		Mistura para Bolo Vilma Fubá 400g	3,98	FALSE
+4289bf01	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Abac	3,98	FALSE
+4d67bc81	2026-05-21	08:39:15		Biscoito So Mineiro Bolinha 150g Bacon	7,99	FALSE
+c5fef582	2026-05-21	08:39:15		Pao Vale do Sol Integral 500g Grao/Castanha	13,98	FALSE
+1b48a564	2026-05-21	08:39:15		Pão Vale do Sol Integral Malte 400g	13,98	FALSE
+680157c3	2026-05-21	08:39:15		Bolo Neutro Fp	29,90 kg	FALSE
+f32174cb	2026-05-21	08:39:15		Pao Vale do Sol Integral Castanha/Quinoa 500g	13,98	FALSE
+05453cfb	2026-05-21	08:39:15		Mistura para Bolo Anchieta Chocolate 400g	4,79	FALSE
+733d7805	2026-05-21	08:39:15		Mistura para Bolo Vilma Aipim 400g	3,98	FALSE
+3e5d3515	2026-05-21	08:39:15		Macarrão Nissin Lámen Talharim Bolonhesa 99g	3,98	FALSE
+5c766b0f	2026-05-21	08:39:15		Mistura para Bolo Vilma Baunilha 400g	3,98	FALSE
+8b663d6f	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g L.Cond	3,98	FALSE
+d6aaa265	2026-05-21	08:39:15		Pao Seven Boys Leve Semi-Integral 450g	9,99	FALSE
+e44d5aee	2026-05-21	08:39:15		Mac.Vilma Sem.500g Espag.N.3	4,48	FALSE
+e0eea0bd	2026-05-21	08:39:15		Pao Panneves Sovado 300g	6,99	FALSE
+12293260	2026-05-21	08:39:15		Molho Tomate Pomarola Bolonhesa Sachê 300g	5,59	FALSE
+49823789	2026-05-21	08:39:15		Pao Wick Bold D.Forno 500g Orig	14,99	FALSE
+ddb89aa9	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Choc.Suave	3,98	FALSE
+e70f31d8	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Lim	3,98	FALSE
+40afcab5	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Fl.Negra	6,59	FALSE
+3597851b	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Milho	3,98	FALSE
+dc8fc101	2026-05-21	08:39:15		Pão Vale do Sol Integral S/Açúcar 400g	13,98	FALSE
+65b69758	2026-05-21	08:39:15		Lasanha Perdigao 600g Bolon	12,98	FALSE
+09eb0149	2026-05-21	08:39:15		Lasanha Sadia 600g Bolon	15,98	FALSE
+6981421f	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Chocolate	9,98	FALSE
+24f83b6b	2026-05-21	08:39:15		Mistura Bolo Fleischmann 400g Chocomousse	9,98	FALSE
+66afd8e3	2026-05-21	08:39:15		Macarrão Italiano Almerinda Gnocchi 500g	11,98	FALSE
+5b4c519b	2026-05-21	08:39:15		Chiclets Fini 80g Ovo Dinossauro	7,98	FALSE
+d53475b4	2026-05-21	08:39:15		Mistura Bolo Anchieta 400g Cenoura	4,39	FALSE
+08bf393a	2026-05-21	08:39:15		Crocantissimo Pullman 40g Churrasco	3,99	FALSE
+461ea01f	2026-05-21	08:39:15		Mistura Bolo Anchieta Milho Verde 400g	4,39	FALSE
+f9e4e4ac	2026-05-21	08:39:15		Pao Wick Bold Gr.Sabor 500g Frutas	19,90	FALSE
+e5049713	2026-05-21	08:39:15		Macarrão Santa Amália Tetra Color 500g Parafuso	7,59	FALSE
+fb5eab4c	2026-05-21	08:39:15		Pao Seven Boys 500g Milho	13,99	FALSE
+ca42d1cb	2026-05-21	08:39:15		Mistura para Bolo Vilma 400g Choc.Bco	3,98	FALSE
+4c35467f	2026-05-21	08:39:15		Mistura Bolo Anchieta Baunilha 400g	4,39	FALSE
+dacadb75	2026-05-21	08:39:15		Mistura Bolo Fleischmann 400g Brownie	9,98	FALSE
+92a24070	2026-05-21	08:39:15		Pao Delicias do Trigo Hot Dog 500g	12,99	FALSE
+5c292765	2026-05-21	08:39:15		Mistura Bolo Anchieta Coco 400g	4,39	FALSE
+c19567de	2026-05-21	08:39:15		Cer.Nutry C/3 Bolo Choc.	6,49	FALSE
+d3e8b9d6	2026-05-21	08:39:15		Pao Wick Bold Quad.400g C.Para/Quin	18,90	FALSE
+d78c45ea	2026-05-21	08:39:15		Crocantissimo Pullman P.Peru C/Requ.40g	3,99	FALSE
+d2704c26	2026-05-21	08:39:15		Crocantissimo Pullman 40g Salame/Limao	3,99	FALSE
+3f8aaa27	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Aipim	6,98	FALSE
+e1c1e947	2026-05-21	08:39:15		Lasanha Perdigao 1kg Bolon	25,90	FALSE
+87811ee2	2026-05-21	08:39:15		Macarrão Santa Amália Tetra Color 500g Pena	7,59	FALSE
+d2ca2e99	2026-05-21	08:39:15		Pão Panneves Lanchinho 340g	7,99	FALSE
+2265e7aa	2026-05-21	08:39:15		Pao da Casa Hamburguer 600g	13,99	FALSE
+bc1a76f5	2026-05-21	08:39:15		Bolo Seven Boys Laranja 250g	10,99	FALSE
+0b5dcdd6	2026-05-21	08:39:15		Pao Wick Bold Forma 300g S/Glut.	23,99	FALSE
+dac0e646	2026-05-21	08:39:15		Crocantissimo Pullman Queijo/Cebola 40g	3,99	FALSE
+1e5ae9fd	2026-05-21	08:39:15		Pao Delicias do Trigo 380g Integral Uvas Passas	9,98	FALSE
+c141429f	2026-05-21	08:39:15		Pao Wick Bold Forma Integral 450g	13,90	FALSE
+70c2a322	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Milho	6,98	FALSE
+dde5fa9e	2026-05-21	08:39:15		Lasanha Flip Bolonhesa 600g	9,90	FALSE
+031077c4	2026-05-21	08:39:15		Pao Wick Bold Gr.Sabor 400g Chia/Macad	17,90	FALSE
+e804af2e	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Coco	6,98	FALSE
+2364a943	2026-05-21	08:39:15		Pao Delicias do Trigo Paezinhos Batata 250g	9,99	FALSE
+674e3cab	2026-05-21	08:39:15		Pao Seven Boys 350g 7 Graos	13,90	FALSE
+0ffa293b	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Limão Cremoso	6,98	FALSE
+9c561099	2026-05-21	08:39:15		Pao Delicias do Trigo 380g Integral Zero	9,98	FALSE
+0983028e	2026-05-21	08:39:15		Pao Wick Bold Gr.Sabor 500g C.Para/Qui	19,90	FALSE
+3d47e10b	2026-05-21	08:39:15		Mistura Bolo Fleischmann 390g Cenoura Up	9,98	FALSE
+6e946a33	2026-05-21	08:39:15		Pao Wick Bold P.Bread 300g Sirio Mini	14,90	FALSE
+e50bb3ee	2026-05-21	08:39:15		Pao Seven Boys Light 350g 7 Graos	13,90	FALSE
+01dd96bb	2026-05-21	08:39:15		Pão Bauducco Bisnaguinha 260g	8,79	FALSE
+c0b019ff	2026-05-21	08:39:15		Pao Wick Bold Pita 400g Sirio Peq.C/12	23,99	FALSE
+94ce3a2a	2026-05-21	08:39:15		Pao Delicias do Trigo 100 P/Cento Integral Castanhas/Quinoa	15,99	FALSE
+ff83b419	2026-05-21	08:39:15		Pao Delicias do Trigo 380g Integral 12 Graos Zero	9,98	FALSE
